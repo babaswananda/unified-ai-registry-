@@ -12,7 +12,7 @@ export default function MorphingBackground({
   intensity = 0.3
 }: MorphingBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
   const timeRef = useRef(0);
 
   useEffect(() => {

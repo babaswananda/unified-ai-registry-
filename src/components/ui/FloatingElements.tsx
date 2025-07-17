@@ -25,7 +25,7 @@ export default function FloatingElements({
 }: FloatingElementsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<FloatingElement[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
 
   const elements = ["⚡", "🌐", "🔗", "💻", "🚀", "⭐", "🔮", "💎", "🎯", "🛡️"];
 

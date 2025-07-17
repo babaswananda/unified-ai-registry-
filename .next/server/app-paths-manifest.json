@@ -1,8 +1,9 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/investors/page": "app/investors/page.js",
   "/download-agentic-web/page": "app/download-agentic-web/page.js",
   "/download-new-internet/page": "app/download-new-internet/page.js",
-  "/page": "app/page.js",
+  "/partners/page": "app/partners/page.js",
   "/agents-are-coming/page": "app/agents-are-coming/page.js",
-  "/investors/page": "app/investors/page.js",
-  "/partners/page": "app/partners/page.js"
+  "/page": "app/page.js"
 }
