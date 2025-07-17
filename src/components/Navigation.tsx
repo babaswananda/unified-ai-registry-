@@ -34,7 +34,7 @@ export default function Navigation() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-black/80 backdrop-blur-md shadow-lg border-b border-cyan-500/20"
+          ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-lg border-b border-cyan-500/20"
           : "bg-transparent"
       )}
     >
@@ -45,7 +45,7 @@ export default function Navigation() {
             <div className="text-3xl">
               🌐
             </div>
-            <span className="text-xl font-bold text-white">
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
               Unified AI Registry
             </span>
           </div>
@@ -56,7 +56,7 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-200"
+                className="text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 font-medium transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -78,7 +78,7 @@ export default function Navigation() {
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <button
-              className="p-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200"
+              className="p-2 text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
             {isMobileMenuOpen ? (
@@ -92,13 +92,13 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-t border-cyan-500/20 shadow-2xl">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-black/95 backdrop-blur-md border-t border-cyan-500/20 shadow-2xl">
             <div className="section-padding py-6 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block text-gray-300 hover:text-cyan-400 font-medium py-3 px-2 rounded-lg hover:bg-cyan-500/10 transition-all duration-200"
+                  className="block text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 font-medium py-3 px-2 rounded-lg hover:bg-cyan-500/10 transition-all duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

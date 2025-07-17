@@ -25,7 +25,7 @@ export default function PricingSection() {
       name: "Developer Tier",
       price: "$49.00",
       description: "For builders and creators",
-      emoji: "⭐",
+      emoji: "✨",
       features: [
         "Standard domain registration",
         "Basic agent deployment",
@@ -121,10 +121,7 @@ export default function PricingSection() {
                 </div>
               )}
 
-              {/* Emoji */}
-              <div className="text-4xl mb-6">
-                {tier.emoji}
-              </div>
+
 
               {/* Tier Info */}
               <div className="mb-6">

@@ -16,7 +16,7 @@ export default function AgentsAreComingPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden relative">
+    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white overflow-hidden relative">
       {/* Conditional Background - Lightweight on mobile */}
       <ConditionalBackground
         intensity={0.8}

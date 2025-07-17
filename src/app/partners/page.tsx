@@ -78,7 +78,7 @@ export default function PartnersPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black dark:bg-black text-white">
+    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
       <Navigation />
       
       {/* Background Effects */}

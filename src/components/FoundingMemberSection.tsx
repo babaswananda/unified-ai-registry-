@@ -16,12 +16,12 @@ export default function FoundingMemberSection() {
       description: "First access to GPU cloud and edge compute resources"
     },
     {
-      emoji: "⭐",
+      emoji: "✨",
       title: "Unified AI Tools",
       description: "Priority access to the complete AI development suite"
     },
     {
-      emoji: "👑",
+      emoji: "🎖️",
       title: "Premium Badge",
       description: "Founding Member status in the agentic directory"
     },

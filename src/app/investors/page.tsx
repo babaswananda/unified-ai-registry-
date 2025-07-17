@@ -69,7 +69,7 @@ export default function InvestorsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
       <Navigation />
 
       <ConditionalBackground

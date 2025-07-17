@@ -27,7 +27,7 @@ export default function FloatingElements({
   const elementsRef = useRef<FloatingElement[]>([]);
   const animationRef = useRef<number>(0);
 
-  const elements = ["⚡", "🌐", "🔗", "💻", "🚀", "⭐", "🔮", "💎", "🎯", "🛡️"];
+  const elements = ["⚡", "🌐", "🔗", "💻", "🚀", "✨", "🔮", "💎", "🎯", "🛡️"];
 
   useEffect(() => {
     const container = containerRef.current;
