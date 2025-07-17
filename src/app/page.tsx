@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import DomainRegistrySection from "@/components/DomainRegistrySection";
 import ProductGrid from "@/components/ProductGrid";
 import FeaturesDeepDive from "@/components/FeaturesDeepDive";
 import UnifiedAIComputeSection from "@/components/UnifiedAIComputeSection";
@@ -22,6 +23,7 @@ export default function Home() {
 
       <Navigation />
       <HeroSection />
+      <DomainRegistrySection />
       <ProductGrid />
       <FeaturesDeepDive />
       <UnifiedAIComputeSection />
