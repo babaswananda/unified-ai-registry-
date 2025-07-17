@@ -84,15 +84,15 @@ export default function InvestorsPage() {
         <section className="py-24 text-center">
           <div className="container-max section-padding">
             <ScrollReveal direction="up" delay={200}>
-              <div className="inline-flex items-center space-x-3 bg-yellow-500/10 border border-yellow-500/20 px-6 py-3 rounded-full mb-8">
-                <TrendingUp className="w-5 h-5 text-yellow-400" />
-                <span className="text-yellow-400 font-semibold">Investor Portal</span>
+              <div className="inline-flex items-center space-x-3 bg-cyan-500/10 border border-cyan-500/20 px-6 py-3 rounded-full mb-8">
+                <TrendingUp className="w-5 h-5 text-cyan-400" />
+                <span className="text-cyan-400 font-semibold">Investor Portal</span>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={400}>
               <h1 className="text-6xl lg:text-7xl font-bold mb-8">
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   The Infrastructure Is Live.
                 </span>
                 <br />
@@ -110,8 +110,8 @@ export default function InvestorsPage() {
                   Modular Infrastructure as a Service, AI-to-AI protocols, headless structured compute, 
                   crypto-native endpoint networks, zero-trust supply chains, and hardware protocol interlock.
                 </p>
-                <p className="text-2xl text-yellow-400 font-semibold">
-                  This is not a pitch deck. This is an open protocol movement backed by real systems, 
+                <p className="text-2xl text-cyan-400 font-semibold">
+                  This is not a pitch deck. This is an open protocol movement backed by real systems,
                   real ownership, and real global opportunity.
                 </p>
               </div>
@@ -126,7 +126,7 @@ export default function InvestorsPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 {opportunityMetrics.map((metric, index) => (
                   <div key={metric.label}>
-                    <div className="text-4xl font-bold text-yellow-400 mb-2">
+                    <div className="text-4xl font-bold text-cyan-400 mb-2">
                       <AnimatedCounter 
                         end={metric.value} 
                         suffix={metric.suffix || ""} 
@@ -155,23 +155,23 @@ export default function InvestorsPage() {
                   <h4 className="text-2xl font-bold mb-6">How Agentic Infrastructure Unlocks New Markets:</h4>
                   <ul className="space-y-4">
                     <li className="flex items-start space-x-3">
-                      <span className="text-yellow-400 mt-1">•</span>
+                      <span className="text-cyan-400 mt-1">•</span>
                       <span>Agent-as-a-Service (AaaS) across sectors</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <span className="text-yellow-400 mt-1">•</span>
+                      <span className="text-cyan-400 mt-1">•</span>
                       <span>Tokenized leasing, licensing, and compute</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <span className="text-yellow-400 mt-1">•</span>
+                      <span className="text-cyan-400 mt-1">•</span>
                       <span>Decentralized data control & authentication</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <span className="text-yellow-400 mt-1">•</span>
+                      <span className="text-cyan-400 mt-1">•</span>
                       <span>Interoperable identities, devices, and businesses</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <span className="text-yellow-400 mt-1">•</span>
+                      <span className="text-cyan-400 mt-1">•</span>
                       <span>Trade, manufacturing, and defense-grade deployments</span>
                     </li>
                   </ul>
@@ -179,8 +179,8 @@ export default function InvestorsPage() {
               </ScrollReveal>
 
               <ScrollReveal direction="right" delay={600}>
-                <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl p-8 border border-yellow-500/20">
-                  <h4 className="text-2xl font-bold mb-4 text-yellow-400">
+                <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl p-8 border border-cyan-500/20">
+                  <h4 className="text-2xl font-bold mb-4 text-cyan-400">
                     We are not raising capital. We are granting access.
                   </h4>
                   <p className="text-gray-300 leading-relaxed">
@@ -195,7 +195,7 @@ export default function InvestorsPage() {
         </section>
 
         {/* The Stack */}
-        <section className="py-24 bg-gradient-to-r from-dark-800/50 to-dark-700/50 backdrop-blur-sm">
+        <section className="py-24 bg-black/30 backdrop-blur-sm">
           <div className="container-max section-padding">
             <ScrollReveal direction="up" delay={200}>
               <h3 className="text-4xl font-bold text-center mb-16">
@@ -210,8 +210,8 @@ export default function InvestorsPage() {
                   direction="up"
                   delay={400 + index * 100}
                 >
-                  <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-yellow-500/30 transition-all duration-300">
-                    <h4 className="text-lg font-bold mb-3 text-yellow-400">{layer.title}</h4>
+                  <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+                    <h4 className="text-lg font-bold mb-3 text-cyan-400">{layer.title}</h4>
                     <p className="text-gray-400 text-sm leading-relaxed">{layer.description}</p>
                   </div>
                 </ScrollReveal>
@@ -248,18 +248,18 @@ export default function InvestorsPage() {
                   delay={400 + index * 150}
                 >
                   <div className={`rounded-2xl p-8 border transition-all duration-300 ${
-                    tier.highlight 
-                      ? 'bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-yellow-500/40 hover:border-yellow-500/60' 
-                      : 'bg-black/30 border-white/10 hover:border-yellow-500/30'
+                    tier.highlight
+                      ? 'bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border-cyan-500/40 hover:border-cyan-500/60'
+                      : 'bg-black/30 border-cyan-500/20 hover:border-cyan-500/30'
                   }`}>
                     {tier.highlight && (
                       <div className="text-center mb-4">
-                        <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
+                        <span className="bg-cyan-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
                           EXCLUSIVE
                         </span>
                       </div>
                     )}
-                    <h4 className="text-xl font-bold mb-3 text-yellow-400">{tier.title}</h4>
+                    <h4 className="text-xl font-bold mb-3 text-cyan-400">{tier.title}</h4>
                     <p className="text-gray-300 mb-4">{tier.description}</p>
                     <p className="text-gray-400 text-sm">{tier.access}</p>
                   </div>
@@ -270,7 +270,7 @@ export default function InvestorsPage() {
         </section>
 
         {/* Due Diligence */}
-        <section className="py-24 bg-gradient-to-r from-red-900/20 to-orange-900/20 backdrop-blur-sm">
+        <section className="py-24 bg-black/30 backdrop-blur-sm">
           <div className="container-max section-padding">
             <ScrollReveal direction="up" delay={200}>
               <div className="text-center mb-16">
@@ -295,8 +295,8 @@ export default function InvestorsPage() {
                   direction="up"
                   delay={400 + index * 100}
                 >
-                  <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-6 border border-red-500/20 hover:border-red-500/40 transition-all duration-300">
-                    <item.icon className="w-8 h-8 text-red-400 mb-4" />
+                  <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+                    <item.icon className="w-8 h-8 text-cyan-400 mb-4" />
                     <h4 className="text-lg font-bold mb-2">{item.title}</h4>
                     <p className="text-gray-400 text-sm">{item.desc}</p>
                   </div>
@@ -306,7 +306,7 @@ export default function InvestorsPage() {
 
             <ScrollReveal direction="up" delay={1000}>
               <div className="text-center mt-12">
-                <p className="text-red-400 font-semibold mb-6">
+                <p className="text-cyan-400 font-semibold mb-6">
                   Only unlocked after verification. No exceptions.
                 </p>
               </div>
@@ -331,7 +331,7 @@ export default function InvestorsPage() {
                   <Button 
                     variant="gradient" 
                     size="lg" 
-                    className="group bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold px-12 py-6 text-xl"
+                    className="group bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold px-12 py-6 text-xl"
                   >
                     <Lock className="w-6 h-6 mr-3" />
                     Request Access to Vault
@@ -341,7 +341,7 @@ export default function InvestorsPage() {
                   <Button 
                     variant="secondary" 
                     size="lg"
-                    className="bg-black/50 border-2 border-yellow-500/30 text-yellow-400 hover:border-yellow-500/50 hover:bg-yellow-500/5 px-12 py-6 text-xl"
+                    className="bg-black/50 border-2 border-cyan-500/30 text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/5 px-12 py-6 text-xl"
                   >
                     <Calendar className="w-6 h-6 mr-3" />
                     Schedule Founder's Briefing
@@ -353,7 +353,7 @@ export default function InvestorsPage() {
         </section>
 
         {/* Footer Badge */}
-        <section className="py-16 border-t border-gray-800">
+        <section className="py-16 border-t border-cyan-500/20">
           <div className="container-max section-padding text-center">
             <ScrollReveal direction="up" delay={200}>
               <a 
