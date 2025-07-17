@@ -109,21 +109,21 @@ export default function ProductGrid() {
         {/* Section Header */}
         <ScrollReveal direction="up" delay={200}>
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               What You're Getting Access To
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
               Your Agentic Handle Powers the Complete Unified AI Suite
             </p>
           </div>
         </ScrollReveal>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-12">
           {products.map((product, index) => (
             <div
               key={product.name}
-              className={`group bg-black/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-500 ${
+              className={`group bg-black/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-500 ${
                 visibleItems.includes(index)
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
@@ -134,7 +134,7 @@ export default function ProductGrid() {
               }}
             >
               {/* Emoji */}
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                 {product.emoji}
               </div>
 
@@ -152,7 +152,7 @@ export default function ProductGrid() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center bg-gradient-to-r from-cyan-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 text-white">
+        <div className="text-center bg-gradient-to-r from-cyan-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-cyan-500/20 text-white">
           <p className="text-lg mb-4">
             Every domain registered gets access to all of the above — as they unlock.
           </p>

@@ -24,6 +24,38 @@
   .rounded-2xl { border-radius: 0.625rem !important; }
   .rounded-3xl { border-radius: 0.75rem !important; }
   .rounded-full { border-radius: 9999px !important; }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .container-max {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .section-padding {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  }
+
+  /* Touch optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  @media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+  }
 }
 
 @layer components {

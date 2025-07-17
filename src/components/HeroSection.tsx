@@ -39,7 +39,7 @@ export default function HeroSection() {
       <FloatingElements count={12} />
 
       <div className="relative z-10 container-max section-padding">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <ScrollReveal direction="left" delay={200} duration={1000}>
             <div className="space-y-8">
@@ -54,7 +54,7 @@ export default function HeroSection() {
             {/* Main Headline */}
             <ScrollReveal direction="up" delay={600}>
               <div className="space-y-4">
-                <h1 className="text-6xl lg:text-8xl font-bold leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
                   <span className="bg-gradient-to-r from-white via-cyan-400 to-blue-400 bg-clip-text text-transparent">
                     <TypewriterText
                       texts={[
@@ -72,7 +72,7 @@ export default function HeroSection() {
                   <span className="text-white">Starts Here</span>
                 </h1>
               
-              <div className="text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 <TypewriterText
                   texts={[
                     "Register your domain in the AI-native internet.",
@@ -95,16 +95,16 @@ export default function HeroSection() {
                 <Button
                   variant="gradient"
                   size="lg"
-                  className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-12 py-6 text-xl shadow-2xl shadow-cyan-500/25"
+                  className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl shadow-cyan-500/25"
                 >
                   Register Domain
-                  <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="bg-black/50 border-2 border-cyan-500/30 text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/5 px-12 py-6 text-xl backdrop-blur-sm"
+                  className="bg-black/50 border-2 border-cyan-500/30 text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/5 px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl backdrop-blur-sm"
                 >
                   Join Waitlist
                 </Button>
@@ -116,11 +116,11 @@ export default function HeroSection() {
           {/* Right Column - Power Features */}
           <ScrollReveal direction="right" delay={400} duration={1200}>
             <div className="relative">
-              <div className="bg-black/50 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-cyan-500/20 relative overflow-hidden">
+              <div className="bg-black/50 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-cyan-500/20 relative overflow-hidden">
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5" />
                 <div className="relative z-10">
-                  <h3 className="text-3xl font-bold text-white mb-8 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 text-center">
                     <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                       Why Choose UnifiedAI?
                     </span>
@@ -134,8 +134,8 @@ export default function HeroSection() {
                         delay={800 + index * 100}
                         duration={600}
                       >
-                        <div className="flex items-center space-x-4 p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-300 group">
-                          <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                        <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-300 group">
+                          <div className="text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300">
                             {feature.emoji}
                           </div>
                           <div className="flex-1">

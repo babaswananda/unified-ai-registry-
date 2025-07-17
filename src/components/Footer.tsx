@@ -52,8 +52,8 @@ export default function Footer() {
       <div className="border-b border-dark-700 dark:border-gray-800">
         <div className="container-max section-padding py-16">
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">💌 Stay Updated</h3>
-            <p className="text-dark-300 dark:text-gray-400 mb-8">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">💌 Stay Updated</h3>
+            <p className="text-gray-300 mb-6 sm:mb-8">
               Get product releases, TLD drops, and roadmap insights delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -62,7 +62,7 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full pl-10 pr-4 py-3 bg-dark-800 dark:bg-gray-800 border border-dark-600 dark:border-gray-700 rounded-xl text-white placeholder-dark-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-purple focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 bg-black/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 backdrop-blur-sm"
                 />
               </div>
               <Button variant="gradient" size="md">
@@ -75,7 +75,7 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="container-max section-padding py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
@@ -84,7 +84,7 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold">Unified AI Registry</span>
             </div>
-            <p className="text-dark-300 mb-6">
+            <p className="text-gray-300 mb-6">
               The agentic web starts here. Register your domain in the AI-native internet.
             </p>
             <div className="space-y-2">

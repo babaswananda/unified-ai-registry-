@@ -1,9 +1,9 @@
 {
   "/_not-found/page": "/_not-found",
-  "/investors/page": "/investors",
+  "/agents-are-coming/page": "/agents-are-coming",
   "/download-agentic-web/page": "/download-agentic-web",
   "/download-new-internet/page": "/download-new-internet",
-  "/partners/page": "/partners",
-  "/agents-are-coming/page": "/agents-are-coming",
-  "/page": "/"
+  "/investors/page": "/investors",
+  "/page": "/",
+  "/partners/page": "/partners"
 }

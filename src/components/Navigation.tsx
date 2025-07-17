@@ -76,7 +76,7 @@ export default function Navigation() {
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <button
-              className="p-2 text-dark-700 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white"
+              className="p-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
             {isMobileMenuOpen ? (
@@ -90,23 +90,23 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-dark-900 border-t border-dark-200 dark:border-dark-700 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-t border-cyan-500/20 shadow-2xl">
             <div className="section-padding py-6 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block text-dark-700 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white font-medium py-2"
+                  className="block text-gray-300 hover:text-cyan-400 font-medium py-3 px-2 rounded-lg hover:bg-cyan-500/10 transition-all duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="ghost" size="sm" className="w-full">
+                <Button variant="ghost" size="sm" className="w-full text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10">
                   Sign In
                 </Button>
-                <Button variant="gradient" size="sm" className="w-full">
+                <Button variant="gradient" size="sm" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400">
                   Register Domain
                 </Button>
               </div>

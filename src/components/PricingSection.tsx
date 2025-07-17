@@ -100,20 +100,20 @@ export default function PricingSection() {
           <div className="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-4 backdrop-blur-sm">
             <span>🌅 Sunrise Pricing</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Early Access for Founding Pioneers
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Secure your position in the AI-native internet with exclusive founding member benefits
           </p>
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16">
           {tiers.map((tier, index) => (
             <div
               key={tier.name}
-              className={`relative bg-black/50 backdrop-blur-sm rounded-2xl p-8 border-2 transition-all duration-300 hover:scale-105 ${
+              className={`relative bg-black/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border-2 transition-all duration-300 hover:scale-105 ${
                 tier.popular
                   ? "border-cyan-500 shadow-xl shadow-cyan-500/20"
                   : "border-cyan-500/20 hover:border-cyan-500/40"
