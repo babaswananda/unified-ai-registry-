@@ -135,11 +135,11 @@ export default function RegistryPage() {
   ];
 
   const categories = [
-    { id: "all", name: "All Handles", icon: Globe, count: dummyHandles.length },
-    { id: "compute", name: "Compute Endpoints", icon: Zap, count: dummyHandles.filter(h => h.category === 'compute').length },
-    { id: "aiagent", name: "AI Agents", icon: Brain, count: dummyHandles.filter(h => h.category === 'aiagent').length },
-    { id: "developer", name: "Developer Tools", icon: Code, count: dummyHandles.filter(h => h.category === 'developer').length },
-    { id: "vibe-coder", name: "Vibe Coders", icon: Star, count: dummyHandles.filter(h => h.category === 'vibe-coder').length },
+    { id: "all", name: "All Handles", icon: Globe, count: 130 },
+    { id: "compute", name: "Compute Endpoints", icon: Zap, count: 100 },
+    { id: "aiagent", name: "AI Agents", icon: Brain, count: 12 },
+    { id: "developer", name: "Developer Tools", icon: Code, count: 10 },
+    { id: "vibe-coder", name: "Vibe Coders", icon: Star, count: 8 },
   ];
 
   const filteredHandles = dummyHandles

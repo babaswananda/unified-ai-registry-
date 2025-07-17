@@ -1,10 +1,10 @@
 {
   "/_not-found/page": "/_not-found",
-  "/agents-are-coming/page": "/agents-are-coming",
-  "/registry/page": "/registry",
+  "/download-new-internet/page": "/download-new-internet",
   "/download-agentic-web/page": "/download-agentic-web",
   "/investors/page": "/investors",
-  "/page": "/",
   "/partners/page": "/partners",
-  "/download-new-internet/page": "/download-new-internet"
+  "/registry/page": "/registry",
+  "/page": "/",
+  "/agents-are-coming/page": "/agents-are-coming"
 }

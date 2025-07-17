@@ -10,11 +10,11 @@ export default function DomainRegistrySection() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const categories = [
-    { id: "all", name: "All Handles", icon: Globe, count: 100, color: "text-cyan-400" },
-    { id: "compute", name: "Compute Endpoints", icon: Zap, count: 25, color: "text-blue-400" },
-    { id: "aiagent", name: "AI Agents", icon: Brain, count: 25, color: "text-purple-400" },
-    { id: "developer", name: "Developer Tools", icon: Code, count: 25, color: "text-green-400" },
-    { id: "vibe-coder", name: "Vibe Coders", icon: Star, count: 25, color: "text-pink-400" },
+    { id: "all", name: "All Handles", icon: Globe, count: 130, color: "text-cyan-400" },
+    { id: "compute", name: "Compute Endpoints", icon: Zap, count: 100, color: "text-blue-400" },
+    { id: "aiagent", name: "AI Agents", icon: Brain, count: 12, color: "text-purple-400" },
+    { id: "developer", name: "Developer Tools", icon: Code, count: 10, color: "text-green-400" },
+    { id: "vibe-coder", name: "Vibe Coders", icon: Star, count: 8, color: "text-pink-400" },
   ];
 
   return (
@@ -146,12 +146,12 @@ export default function DomainRegistrySection() {
         <ScrollReveal direction="up" delay={600}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl sm:text-4xl font-bold text-cyan-400 mb-2">100+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-cyan-400 mb-2">130+</div>
               <div className="text-gray-300">Available Handles</div>
             </div>
             <div>
-              <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">4</div>
-              <div className="text-gray-300">Categories</div>
+              <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">100+</div>
+              <div className="text-gray-300">Compute Endpoints</div>
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-bold text-purple-400 mb-2">$79+</div>
