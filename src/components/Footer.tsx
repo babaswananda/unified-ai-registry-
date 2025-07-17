@@ -49,7 +49,7 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white border-t border-cyan-500/20">
       {/* Newsletter Section */}
-      <div className="border-b border-dark-700 dark:border-gray-800">
+      <div className="border-b border-cyan-500/20">
         <div className="container-max section-padding py-16">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">💌 Stay Updated</h3>
@@ -58,7 +58,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <div className="flex-1 relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-dark-400" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -88,7 +88,7 @@ export default function Footer() {
               The agentic web starts here. Register your domain in the AI-native internet.
             </p>
             <div className="space-y-2">
-              <p className="text-sm text-dark-400">Built on the</p>
+              <p className="text-sm text-gray-400">Built on the</p>
               <p className="text-gradient font-semibold">Unified AI Framework</p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function Footer() {
                   <li key={linkIndex}>
                     <a
                       href={link.href}
-                      className="text-dark-300 hover:text-white transition-colors duration-200"
+                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -115,13 +115,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-dark-700">
+      <div className="border-t border-cyan-500/20">
         <div className="container-max section-padding py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-dark-400 text-sm">
+            <div className="text-gray-400 text-sm">
               © 2025 Unified AI Registry. All rights reserved.
             </div>
-            <div className="flex items-center space-x-6 text-sm text-dark-400">
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
               <span>The AI-native internet layer</span>
               <span>•</span>
               <span>Powered by Unified AI</span>

@@ -3,11 +3,8 @@
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import TypewriterText from "@/components/ui/TypewriterText";
-import ParticleField from "@/components/ui/ParticleField";
-import MorphingBackground from "@/components/ui/MorphingBackground";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import FloatingElements from "@/components/ui/FloatingElements";
-import AnimatedGrid from "@/components/ui/AnimatedGrid";
+import ConditionalBackground from "@/components/ui/ConditionalBackground";
 
 export default function HeroSection() {
   const powerFeatures = [
@@ -21,22 +18,13 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white">
-      {/* Background Effects - Exact same as agents-are-coming */}
-      <MorphingBackground intensity={0.8} />
-      <AnimatedGrid
-        gridSize={100}
-        lineColor="rgba(0, 255, 255, 0.03)"
-        pulseColor="rgba(0, 255, 255, 0.2)"
+      {/* Conditional Background - Lightweight on mobile, full animations on desktop */}
+      <ConditionalBackground
         intensity={0.8}
-      />
-      <ParticleField
         particleCount={120}
-        color="rgba(0, 255, 255, 0.4)"
-        darkColor="rgba(0, 255, 255, 0.6)"
+        floatingCount={12}
+        gridSize={100}
       />
-
-      {/* Floating Elements */}
-      <FloatingElements count={12} />
 
       <div className="relative z-10 container-max section-padding">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -92,14 +80,16 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <ScrollReveal direction="up" delay={1000}>
               <div className="flex flex-col sm:flex-row gap-6 mb-16">
-                <Button
-                  variant="gradient"
-                  size="lg"
-                  className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl shadow-cyan-500/25"
-                >
-                  Register Domain
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <a href="/registry">
+                  <Button
+                    variant="gradient"
+                    size="lg"
+                    className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl shadow-cyan-500/25"
+                  >
+                    Browse Registry
+                    <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
 
                 <Button
                   variant="secondary"

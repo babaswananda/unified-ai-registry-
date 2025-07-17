@@ -56,6 +56,38 @@
       font-size: 16px !important;
     }
   }
+
+  /* Performance optimizations for mobile */
+  @media (max-width: 768px) {
+    /* Disable heavy animations on mobile */
+    .mobile-disable-animation {
+      display: none !important;
+    }
+
+    /* Reduce animation complexity */
+    * {
+      animation-duration: 0.3s !important;
+      transition-duration: 0.3s !important;
+    }
+
+    /* Disable transform3d on mobile to prevent GPU overload */
+    .mobile-reduce-transforms {
+      transform: none !important;
+    }
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-disable-animation {
+      display: none !important;
+    }
+
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer components {

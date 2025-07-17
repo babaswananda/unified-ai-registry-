@@ -1,11 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import ParticleField from "@/components/ui/ParticleField";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { ArrowRight, Shield, TrendingUp, Globe, Lock, FileText, Calendar } from "lucide-react";
 
 export default function InvestorsPage() {
@@ -72,10 +72,11 @@ export default function InvestorsPage() {
     <main className="min-h-screen bg-black text-white">
       <Navigation />
 
-      <ParticleField
-        particleCount={100}
-        color="rgba(0, 255, 255, 0.4)"
-        darkColor="rgba(0, 255, 255, 0.6)"
+      <ConditionalBackground
+        intensity={0.6}
+        particleCount={80}
+        floatingCount={0}
+        gridSize={120}
       />
 
       <div className="relative z-10 pt-24">

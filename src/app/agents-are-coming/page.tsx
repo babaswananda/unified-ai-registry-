@@ -2,11 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
-import ParticleField from "@/components/ui/ParticleField";
-import MorphingBackground from "@/components/ui/MorphingBackground";
-import AnimatedGrid from "@/components/ui/AnimatedGrid";
 import TypewriterText from "@/components/ui/TypewriterText";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { ArrowRight, Eye, Zap, Globe } from "lucide-react";
 
 export default function AgentsAreComingPage() {
@@ -19,18 +17,12 @@ export default function AgentsAreComingPage() {
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* Advanced Background Effects */}
-      <MorphingBackground intensity={0.8} />
-      <AnimatedGrid 
-        gridSize={100}
-        lineColor="rgba(255, 255, 255, 0.03)"
-        pulseColor="rgba(0, 255, 255, 0.2)"
+      {/* Conditional Background - Lightweight on mobile */}
+      <ConditionalBackground
         intensity={0.8}
-      />
-      <ParticleField 
         particleCount={120}
-        color="rgba(0, 255, 255, 0.4)"
-        darkColor="rgba(0, 255, 255, 0.6)"
+        floatingCount={8}
+        gridSize={100}
       />
 
       {/* Main Content */}

@@ -3,9 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import { Check } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import MorphingBackground from "@/components/ui/MorphingBackground";
-import AnimatedGrid from "@/components/ui/AnimatedGrid";
-import ParticleField from "@/components/ui/ParticleField";
+import ConditionalBackground from "@/components/ui/ConditionalBackground";
 
 export default function PricingSection() {
   const tiers = [
@@ -81,18 +79,12 @@ export default function PricingSection() {
 
   return (
     <section id="pricing" className="py-24 bg-black text-white relative overflow-hidden">
-      {/* Background Effects - Same as agents-are-coming */}
-      <MorphingBackground intensity={0.8} />
-      <AnimatedGrid
-        gridSize={100}
-        lineColor="rgba(0, 255, 255, 0.03)"
-        pulseColor="rgba(0, 255, 255, 0.2)"
+      {/* Conditional Background - Lightweight on mobile */}
+      <ConditionalBackground
         intensity={0.8}
-      />
-      <ParticleField
         particleCount={100}
-        color="rgba(0, 255, 255, 0.4)"
-        darkColor="rgba(0, 255, 255, 0.6)"
+        floatingCount={0}
+        gridSize={100}
       />
       <div className="container-max section-padding relative z-10">
         {/* Section Header */}

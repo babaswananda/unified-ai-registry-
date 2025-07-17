@@ -61,6 +61,12 @@
       "regex": "^/partners(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/partners(?:/)?$"
+    },
+    {
+      "page": "/registry",
+      "regex": "^/registry(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/registry(?:/)?$"
     }
   ],
   "dataRoutes": [],
