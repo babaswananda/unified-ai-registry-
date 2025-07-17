@@ -64,15 +64,33 @@
       display: none !important;
     }
 
-    /* Reduce animation complexity */
-    * {
-      animation-duration: 0.3s !important;
-      transition-duration: 0.3s !important;
+    /* Completely disable problematic animations */
+    canvas {
+      display: none !important;
     }
 
-    /* Disable transform3d on mobile to prevent GPU overload */
+    /* Disable complex transforms and animations */
+    * {
+      animation-duration: 0.1s !important;
+      transition-duration: 0.2s !important;
+      transform: none !important;
+      will-change: auto !important;
+    }
+
+    /* Force hardware acceleration off */
     .mobile-reduce-transforms {
       transform: none !important;
+      backface-visibility: visible !important;
+      perspective: none !important;
+    }
+
+    /* Disable blur effects that can cause performance issues */
+    .backdrop-blur-xl,
+    .backdrop-blur-lg,
+    .backdrop-blur-md,
+    .backdrop-blur-sm {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
     }
   }
 

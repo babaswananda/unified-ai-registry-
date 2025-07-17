@@ -5,7 +5,7 @@ import MorphingBackground from "./MorphingBackground";
 import AnimatedGrid from "./AnimatedGrid";
 import ParticleField from "./ParticleField";
 import FloatingElements from "./FloatingElements";
-import LightweightBackground from "./LightweightBackground";
+import StaticBackground from "./StaticBackground";
 
 interface ConditionalBackgroundProps {
   intensity?: number;
@@ -22,14 +22,14 @@ export default function ConditionalBackground({
   gridSize = 100,
   className = ""
 }: ConditionalBackgroundProps) {
-  const { shouldReduceAnimations } = useMobileDetection();
+  const { shouldReduceAnimations, isMobile } = useMobileDetection();
 
-  if (shouldReduceAnimations) {
-    // Use lightweight CSS-only background for mobile/low-end devices
-    return <LightweightBackground className={className} />;
+  // Use completely static background for mobile devices
+  if (isMobile || shouldReduceAnimations) {
+    return <StaticBackground className={className} />;
   }
 
-  // Use full animated background for desktop/high-end devices
+  // Use full animated background only for desktop devices
   return (
     <>
       <MorphingBackground intensity={intensity} className={className} />
