@@ -54,13 +54,14 @@ export default function HITLSection() {
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-              GLOBAL MOVEMENT
+              THE NEW OPERATOR CLASS
             </span>
           </h2>
-          
+
           <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-            This is not AI replacing humans. This is AI deployed to enhance human agency. 
-            <span className="text-orange-400 font-semibold"> HITL is a cultural protocol, not just a technical one.</span>
+            Unified AI isn't about replacing humans — it's about upgrading human agency.
+            This is the new gig economy, powered by AI workflows, sovereign data, and autonomous infrastructure.
+            <span className="text-orange-400 font-semibold">We call it the Operator Economy — and Humans in the Loop are the core.</span>
           </p>
         </div>
 
@@ -78,29 +79,44 @@ export default function HITLSection() {
           ))}
         </div>
 
-        {/* Core Message */}
+        {/* Monetization Opportunities */}
         <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-2xl p-8 mb-16 text-center animate-slide-up" style={{ animationDelay: "400ms" }}>
-          <h3 className="text-2xl font-bold text-orange-400 mb-4">We Stay in the Loop</h3>
+          <h3 className="text-2xl font-bold text-orange-400 mb-4">Monetization Opportunities Include:</h3>
           <p className="text-lg text-gray-300 mb-6 max-w-3xl mx-auto">
-            Everyone in the Unified ecosystem participates in the training, refining, governing, and deploying of AI. 
-            <span className="text-white font-semibold"> No passive consumption. Only active creation.</span>
+            You're not just using AI — you co-create it, fine-tune it, and get paid for it.
+            <span className="text-white font-semibold">Whether you're an ops-minded strategist, QA specialist, data labeler, or visionary generalist — there's a slot for you in this new machine.</span>
           </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="bg-black/30 rounded-lg p-4">
-              <CheckCircle className="w-6 h-6 text-green-400 mb-2 mx-auto" />
-              <h4 className="text-white font-semibold mb-1">Not Surveillance</h4>
-              <p className="text-gray-300 text-sm">Human oversight, not monitoring</p>
+              <div className="text-2xl mb-2">🔧</div>
+              <h4 className="text-white font-semibold mb-1">AI Agent Training</h4>
+              <p className="text-gray-300 text-sm">Prompt Flow Optimization</p>
             </div>
             <div className="bg-black/30 rounded-lg p-4">
-              <CheckCircle className="w-6 h-6 text-green-400 mb-2 mx-auto" />
-              <h4 className="text-white font-semibold mb-1">Not Replacement</h4>
-              <p className="text-gray-300 text-sm">AI enhancement, not substitution</p>
+              <div className="text-2xl mb-2">🧠</div>
+              <h4 className="text-white font-semibold mb-1">Human-AI Review</h4>
+              <p className="text-gray-300 text-sm">Alignment Tasks</p>
             </div>
             <div className="bg-black/30 rounded-lg p-4">
-              <CheckCircle className="w-6 h-6 text-green-400 mb-2 mx-auto" />
-              <h4 className="text-white font-semibold mb-1">Not Bias Loops</h4>
-              <p className="text-gray-300 text-sm">Active human guidance</p>
+              <div className="text-2xl mb-2">🏗️</div>
+              <h4 className="text-white font-semibold mb-1">Workflow Curation</h4>
+              <p className="text-gray-300 text-sm">Infrastructure Setup</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4">
+              <div className="text-2xl mb-2">🪪</div>
+              <h4 className="text-white font-semibold mb-1">Identity Management</h4>
+              <p className="text-gray-300 text-sm">AI, People, Org Verification</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4">
+              <div className="text-2xl mb-2">🧩</div>
+              <h4 className="text-white font-semibold mb-1">Onboarding</h4>
+              <p className="text-gray-300 text-sm">New Use Cases + Customer Success</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4">
+              <div className="text-2xl mb-2">💸</div>
+              <h4 className="text-white font-semibold mb-1">Fork & Deploy</h4>
+              <p className="text-gray-300 text-sm">Fork an App. Deploy a Factory. Get Paid.</p>
             </div>
           </div>
         </div>

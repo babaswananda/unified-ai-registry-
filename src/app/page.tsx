@@ -5,6 +5,7 @@ import StructuredComputeSection from "@/components/StructuredComputeSection";
 import HyperlocalHandlesSection from "@/components/HyperlocalHandlesSection";
 import InstitutionalMandatesSection from "@/components/InstitutionalMandatesSection";
 import HITLSection from "@/components/HITLSection";
+import DevCommunitySection from "@/components/DevCommunitySection";
 import ForkdSection from "@/components/ForkdSection";
 import VibeCoderSection from "@/components/VibeCoderSection";
 import AIAgentsDevKitSection from "@/components/AIAgentsDevKitSection";
@@ -35,6 +36,7 @@ export default function Home() {
       <HyperlocalHandlesSection />
       <InstitutionalMandatesSection />
       <HITLSection />
+      <DevCommunitySection />
       <ForkdSection />
       <VibeCoderSection />
       <AIAgentsDevKitSection />

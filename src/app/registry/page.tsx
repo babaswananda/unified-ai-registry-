@@ -10,7 +10,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface DomainHandle {
   name: string;
-  category: 'aiagents' | 'madeindetroit' | 'vibecoder' | 'k12' | 'aifactory';
+  category: 'aiagents' | 'madeindetroit' | 'vibecoder' | 'k12' | 'aifactory' | 'devcommunity' | 'humanintheloop' | 'iaas' | 'gmt' | 'gmt7';
   price: number;
   description: string;
   features: string[];
@@ -79,20 +79,45 @@ export default function RegistryPage() {
     { name: "electronics.aifactory", category: "aifactory", price: 100, description: "Electronics production", features: ["Circuit Manufacturing", "Component Testing", "Quality Assurance"], available: true, premium: false },
     { name: "pharmaceutical.aifactory", category: "aifactory", price: 100, description: "Pharmaceutical manufacturing", features: ["Drug Production", "FDA Compliance", "Batch Tracking"], available: true, premium: false },
     { name: "textiles.aifactory", category: "aifactory", price: 100, description: "Textile manufacturing", features: ["Fabric Production", "Pattern Recognition", "Quality Control"], available: true, premium: false },
-    { name: "food.aifactory", category: "aifactory", price: 100, description: "Food processing and manufacturing", features: ["Food Safety", "Production Optimization", "Supply Chain"], available: true, premium: false },
-    { name: "steel.aifactory", category: "aifactory", price: 100, description: "Steel and metal manufacturing", features: ["Metal Processing", "Quality Testing", "Industrial AI"], available: true, premium: false },
-    { name: "chemical.aifactory", category: "aifactory", price: 100, description: "Chemical manufacturing", features: ["Process Control", "Safety Monitoring", "Batch Optimization"], available: true, premium: false },
-    { name: "plastics.aifactory", category: "aifactory", price: 100, description: "Plastics manufacturing", features: ["Injection Molding", "Material Testing", "Recycling"], available: true, premium: false },
-    { name: "energy.aifactory", category: "aifactory", price: 100, description: "Energy equipment manufacturing", features: ["Renewable Energy", "Grid Systems", "Battery Production"], available: true, premium: false },
+
+    // .devcommunity - Developer Community ($75)
+    { name: "frontend.devcommunity", category: "devcommunity", price: 75, description: "Frontend development community", features: ["React/Vue/Angular", "UI/UX Design", "Component Library"], available: true, premium: false },
+    { name: "backend.devcommunity", category: "devcommunity", price: 75, description: "Backend development hub", features: ["API Development", "Database Design", "Server Architecture"], available: true, premium: false },
+    { name: "fullstack.devcommunity", category: "devcommunity", price: 75, description: "Full-stack development", features: ["End-to-end Development", "DevOps", "Cloud Deployment"], available: true, premium: false },
+    { name: "ai.devcommunity", category: "devcommunity", price: 75, description: "AI/ML development community", features: ["Machine Learning", "Deep Learning", "AI Models"], available: true, premium: false },
+    { name: "blockchain.devcommunity", category: "devcommunity", price: 75, description: "Blockchain development", features: ["Smart Contracts", "DeFi", "Web3"], available: true, premium: false },
+
+    // .humanintheloop - HITL Protocol ($150)
+    { name: "operators.humanintheloop", category: "humanintheloop", price: 150, description: "Human operators in AI workflows", features: ["AI Training", "Quality Assurance", "Workflow Management"], available: true, premium: false },
+    { name: "reviewers.humanintheloop", category: "humanintheloop", price: 150, description: "AI review and alignment", features: ["Content Review", "Model Alignment", "Bias Detection"], available: true, premium: false },
+    { name: "trainers.humanintheloop", category: "humanintheloop", price: 150, description: "AI model training specialists", features: ["Data Labeling", "Model Fine-tuning", "Performance Optimization"], available: true, premium: false },
+
+    // .iaas - Infrastructure as a Service ($200)
+    { name: "compute.iaas", category: "iaas", price: 200, description: "Compute infrastructure service", features: ["GPU Clusters", "Auto-scaling", "Load Balancing"], available: true, premium: true },
+    { name: "storage.iaas", category: "iaas", price: 200, description: "Distributed storage service", features: ["Object Storage", "Data Replication", "Backup Systems"], available: true, premium: true },
+    { name: "network.iaas", category: "iaas", price: 200, description: "Network infrastructure", features: ["CDN", "Load Balancers", "VPN"], available: true, premium: true },
+
+    // .gmt - GMT Protocol ($300)
+    { name: "multimodal.gmt", category: "gmt", price: 300, description: "Generative Multimodal Transformer", features: ["Text Generation", "Image Processing", "Audio Synthesis"], available: true, premium: true },
+    { name: "vision.gmt", category: "gmt", price: 300, description: "Computer vision GMT", features: ["Image Recognition", "Object Detection", "Scene Understanding"], available: true, premium: true },
+
+    // .gmt-7 - GMT-7 Early Access ($500)
+    { name: "earlyaccess.gmt-7", category: "gmt7", price: 500, description: "GMT-7 early access program", features: ["Beta Testing", "Priority Support", "Advanced Features"], available: true, premium: true },
+    { name: "research.gmt-7", category: "gmt7", price: 500, description: "GMT-7 research access", features: ["Research License", "Academic Use", "Publication Rights"], available: true, premium: true },
   ];
 
   const categories = [
-    { id: "all", name: "All Handles", icon: Globe, count: 60 },
+    { id: "all", name: "All Handles", icon: Globe, count: 85 },
     { id: "aiagents", name: ".aiagents", icon: Brain, count: 10 },
     { id: "madeindetroit", name: ".madeindetroit", icon: Star, count: 10 },
     { id: "vibecoder", name: ".vibecoder", icon: Code, count: 10 },
     { id: "k12", name: ".k-12", icon: Filter, count: 10 },
-    { id: "aifactory", name: ".aifactory", icon: Zap, count: 10 },
+    { id: "aifactory", name: ".aifactory", icon: Zap, count: 5 },
+    { id: "devcommunity", name: ".devcommunity", icon: Code, count: 5 },
+    { id: "humanintheloop", name: ".humanintheloop", icon: Brain, count: 3 },
+    { id: "iaas", name: ".iaas", icon: Zap, count: 3 },
+    { id: "gmt", name: ".gmt", icon: Star, count: 2 },
+    { id: "gmt7", name: ".gmt-7", icon: Star, count: 2 },
   ];
 
   const filteredHandles = unifiedHandles
@@ -224,7 +249,13 @@ export default function RegistryPage() {
                           handle.category === 'madeindetroit' ? 'bg-yellow-500/20 text-yellow-400' :
                           handle.category === 'vibecoder' ? 'bg-green-500/20 text-green-400' :
                           handle.category === 'k12' ? 'bg-blue-500/20 text-blue-400' :
-                          'bg-orange-500/20 text-orange-400'
+                          handle.category === 'aifactory' ? 'bg-orange-500/20 text-orange-400' :
+                          handle.category === 'devcommunity' ? 'bg-cyan-500/20 text-cyan-400' :
+                          handle.category === 'humanintheloop' ? 'bg-red-500/20 text-red-400' :
+                          handle.category === 'iaas' ? 'bg-indigo-500/20 text-indigo-400' :
+                          handle.category === 'gmt' ? 'bg-pink-500/20 text-pink-400' :
+                          handle.category === 'gmt7' ? 'bg-rose-500/20 text-rose-400' :
+                          'bg-gray-500/20 text-gray-400'
                         }`}>
                           {handle.category.replace('-', ' ')}
                         </span>
