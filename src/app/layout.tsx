@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
   title: "Unified AI Registry - The Agentic Web Starts Here",
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth dark">
       <body className="antialiased bg-black text-white">
         {children}
+        <ChatWidget />
       </body>
     </html>
   );
