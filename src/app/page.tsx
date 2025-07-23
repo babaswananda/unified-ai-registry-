@@ -10,6 +10,7 @@ import VibeCoderSection from "@/components/VibeCoderSection";
 import AIAgentsDevKitSection from "@/components/AIAgentsDevKitSection";
 import UnifiedAIMarketplaceSection from "@/components/UnifiedAIMarketplaceSection";
 import UnifiedAIDirectorySection from "@/components/UnifiedAIDirectorySection";
+import GMT7Section from "@/components/GMT7Section";
 import HardwareSuiteSection from "@/components/HardwareSuiteSection";
 import ContractManufacturingSection from "@/components/ContractManufacturingSection";
 import AIEmailSection from "@/components/AIEmailSection";
@@ -39,6 +40,7 @@ export default function Home() {
       <AIAgentsDevKitSection />
       <UnifiedAIMarketplaceSection />
       <UnifiedAIDirectorySection />
+      <GMT7Section />
       <HardwareSuiteSection />
       <ContractManufacturingSection />
       <AIEmailSection />
