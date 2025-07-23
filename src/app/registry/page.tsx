@@ -10,7 +10,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface DomainHandle {
   name: string;
-  category: 'compute' | 'aiagent' | 'developer' | 'vibe-coder';
+  category: 'aiagents' | 'madeindetroit' | 'vibecoder' | 'k12' | 'aifactory';
   price: number;
   description: string;
   features: string[];
@@ -23,126 +23,79 @@ export default function RegistryPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("name");
 
-  // Dummy handles data - you'll replace this with your actual list
-  const dummyHandles: DomainHandle[] = [
-    // Structured Compute Endpoints (25 examples)
-    { name: "compute.ai", category: "compute", price: 299, description: "High-performance AI compute endpoint", features: ["GPU Access", "Auto-scaling", "24/7 Uptime"], available: true, premium: true },
-    { name: "neural.compute", category: "compute", price: 199, description: "Neural network processing hub", features: ["ML Pipeline", "Data Processing", "API Gateway"], available: true, premium: false },
-    { name: "quantum.edge", category: "compute", price: 499, description: "Quantum-ready edge computing", features: ["Quantum Sim", "Edge Deploy", "Low Latency"], available: true, premium: true },
-    { name: "tensor.flow", category: "compute", price: 149, description: "TensorFlow optimized endpoint", features: ["TF Runtime", "Model Serving", "Batch Processing"], available: true, premium: false },
-    { name: "gpu.cluster", category: "compute", price: 399, description: "Distributed GPU cluster access", features: ["Multi-GPU", "Cluster Mgmt", "Load Balancing"], available: false, premium: true },
-    { name: "edge.compute", category: "compute", price: 179, description: "Edge computing infrastructure", features: ["Edge Nodes", "CDN", "Real-time"], available: true, premium: false },
-    { name: "ml.pipeline", category: "compute", price: 229, description: "Machine learning pipeline", features: ["Data Flow", "Model Training", "Deployment"], available: true, premium: false },
-    { name: "cloud.native", category: "compute", price: 189, description: "Cloud-native compute platform", features: ["Kubernetes", "Microservices", "Serverless"], available: true, premium: false },
-    { name: "hpc.grid", category: "compute", price: 449, description: "High-performance computing grid", features: ["Parallel Processing", "Scientific Computing", "Simulation"], available: true, premium: true },
-    { name: "ai.accelerator", category: "compute", price: 349, description: "AI acceleration platform", features: ["TPU Access", "Model Optimization", "Inference"], available: true, premium: true },
-    { name: "data.mesh", category: "compute", price: 199, description: "Distributed data processing", features: ["Data Lake", "Stream Processing", "Analytics"], available: true, premium: false },
-    { name: "vector.db", category: "compute", price: 159, description: "Vector database endpoint", features: ["Embeddings", "Similarity Search", "Vector Ops"], available: true, premium: false },
-    { name: "inference.engine", category: "compute", price: 249, description: "AI inference optimization", features: ["Model Serving", "Batch Inference", "Real-time"], available: true, premium: false },
-    { name: "distributed.ai", category: "compute", price: 329, description: "Distributed AI computing", features: ["Federated Learning", "Multi-node", "Consensus"], available: true, premium: true },
-    { name: "serverless.ml", category: "compute", price: 139, description: "Serverless ML platform", features: ["Auto-scale", "Pay-per-use", "Event-driven"], available: true, premium: false },
-    { name: "blockchain.compute", category: "compute", price: 279, description: "Blockchain compute network", features: ["Decentralized", "Smart Contracts", "Consensus"], available: true, premium: false },
-    { name: "fog.computing", category: "compute", price: 169, description: "Fog computing infrastructure", features: ["IoT Integration", "Local Processing", "Low Latency"], available: true, premium: false },
-    { name: "hybrid.cloud", category: "compute", price: 219, description: "Hybrid cloud platform", features: ["Multi-cloud", "On-premise", "Seamless"], available: true, premium: false },
-    { name: "auto.scale", category: "compute", price: 189, description: "Auto-scaling compute service", features: ["Dynamic Scaling", "Cost Optimization", "Performance"], available: true, premium: false },
-    { name: "batch.processor", category: "compute", price: 129, description: "Batch processing engine", features: ["Job Scheduling", "Resource Mgmt", "Monitoring"], available: true, premium: false },
-    { name: "stream.compute", category: "compute", price: 199, description: "Stream computing platform", features: ["Real-time", "Event Processing", "Low Latency"], available: true, premium: false },
-    { name: "gpu.farm", category: "compute", price: 399, description: "GPU computing farm", features: ["CUDA Support", "Parallel Computing", "High Memory"], available: false, premium: true },
-    { name: "quantum.compute", category: "compute", price: 599, description: "Quantum computing access", features: ["Quantum Gates", "Superposition", "Entanglement"], available: false, premium: true },
-    { name: "neuromorphic.chip", category: "compute", price: 449, description: "Neuromorphic computing", features: ["Brain-inspired", "Low Power", "Adaptive"], available: true, premium: true },
-    { name: "photonic.compute", category: "compute", price: 379, description: "Photonic computing platform", features: ["Light-based", "Ultra-fast", "Parallel"], available: true, premium: true },
+  // Unified AI Registry Handles - Real TLD Structure
+  const unifiedHandles: DomainHandle[] = [
+    // .aiagents - Root AI Agent Protocol (Premium & Municipal)
+    { name: "detroit.aiagents", category: "aiagents", price: 0, description: "Official Detroit AI infrastructure", features: ["Municipal Priority", "Government Access", "Free Forever"], available: true, premium: false },
+    { name: "schoolname.aiagents", category: "aiagents", price: 0, description: "Educational institution AI agent", features: ["K-12 Access", "Educational Tools", "Free Forever"], available: true, premium: false },
+    { name: "assistant.aiagents", category: "aiagents", price: 200, description: "Premium AI assistant agent", features: ["Advanced NLP", "Task Automation", "Learning"], available: true, premium: true },
+    { name: "guardian.aiagents", category: "aiagents", price: 200, description: "Security monitoring agent", features: ["Threat Detection", "Auto Response", "24/7 Monitoring"], available: true, premium: true },
+    { name: "analyst.aiagents", category: "aiagents", price: 200, description: "Business intelligence agent", features: ["Data Analysis", "Report Generation", "KPI Tracking"], available: true, premium: true },
+    { name: "coach.aiagents", category: "aiagents", price: 200, description: "Performance coaching agent", features: ["Goal Setting", "Progress Tracking", "Motivation"], available: true, premium: true },
+    { name: "tutor.aiagents", category: "aiagents", price: 200, description: "Personalized learning agent", features: ["Adaptive Learning", "Progress Tracking", "Skill Assessment"], available: true, premium: true },
+    { name: "researcher.aiagents", category: "aiagents", price: 200, description: "Research automation agent", features: ["Data Mining", "Literature Review", "Synthesis"], available: true, premium: true },
+    { name: "translator.aiagents", category: "aiagents", price: 200, description: "Real-time translation agent", features: ["Multi-language", "Context Aware", "Cultural Adaptation"], available: true, premium: true },
+    { name: "moderator.aiagents", category: "aiagents", price: 200, description: "Content moderation agent", features: ["Toxicity Detection", "Spam Filter", "Community Rules"], available: true, premium: true },
 
-    // AI Agent Handles (25 examples)
-    { name: "assistant.ai", category: "aiagent", price: 99, description: "Personal AI assistant agent", features: ["NLP", "Task Automation", "Learning"], available: true, premium: false },
-    { name: "oracle.agent", category: "aiagent", price: 299, description: "Predictive analytics agent", features: ["Forecasting", "Data Analysis", "Insights"], available: true, premium: true },
-    { name: "guardian.ai", category: "aiagent", price: 199, description: "Security monitoring agent", features: ["Threat Detection", "Auto Response", "Monitoring"], available: true, premium: false },
-    { name: "curator.bot", category: "aiagent", price: 149, description: "Content curation agent", features: ["Content Filter", "Recommendation", "Personalization"], available: true, premium: false },
-    { name: "trader.ai", category: "aiagent", price: 599, description: "Autonomous trading agent", features: ["Market Analysis", "Auto Trading", "Risk Mgmt"], available: false, premium: true },
-    { name: "researcher.ai", category: "aiagent", price: 179, description: "Research automation agent", features: ["Data Mining", "Literature Review", "Synthesis"], available: true, premium: false },
-    { name: "scheduler.bot", category: "aiagent", price: 89, description: "Intelligent scheduling agent", features: ["Calendar Mgmt", "Meeting Optimization", "Reminders"], available: true, premium: false },
-    { name: "translator.ai", category: "aiagent", price: 129, description: "Real-time translation agent", features: ["Multi-language", "Context Aware", "Cultural Adaptation"], available: true, premium: false },
-    { name: "moderator.ai", category: "aiagent", price: 159, description: "Content moderation agent", features: ["Toxicity Detection", "Spam Filter", "Community Rules"], available: true, premium: false },
-    { name: "optimizer.bot", category: "aiagent", price: 219, description: "Performance optimization agent", features: ["Resource Optimization", "Cost Reduction", "Efficiency"], available: true, premium: false },
-    { name: "analyst.ai", category: "aiagent", price: 249, description: "Business intelligence agent", features: ["Data Analysis", "Report Generation", "KPI Tracking"], available: true, premium: false },
-    { name: "recruiter.bot", category: "aiagent", price: 199, description: "AI recruitment agent", features: ["Resume Screening", "Candidate Matching", "Interview Scheduling"], available: true, premium: false },
-    { name: "tutor.ai", category: "aiagent", price: 139, description: "Personalized learning agent", features: ["Adaptive Learning", "Progress Tracking", "Skill Assessment"], available: true, premium: false },
-    { name: "therapist.bot", category: "aiagent", price: 179, description: "Mental health support agent", features: ["Emotional Support", "Coping Strategies", "Crisis Detection"], available: true, premium: false },
-    { name: "coach.ai", category: "aiagent", price: 169, description: "Performance coaching agent", features: ["Goal Setting", "Progress Tracking", "Motivation"], available: true, premium: false },
-    { name: "negotiator.ai", category: "aiagent", price: 299, description: "Automated negotiation agent", features: ["Deal Optimization", "Strategy Planning", "Win-Win Solutions"], available: true, premium: true },
-    { name: "detective.bot", category: "aiagent", price: 249, description: "Investigation and analysis agent", features: ["Pattern Recognition", "Evidence Analysis", "Case Building"], available: true, premium: false },
-    { name: "creative.ai", category: "aiagent", price: 189, description: "Creative content generation agent", features: ["Content Creation", "Idea Generation", "Style Adaptation"], available: true, premium: false },
-    { name: "validator.bot", category: "aiagent", price: 119, description: "Data validation agent", features: ["Quality Assurance", "Error Detection", "Compliance Check"], available: true, premium: false },
-    { name: "synthesizer.ai", category: "aiagent", price: 209, description: "Information synthesis agent", features: ["Data Fusion", "Summary Generation", "Insight Extraction"], available: true, premium: false },
-    { name: "predictor.bot", category: "aiagent", price: 279, description: "Predictive modeling agent", features: ["Trend Analysis", "Risk Assessment", "Scenario Planning"], available: true, premium: true },
-    { name: "companion.ai", category: "aiagent", price: 149, description: "AI companion agent", features: ["Emotional Intelligence", "Conversation", "Companionship"], available: true, premium: false },
-    { name: "strategist.bot", category: "aiagent", price: 329, description: "Strategic planning agent", features: ["Strategic Analysis", "Planning", "Decision Support"], available: false, premium: true },
-    { name: "innovator.ai", category: "aiagent", price: 259, description: "Innovation catalyst agent", features: ["Idea Generation", "Innovation Process", "Creativity Boost"], available: true, premium: false },
-    { name: "philosopher.bot", category: "aiagent", price: 199, description: "Philosophical reasoning agent", features: ["Ethical Analysis", "Logical Reasoning", "Wisdom"], available: true, premium: false },
+    // .madeindetroit - Detroit Origin Verification ($50)
+    { name: "automotive.madeindetroit", category: "madeindetroit", price: 50, description: "Detroit automotive innovation", features: ["Auto Industry", "Detroit Verified", "Manufacturing"], available: true, premium: false },
+    { name: "techno.madeindetroit", category: "madeindetroit", price: 50, description: "Detroit techno music heritage", features: ["Music Industry", "Cultural Heritage", "Detroit Born"], available: true, premium: false },
+    { name: "motors.madeindetroit", category: "madeindetroit", price: 50, description: "Motor City manufacturing", features: ["Manufacturing", "Industrial Heritage", "Detroit Pride"], available: true, premium: false },
+    { name: "innovation.madeindetroit", category: "madeindetroit", price: 50, description: "Detroit innovation hub", features: ["Innovation Center", "Startup Ecosystem", "Tech Hub"], available: true, premium: false },
+    { name: "renaissance.madeindetroit", category: "madeindetroit", price: 50, description: "Detroit renaissance movement", features: ["Urban Renewal", "Cultural Revival", "Community"], available: true, premium: false },
+    { name: "riverfront.madeindetroit", category: "madeindetroit", price: 50, description: "Detroit riverfront development", features: ["Waterfront", "Development", "Tourism"], available: true, premium: false },
+    { name: "downtown.madeindetroit", category: "madeindetroit", price: 50, description: "Downtown Detroit business", features: ["Business District", "Commercial", "Urban Core"], available: true, premium: false },
+    { name: "corktown.madeindetroit", category: "madeindetroit", price: 50, description: "Historic Corktown district", features: ["Historic District", "Neighborhood", "Heritage"], available: true, premium: false },
+    { name: "midtown.madeindetroit", category: "madeindetroit", price: 50, description: "Midtown Detroit culture", features: ["Cultural District", "Arts", "Entertainment"], available: true, premium: false },
+    { name: "eastside.madeindetroit", category: "madeindetroit", price: 50, description: "East Detroit community", features: ["Community", "Residential", "Local Business"], available: true, premium: false },
 
-    // Developer Handles (25 examples)
-    { name: "dev.stack", category: "developer", price: 79, description: "Full-stack development environment", features: ["IDE Access", "Version Control", "CI/CD"], available: true, premium: false },
-    { name: "code.forge", category: "developer", price: 129, description: "Advanced code generation tools", features: ["AI Coding", "Code Review", "Optimization"], available: true, premium: false },
-    { name: "api.builder", category: "developer", price: 99, description: "API development and testing", features: ["API Design", "Testing Suite", "Documentation"], available: true, premium: false },
-    { name: "deploy.fast", category: "developer", price: 159, description: "Rapid deployment platform", features: ["One-Click Deploy", "Auto Scaling", "Monitoring"], available: true, premium: false },
-    { name: "debug.pro", category: "developer", price: 199, description: "Advanced debugging tools", features: ["Real-time Debug", "Performance Analysis", "Error Tracking"], available: true, premium: true },
-    { name: "test.suite", category: "developer", price: 89, description: "Comprehensive testing framework", features: ["Unit Tests", "Integration Tests", "Coverage"], available: true, premium: false },
-    { name: "git.flow", category: "developer", price: 69, description: "Git workflow optimization", features: ["Branch Management", "Merge Strategies", "Collaboration"], available: true, premium: false },
-    { name: "docker.hub", category: "developer", price: 109, description: "Container development platform", features: ["Docker Images", "Orchestration", "Registry"], available: true, premium: false },
-    { name: "micro.services", category: "developer", price: 149, description: "Microservices architecture tools", features: ["Service Mesh", "API Gateway", "Discovery"], available: true, premium: false },
-    { name: "cloud.dev", category: "developer", price: 119, description: "Cloud development environment", features: ["Remote IDE", "Cloud Resources", "Collaboration"], available: true, premium: false },
-    { name: "mobile.dev", category: "developer", price: 139, description: "Mobile development platform", features: ["Cross-platform", "Native Tools", "App Store"], available: true, premium: false },
-    { name: "web.dev", category: "developer", price: 99, description: "Web development toolkit", features: ["Frontend Tools", "Backend APIs", "Hosting"], available: true, premium: false },
-    { name: "ai.dev", category: "developer", price: 179, description: "AI development platform", features: ["ML Models", "Training Data", "Deployment"], available: true, premium: false },
-    { name: "blockchain.dev", category: "developer", price: 199, description: "Blockchain development tools", features: ["Smart Contracts", "DApp Tools", "Testing"], available: true, premium: false },
-    { name: "game.dev", category: "developer", price: 159, description: "Game development environment", features: ["Game Engine", "Asset Store", "Publishing"], available: true, premium: false },
-    { name: "data.dev", category: "developer", price: 129, description: "Data engineering platform", features: ["ETL Tools", "Data Pipeline", "Analytics"], available: true, premium: false },
-    { name: "security.dev", category: "developer", price: 189, description: "Security development tools", features: ["Vulnerability Scan", "Penetration Testing", "Compliance"], available: true, premium: false },
-    { name: "devops.pro", category: "developer", price: 169, description: "DevOps automation platform", features: ["Infrastructure as Code", "Monitoring", "Automation"], available: true, premium: false },
-    { name: "low.code", category: "developer", price: 89, description: "Low-code development platform", features: ["Visual Builder", "Drag & Drop", "Templates"], available: true, premium: false },
-    { name: "no.code", category: "developer", price: 79, description: "No-code development tools", features: ["Visual Interface", "Workflow Builder", "Integrations"], available: true, premium: false },
-    { name: "rapid.proto", category: "developer", price: 109, description: "Rapid prototyping tools", features: ["Quick Mockups", "Interactive Prototypes", "User Testing"], available: true, premium: false },
-    { name: "code.review", category: "developer", price: 119, description: "Code review automation", features: ["Static Analysis", "Peer Review", "Quality Gates"], available: true, premium: false },
-    { name: "performance.monitor", category: "developer", price: 139, description: "Application performance monitoring", features: ["Real-time Metrics", "Alerting", "Optimization"], available: true, premium: false },
-    { name: "error.tracker", category: "developer", price: 99, description: "Error tracking and logging", features: ["Error Monitoring", "Log Analysis", "Debugging"], available: true, premium: false },
-    { name: "code.quality", category: "developer", price: 129, description: "Code quality assurance", features: ["Quality Metrics", "Best Practices", "Refactoring"], available: true, premium: false },
+    // .vibecoder - Developer Community ($75)
+    { name: "frontend.vibecoder", category: "vibecoder", price: 75, description: "Frontend development community", features: ["React/Vue/Angular", "UI/UX Design", "Component Library"], available: true, premium: false },
+    { name: "backend.vibecoder", category: "vibecoder", price: 75, description: "Backend development hub", features: ["API Development", "Database Design", "Server Architecture"], available: true, premium: false },
+    { name: "fullstack.vibecoder", category: "vibecoder", price: 75, description: "Full-stack development", features: ["End-to-end Development", "DevOps", "Cloud Deployment"], available: true, premium: false },
+    { name: "mobile.vibecoder", category: "vibecoder", price: 75, description: "Mobile app development", features: ["iOS/Android", "React Native", "Flutter"], available: true, premium: false },
+    { name: "ai.vibecoder", category: "vibecoder", price: 75, description: "AI/ML development community", features: ["Machine Learning", "Deep Learning", "AI Models"], available: true, premium: false },
+    { name: "blockchain.vibecoder", category: "vibecoder", price: 75, description: "Blockchain development", features: ["Smart Contracts", "DeFi", "Web3"], available: true, premium: false },
+    { name: "gamedev.vibecoder", category: "vibecoder", price: 75, description: "Game development community", features: ["Unity", "Unreal Engine", "Indie Games"], available: true, premium: false },
+    { name: "devops.vibecoder", category: "vibecoder", price: 75, description: "DevOps and infrastructure", features: ["CI/CD", "Docker", "Kubernetes"], available: true, premium: false },
+    { name: "security.vibecoder", category: "vibecoder", price: 75, description: "Cybersecurity development", features: ["Penetration Testing", "Security Audits", "Encryption"], available: true, premium: false },
+    { name: "opensource.vibecoder", category: "vibecoder", price: 75, description: "Open source projects", features: ["Community Projects", "Collaboration", "Code Sharing"], available: true, premium: false },
 
-    // Vibe Coder Handles (25 examples)
-    { name: "vibe.code", category: "vibe-coder", price: 249, description: "AI-powered creative coding", features: ["Creative AI", "Style Transfer", "Generative Code"], available: true, premium: true },
-    { name: "flow.state", category: "vibe-coder", price: 179, description: "Optimal coding flow environment", features: ["Focus Mode", "Distraction Block", "Flow Metrics"], available: true, premium: false },
-    { name: "zen.dev", category: "vibe-coder", price: 129, description: "Mindful development experience", features: ["Meditation Timer", "Stress Monitor", "Wellness Tips"], available: true, premium: false },
-    { name: "creative.ai", category: "vibe-coder", price: 299, description: "Creative AI collaboration", features: ["AI Brainstorm", "Idea Generation", "Creative Prompts"], available: true, premium: true },
-    { name: "harmony.code", category: "vibe-coder", price: 199, description: "Harmonious coding environment", features: ["Music Integration", "Ambient Sounds", "Rhythm Coding"], available: false, premium: false },
-    { name: "aesthetic.dev", category: "vibe-coder", price: 159, description: "Beautiful code aesthetics", features: ["Code Beautification", "Theme Customization", "Visual Appeal"], available: true, premium: false },
-    { name: "mindful.code", category: "vibe-coder", price: 139, description: "Mindful coding practices", features: ["Breathing Reminders", "Posture Alerts", "Mental Health"], available: true, premium: false },
-    { name: "artistic.dev", category: "vibe-coder", price: 189, description: "Artistic development tools", features: ["Visual Coding", "Creative Patterns", "Art Generation"], available: true, premium: false },
-    { name: "mood.dev", category: "vibe-coder", price: 149, description: "Mood-based development", features: ["Mood Tracking", "Environment Adaptation", "Emotional Coding"], available: true, premium: false },
-    { name: "inspiration.code", category: "vibe-coder", price: 169, description: "Inspiration-driven coding", features: ["Daily Inspiration", "Creative Challenges", "Motivation"], available: true, premium: false },
-    { name: "wellness.dev", category: "vibe-coder", price: 119, description: "Developer wellness platform", features: ["Health Tracking", "Break Reminders", "Ergonomics"], available: true, premium: false },
-    { name: "nature.code", category: "vibe-coder", price: 139, description: "Nature-inspired coding", features: ["Natural Themes", "Outdoor Sounds", "Biophilic Design"], available: true, premium: false },
-    { name: "cosmic.dev", category: "vibe-coder", price: 199, description: "Cosmic coding experience", features: ["Space Themes", "Stellar Sounds", "Universe Inspiration"], available: true, premium: false },
-    { name: "retro.code", category: "vibe-coder", price: 129, description: "Retro coding aesthetics", features: ["Vintage Themes", "Retro Sounds", "Nostalgic UI"], available: true, premium: false },
-    { name: "neon.dev", category: "vibe-coder", price: 159, description: "Neon cyberpunk coding", features: ["Neon Themes", "Synthwave Music", "Cyberpunk Aesthetics"], available: true, premium: false },
-    { name: "minimal.code", category: "vibe-coder", price: 109, description: "Minimalist coding environment", features: ["Clean Interface", "Distraction-free", "Focus Enhancement"], available: true, premium: false },
-    { name: "cozy.dev", category: "vibe-coder", price: 119, description: "Cozy coding atmosphere", features: ["Warm Themes", "Comfort Sounds", "Hygge Vibes"], available: true, premium: false },
-    { name: "energetic.code", category: "vibe-coder", price: 149, description: "High-energy coding", features: ["Upbeat Music", "Vibrant Colors", "Energy Boost"], available: true, premium: false },
-    { name: "calm.dev", category: "vibe-coder", price: 129, description: "Calming development space", features: ["Peaceful Sounds", "Soft Colors", "Relaxation"], available: true, premium: false },
-    { name: "focus.zone", category: "vibe-coder", price: 139, description: "Deep focus coding zone", features: ["Concentration Tools", "Noise Cancellation", "Deep Work"], available: true, premium: false },
-    { name: "creative.flow", category: "vibe-coder", price: 179, description: "Creative flow enhancement", features: ["Creativity Boost", "Flow Triggers", "Inspiration"], available: true, premium: false },
-    { name: "ambient.code", category: "vibe-coder", price: 119, description: "Ambient coding environment", features: ["Ambient Sounds", "Atmospheric Lighting", "Immersion"], available: true, premium: false },
-    { name: "dreamy.dev", category: "vibe-coder", price: 159, description: "Dreamy development experience", features: ["Ethereal Themes", "Dream Sounds", "Imagination"], available: true, premium: false },
-    { name: "electric.code", category: "vibe-coder", price: 169, description: "Electric coding energy", features: ["Electric Themes", "High Energy", "Dynamic Interface"], available: true, premium: false },
-    { name: "serene.dev", category: "vibe-coder", price: 139, description: "Serene coding sanctuary", features: ["Peaceful Environment", "Tranquil Sounds", "Serenity"], available: true, premium: false },
+    // .k-12 - Educational Institutions (FREE)
+    { name: "detroitpublic.k-12", category: "k12", price: 0, description: "Detroit Public Schools Community District", features: ["K-12 Education", "Public Schools", "Free Access"], available: true, premium: false },
+    { name: "birmingham.k-12", category: "k12", price: 0, description: "Birmingham Public Schools", features: ["K-12 Education", "Suburban District", "Free Access"], available: true, premium: false },
+    { name: "bloomfield.k-12", category: "k12", price: 0, description: "Bloomfield Hills Schools", features: ["K-12 Education", "High Performance", "Free Access"], available: true, premium: false },
+    { name: "rochester.k-12", category: "k12", price: 0, description: "Rochester Community Schools", features: ["K-12 Education", "Community Focus", "Free Access"], available: true, premium: false },
+    { name: "troy.k-12", category: "k12", price: 0, description: "Troy School District", features: ["K-12 Education", "Academic Excellence", "Free Access"], available: true, premium: false },
+    { name: "westbloomfield.k-12", category: "k12", price: 0, description: "West Bloomfield Schools", features: ["K-12 Education", "Innovation Focus", "Free Access"], available: true, premium: false },
+    { name: "novi.k-12", category: "k12", price: 0, description: "Novi Community Schools", features: ["K-12 Education", "Technology Integration", "Free Access"], available: true, premium: false },
+    { name: "plymouth.k-12", category: "k12", price: 0, description: "Plymouth-Canton Schools", features: ["K-12 Education", "Large District", "Free Access"], available: true, premium: false },
+    { name: "livonia.k-12", category: "k12", price: 0, description: "Livonia Public Schools", features: ["K-12 Education", "Established District", "Free Access"], available: true, premium: false },
+    { name: "farmington.k-12", category: "k12", price: 0, description: "Farmington Public Schools", features: ["K-12 Education", "Community Schools", "Free Access"], available: true, premium: false },
+
+    // .aifactory - Manufacturing & Production ($100)
+    { name: "automotive.aifactory", category: "aifactory", price: 100, description: "Automotive manufacturing AI", features: ["Assembly Line AI", "Quality Control", "Predictive Maintenance"], available: true, premium: false },
+    { name: "aerospace.aifactory", category: "aifactory", price: 100, description: "Aerospace manufacturing", features: ["Precision Manufacturing", "Safety Systems", "Compliance"], available: true, premium: false },
+    { name: "electronics.aifactory", category: "aifactory", price: 100, description: "Electronics production", features: ["Circuit Manufacturing", "Component Testing", "Quality Assurance"], available: true, premium: false },
+    { name: "pharmaceutical.aifactory", category: "aifactory", price: 100, description: "Pharmaceutical manufacturing", features: ["Drug Production", "FDA Compliance", "Batch Tracking"], available: true, premium: false },
+    { name: "textiles.aifactory", category: "aifactory", price: 100, description: "Textile manufacturing", features: ["Fabric Production", "Pattern Recognition", "Quality Control"], available: true, premium: false },
+    { name: "food.aifactory", category: "aifactory", price: 100, description: "Food processing and manufacturing", features: ["Food Safety", "Production Optimization", "Supply Chain"], available: true, premium: false },
+    { name: "steel.aifactory", category: "aifactory", price: 100, description: "Steel and metal manufacturing", features: ["Metal Processing", "Quality Testing", "Industrial AI"], available: true, premium: false },
+    { name: "chemical.aifactory", category: "aifactory", price: 100, description: "Chemical manufacturing", features: ["Process Control", "Safety Monitoring", "Batch Optimization"], available: true, premium: false },
+    { name: "plastics.aifactory", category: "aifactory", price: 100, description: "Plastics manufacturing", features: ["Injection Molding", "Material Testing", "Recycling"], available: true, premium: false },
+    { name: "energy.aifactory", category: "aifactory", price: 100, description: "Energy equipment manufacturing", features: ["Renewable Energy", "Grid Systems", "Battery Production"], available: true, premium: false },
   ];
 
   const categories = [
-    { id: "all", name: "All Handles", icon: Globe, count: 130 },
-    { id: "compute", name: "Compute Endpoints", icon: Zap, count: 100 },
-    { id: "aiagent", name: "AI Agents", icon: Brain, count: 12 },
-    { id: "developer", name: "Developer Tools", icon: Code, count: 10 },
-    { id: "vibe-coder", name: "Vibe Coders", icon: Star, count: 8 },
+    { id: "all", name: "All Handles", icon: Globe, count: 60 },
+    { id: "aiagents", name: ".aiagents", icon: Brain, count: 10 },
+    { id: "madeindetroit", name: ".madeindetroit", icon: Star, count: 10 },
+    { id: "vibecoder", name: ".vibecoder", icon: Code, count: 10 },
+    { id: "k12", name: ".k-12", icon: Filter, count: 10 },
+    { id: "aifactory", name: ".aifactory", icon: Zap, count: 10 },
   ];
 
-  const filteredHandles = dummyHandles
+  const filteredHandles = unifiedHandles
     .filter(handle => {
       const matchesSearch = handle.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            handle.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -181,14 +134,14 @@ export default function RegistryPage() {
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                    Claim Your Handle
+                    Unified AI Registry
                   </span>
                   <br />
-                  <span className="text-white">In the Agentic Web</span>
+                  <span className="text-white">Claim Your Handle</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-                  Register structured compute endpoints, AI agent handles, and developer tools. 
-                  Own your piece of the autonomous internet infrastructure.
+                  Register AI agents, Detroit-verified domains, developer tools, educational handles, and manufacturing endpoints.
+                  Own your piece of the AI-native infrastructure.
                 </p>
               </div>
             </ScrollReveal>
@@ -267,10 +220,11 @@ export default function RegistryPage() {
                       <div>
                         <h3 className="text-xl font-bold text-white mb-1">{handle.name}</h3>
                         <span className={`text-xs px-2 py-1 rounded-full ${
-                          handle.category === 'compute' ? 'bg-blue-500/20 text-blue-400' :
-                          handle.category === 'aiagent' ? 'bg-purple-500/20 text-purple-400' :
-                          handle.category === 'developer' ? 'bg-green-500/20 text-green-400' :
-                          'bg-pink-500/20 text-pink-400'
+                          handle.category === 'aiagents' ? 'bg-purple-500/20 text-purple-400' :
+                          handle.category === 'madeindetroit' ? 'bg-yellow-500/20 text-yellow-400' :
+                          handle.category === 'vibecoder' ? 'bg-green-500/20 text-green-400' :
+                          handle.category === 'k12' ? 'bg-blue-500/20 text-blue-400' :
+                          'bg-orange-500/20 text-orange-400'
                         }`}>
                           {handle.category.replace('-', ' ')}
                         </span>
