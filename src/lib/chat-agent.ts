@@ -199,15 +199,16 @@ export class UnifiedAIChatAgent {
     return regex.test(handle)
   }
 
-  // Get domain pricing based on category
+  // Get domain pricing based on category and TLD
   private getDomainPrice(category: string): number {
     const pricing = {
-      'municipal': 0, // Free for government
-      'education': 0, // Free for schools
-      'manufacturing': 100,
-      'detroit': 50,
-      'premium': 200,
-      'standard': 25
+      'municipal': 0, // Free for government (.aiagents)
+      'education': 0, // Free for schools (.k-12)
+      'manufacturing': 100, // Manufacturing (.aifactory)
+      'detroit': 50, // Detroit origin (.madeindetroit)
+      'developer': 75, // Developer community (.vibecoder)
+      'premium': 200, // Premium AI agents (.aiagents)
+      'standard': 25 // Standard handles
     }
     return pricing[category as keyof typeof pricing] || 25
   }
@@ -228,9 +229,18 @@ export class UnifiedAIChatAgent {
       const handle = this.extractHandleFromMessage(message)
       if (handle) {
         const available = await this.checkDomainAvailability(handle)
-        return available 
-          ? `✅ ${handle}.aiagents is available! Would you like to register it?`
-          : `❌ ${handle}.aiagents is already taken. Try a different handle.`
+        return available
+          ? `✅ ${handle} is available across our TLD network!
+
+**Available on:**
+• ${handle}.aiagents
+• ${handle}.madeindetroit
+• ${handle}.vibecoder
+• ${handle}.k-12
+• ${handle}.aifactory
+
+Which TLD would you like to register?`
+          : `❌ ${handle} is already taken on some TLDs. Let me check specific availability...`
       }
     }
 
@@ -241,31 +251,45 @@ export class UnifiedAIChatAgent {
     return `🔑 **Register Your AI Handle**
 
 I can help you register handles on:
-• dnser.pencil.li
-• 3dns.box  
-• hns.id
+• dnser.pencil.li (.aiagents, .vibecoder, .k-12)
+• 3dns.box (.madeindetroit, .aifactory)
+• hns.id (.agent, .ai, .bot)
+
+**Available TLDs:**
+• .aiagents - Root AI agent protocol
+• .madeindetroit - Detroit-origin verification
+• .vibecoder - Developer community
+• .k-12 - Educational institutions
+• .aifactory - Manufacturing & production
 
 **Pricing:**
 • Municipal/Education: FREE
-• Detroit handles: $50
-• Manufacturing: $100
-• Premium: $200
+• Detroit (.madeindetroit): $50
+• Manufacturing (.aifactory): $100
+• Premium (.aiagents): $200
 • Standard: $25
 
 Just tell me the handle you want and I'll check availability!`
   }
 
   private generatePricingResponse(): string {
-    return `💰 **Handle Pricing**
+    return `💰 **Handle Pricing by TLD**
 
-• 🏛️ Municipal/Government: **FREE**
-• 🏫 Education/Schools: **FREE**
-• ⭐ Detroit (.madeindetroit): **$50**
-• 🏭 Manufacturing: **$100**
-• 💎 Premium handles: **$200**
+**FREE Tiers:**
+• 🏛️ Municipal/Government (.aiagents): **FREE**
+• 🏫 Education/Schools (.k-12): **FREE**
+
+**Paid Tiers:**
+• ⭐ Detroit Origin (.madeindetroit): **$50**
+• 🏭 Manufacturing (.aifactory): **$100**
+• 💎 Premium AI Agents (.aiagents): **$200**
+• 👨‍💻 Developer Community (.vibecoder): **$75**
 • 📝 Standard handles: **$25**
 
-Payment accepted via crypto (Crossmint) or credit card (Stripe).`
+**Payment Methods:**
+• 💰 Crypto payments via Crossmint
+• 💳 Credit card via Stripe
+• 🔗 Integrated with dnser.pencil.li, 3dns.box, hns.id`
   }
 
   private extractHandleFromMessage(message: string): string | null {
