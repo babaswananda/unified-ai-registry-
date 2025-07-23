@@ -12,10 +12,10 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white">
       {/* Conditional Background - Lightweight on mobile, full animations on desktop */}
       <ConditionalBackground
-        intensity={0.8}
-        particleCount={120}
-        floatingCount={12}
-        gridSize={100}
+        intensity={0.6}
+        particleCount={60}
+        floatingCount={0}
+        gridSize={120}
       />
 
       <div className="relative z-10 w-full">

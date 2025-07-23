@@ -48,11 +48,11 @@ export default function CallToActionSection() {
 
   return (
     <section className="py-24 text-white relative overflow-hidden">
-      <ConditionalBackground 
-        intensity={1.0}
-        particleCount={150}
+      <ConditionalBackground
+        intensity={0.6}
+        particleCount={60}
         floatingCount={0}
-        gridSize={80}
+        gridSize={120}
       />
       
       <div className="container-max section-padding relative z-10">

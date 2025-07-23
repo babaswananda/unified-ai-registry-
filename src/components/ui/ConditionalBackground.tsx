@@ -42,7 +42,7 @@ export default function ConditionalBackground({
           className={className}
         />
         <ParticleField
-          particleCount={Math.floor(particleCount * 0.2)}
+          particleCount={Math.floor(particleCount * 0.15)}
           color="rgba(0, 255, 255, 0.2)"
           darkColor="rgba(0, 255, 255, 0.3)"
           className={className}
