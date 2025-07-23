@@ -533,6 +533,11 @@ body {
       transform: none !important;
     }
 
+    /* Allow subtle slide-up animations on mobile */
+    .animate-slide-up {
+      animation: slideUp 0.6s ease-out forwards !important;
+    }
+
     /* Simplify chat widget for mobile */
     .xs\:fixed {
       position: fixed !important;
@@ -1511,8 +1516,8 @@ body {
 .bg-orange-500\/10{
   background-color: rgb(249 115 22 / 0.1);
 }
-.bg-pink-500\/20{
-  background-color: rgb(236 72 153 / 0.2);
+.bg-orange-500\/20{
+  background-color: rgb(249 115 22 / 0.2);
 }
 .bg-purple-500\/10{
   background-color: rgb(168 85 247 / 0.1);
@@ -1558,9 +1563,6 @@ body {
 }
 .bg-yellow-500\/10{
   background-color: rgb(234 179 8 / 0.1);
-}
-.bg-orange-500\/20{
-  background-color: rgb(249 115 22 / 0.2);
 }
 .bg-yellow-500\/20{
   background-color: rgb(234 179 8 / 0.2);

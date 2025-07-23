@@ -229,6 +229,11 @@ div[style*="position: fixed"][style*="bottom"][style*="right"] button {
       transform: none !important;
     }
 
+    /* Allow subtle slide-up animations on mobile */
+    .animate-slide-up {
+      animation: slideUp 0.6s ease-out forwards !important;
+    }
+
     /* Simplify chat widget for mobile */
     .xs\:fixed {
       position: fixed !important;
