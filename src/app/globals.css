@@ -222,6 +222,36 @@ div[style*="position: fixed"][style*="bottom"][style*="right"] button {
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
     }
+
+    /* Disable hover effects on mobile */
+    .hover\:scale-105:hover,
+    .hover\:scale-110:hover {
+      transform: none !important;
+    }
+
+    /* Simplify chat widget for mobile */
+    .xs\:fixed {
+      position: fixed !important;
+    }
+
+    .xs\:inset-4 {
+      top: 1rem !important;
+      right: 1rem !important;
+      bottom: 1rem !important;
+      left: 1rem !important;
+    }
+
+    .xs\:w-auto {
+      width: auto !important;
+    }
+
+    .xs\:h-auto {
+      height: auto !important;
+    }
+
+    .xs\:max-h-\[80vh\] {
+      max-height: 80vh !important;
+    }
   }
 
   /* Reduce motion for users who prefer it, but still allow some animations */

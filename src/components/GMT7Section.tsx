@@ -32,11 +32,11 @@ export default function GMT7Section() {
 
   return (
     <section className="py-24 text-white relative overflow-hidden">
-      <ConditionalBackground 
-        intensity={0.9}
-        particleCount={120}
+      <ConditionalBackground
+        intensity={0.6}
+        particleCount={50}
         floatingCount={0}
-        gridSize={90}
+        gridSize={140}
       />
       
       <div className="container-max section-padding relative z-10">

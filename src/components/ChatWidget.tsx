@@ -101,7 +101,7 @@ export default function ChatWidget() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-40 w-96 h-[500px] bg-black/90 backdrop-blur-sm border border-gray-600 rounded-xl shadow-2xl flex flex-col">
+        <div className="fixed bottom-24 right-6 z-40 w-96 h-[500px] md:w-96 md:h-[500px] sm:w-80 sm:h-[400px] xs:fixed xs:inset-4 xs:w-auto xs:h-auto xs:max-h-[80vh] bg-black/90 backdrop-blur-sm border border-gray-600 rounded-xl shadow-2xl flex flex-col">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-t-xl">
             <h3 className="text-white font-bold">Unified AI Assistant</h3>

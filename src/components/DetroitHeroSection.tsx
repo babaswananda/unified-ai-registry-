@@ -25,10 +25,10 @@ export default function DetroitHeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
       <ConditionalBackground
-        intensity={1.0}
-        particleCount={150}
-        floatingCount={8}
-        gridSize={80}
+        intensity={0.8}
+        particleCount={60}
+        floatingCount={0}
+        gridSize={120}
       />
 
       {/* Detroit Skyline Overlay */}

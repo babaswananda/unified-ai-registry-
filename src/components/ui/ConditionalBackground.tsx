@@ -29,37 +29,20 @@ export default function ConditionalBackground({
     return <StaticBackground className={className} />;
   }
 
-  // Use simplified animated background for mobile devices
+  // Use minimal background for mobile devices to prevent crashes
   if (isMobile) {
-    return (
-      <>
-        <MorphingBackground intensity={intensity * 0.5} className={className} />
-        <ParticleField
-          particleCount={Math.floor(particleCount * 0.3)}
-          color="rgba(0, 255, 255, 0.3)"
-          darkColor="rgba(0, 255, 255, 0.4)"
-          className={className}
-        />
-      </>
-    );
+    return <StaticBackground className={className} />;
   }
 
-  // Use medium animated background for tablets
+  // Use simplified background for tablets
   if (isTablet) {
     return (
       <>
-        <MorphingBackground intensity={intensity * 0.7} className={className} />
-        <AnimatedGrid
-          gridSize={gridSize * 1.5}
-          lineColor="rgba(0, 255, 255, 0.02)"
-          pulseColor="rgba(0, 255, 255, 0.1)"
-          intensity={intensity * 0.7}
-          className={className}
-        />
+        <MorphingBackground intensity={intensity * 0.3} className={className} />
         <ParticleField
-          particleCount={Math.floor(particleCount * 0.6)}
-          color="rgba(0, 255, 255, 0.3)"
-          darkColor="rgba(0, 255, 255, 0.5)"
+          particleCount={Math.floor(particleCount * 0.2)}
+          color="rgba(0, 255, 255, 0.2)"
+          darkColor="rgba(0, 255, 255, 0.3)"
           className={className}
         />
       </>
