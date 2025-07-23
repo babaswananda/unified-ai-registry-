@@ -26,16 +26,28 @@ export default function ScrollReveal({
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
+  // Move timerRef outside of useEffect to persist between renders
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        // Use refs to avoid dependency on state values
         if (entry.isIntersecting && (!once || !hasAnimated)) {
-          setTimeout(() => {
+          // Clear any existing timeout
+          if (timerRef.current) {
+            clearTimeout(timerRef.current);
+          }
+
+          timerRef.current = setTimeout(() => {
             setIsVisible(true);
             if (once) setHasAnimated(true);
           }, delay);
         } else if (!once && !entry.isIntersecting) {
+          // Clear timeout if element goes out of view
+          if (timerRef.current) {
+            clearTimeout(timerRef.current);
+          }
           setIsVisible(false);
         }
       },
@@ -51,9 +63,15 @@ export default function ScrollReveal({
       if (element) {
         observer.unobserve(element);
       }
+      // Clear the timeout on cleanup
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
     };
-  }, [delay, threshold, once, hasAnimated]);
+  }, [delay, threshold, once]); // Remove hasAnimated from dependencies to prevent loops
 
+  // Memoize the transform value to prevent unnecessary recalculations
   const getTransform = () => {
     if (isVisible) return "translate3d(0, 0, 0) scale(1) rotate(0deg)";
     
@@ -75,12 +93,15 @@ export default function ScrollReveal({
     }
   };
 
+  // Calculate transform once to avoid recalculation on each render
+  const transformValue = getTransform();
+
   return (
     <div
       ref={elementRef}
       className={className}
       style={{
-        transform: getTransform(),
+        transform: transformValue,
         opacity: isVisible ? 1 : 0,
         transition: `all ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`,
         willChange: "transform, opacity"

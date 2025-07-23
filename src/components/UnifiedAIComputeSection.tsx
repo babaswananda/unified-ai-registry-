@@ -1,9 +1,6 @@
 "use client";
 
-import ScrollReveal from "@/components/ui/ScrollReveal";
-import ParticleField from "@/components/ui/ParticleField";
-import AnimatedGrid from "@/components/ui/AnimatedGrid";
-import MorphingBackground from "@/components/ui/MorphingBackground";
+import ConditionalBackground from "@/components/ui/ConditionalBackground";
 
 export default function UnifiedAIComputeSection() {
   const coreCapabilities = [
@@ -54,71 +51,57 @@ export default function UnifiedAIComputeSection() {
   ];
 
   return (
-    <section className="py-32 bg-black text-white relative overflow-hidden">
-      {/* Background Elements - Same as agents-are-coming */}
-      <MorphingBackground intensity={0.8} />
-      <AnimatedGrid
-        gridSize={100}
-        lineColor="rgba(0, 255, 255, 0.03)"
-        pulseColor="rgba(0, 255, 255, 0.2)"
+    <section className="py-32 text-white relative overflow-hidden">
+      {/* Background Effects */}
+      <ConditionalBackground
         intensity={0.8}
-      />
-      <ParticleField
         particleCount={100}
-        color="rgba(0, 255, 255, 0.4)"
-        darkColor="rgba(0, 255, 255, 0.6)"
+        floatingCount={0}
+        gridSize={100}
       />
 
       <div className="container-max section-padding relative z-10">
         {/* Section Header */}
-        <ScrollReveal direction="up" delay={200}>
-          <div className="text-center mb-20 space-y-6">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white">
-              UnifiedAI Compute
-            </h2>
-            <h3 className="text-2xl lg:text-3xl text-gray-300 font-semibold">
-              Elastic Agentic Infrastructure, Built for the Autonomous Web
-            </h3>
-            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              UnifiedAI Compute is the sovereign backbone for Structured AI Workloads. Designed to power
-              the full lifecycle of autonomous agents, microservices, and distributed intelligence — this
-              infrastructure is your command center for everything AI-native.
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="text-center mb-20 space-y-6 animate-slide-up" style={{ animationDelay: "200ms", animationDuration: "800ms" }}>
+          <h2 className="text-5xl lg:text-6xl font-bold text-white">
+            UnifiedAI Compute
+          </h2>
+          <h3 className="text-2xl lg:text-3xl text-gray-300 font-semibold">
+            Elastic Agentic Infrastructure, Built for the Autonomous Web
+          </h3>
+          <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            UnifiedAI Compute is the sovereign backbone for Structured AI Workloads. Designed to power
+            the full lifecycle of autonomous agents, microservices, and distributed intelligence — this
+            infrastructure is your command center for everything AI-native.
+          </p>
+        </div>
 
         {/* Core Capabilities */}
-        <ScrollReveal direction="up" delay={400}>
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-white mb-12 text-center">
-              🔧 Core Capabilities
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mb-20 animate-slide-up" style={{ animationDelay: "400ms", animationDuration: "800ms" }}>
+          <h3 className="text-3xl font-bold text-white mb-12 text-center">
+            🔧 Core Capabilities
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {coreCapabilities.map((capability, index) => (
-                <ScrollReveal
+                <div
                   key={capability.title}
-                  direction="up"
-                  delay={600 + index * 100}
-                  duration={600}
+                  className="animate-slide-up bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:scale-105 transition-all duration-300 group"
+                  style={{ animationDelay: `${600 + index * 100}ms`, animationDuration: "600ms" }}
                 >
-                  <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:scale-105 transition-all duration-300 group">
-                    <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{capability.emoji}</div>
-                    <h4 className="text-xl font-bold text-white group-hover:text-cyan-400 mb-4 transition-colors duration-300">
-                      {capability.title}
-                    </h4>
-                    <p className="text-gray-300 leading-relaxed">
-                      {capability.description}
-                    </p>
-                  </div>
-                </ScrollReveal>
+                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{capability.emoji}</div>
+                  <h4 className="text-xl font-bold text-white group-hover:text-cyan-400 mb-4 transition-colors duration-300">
+                    {capability.title}
+                  </h4>
+                  <p className="text-gray-300 leading-relaxed">
+                    {capability.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
-        </ScrollReveal>
 
         {/* Integrations Layer */}
-        <ScrollReveal direction="up" delay={800}>
-          <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 text-white mb-20 relative overflow-hidden border border-cyan-500/20">
+        <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 text-white mb-20 relative overflow-hidden border border-cyan-500/20 animate-slide-up" style={{ animationDelay: "800ms", animationDuration: "800ms" }}>
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5" />
             <div className="relative z-10">
               <div className="text-center mb-12">
@@ -144,7 +127,7 @@ export default function UnifiedAIComputeSection() {
                   </p>
                   <div className="space-y-3">
                     {integrationFeatures.map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3">
+                      <div key={`integration-feature-${index}`} className="flex items-start space-x-3">
                         <span className="text-cyan-400 mt-1">•</span>
                         <span className="text-gray-300">{feature}</span>
                       </div>
@@ -160,37 +143,32 @@ export default function UnifiedAIComputeSection() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
 
         {/* Developer Experience & Privacy */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <ScrollReveal direction="left" delay={1000}>
-            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-cyan-500/20">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                💻 Developer Experience
-              </h3>
-              <div className="space-y-4">
-                {developerFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <span className="text-green-400">✓</span>
-                    <span className="text-gray-300">{feature}</span>
-                  </div>
-                ))}
-              </div>
+          <div className="animate-slide-left bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-cyan-500/20" style={{ animationDelay: "1000ms" }}>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              💻 Developer Experience
+            </h3>
+            <div className="space-y-4">
+              {developerFeatures.map((feature, index) => (
+                <div key={`developer-feature-${index}`} className="flex items-center space-x-3">
+                  <span className="text-green-400">✓</span>
+                  <span className="text-gray-300">{feature}</span>
+                </div>
+              ))}
             </div>
-          </ScrollReveal>
+          </div>
 
-          <ScrollReveal direction="right" delay={1200}>
-            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-cyan-500/20">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                🔒 Privacy by Design
-              </h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                Encrypted data movement. Isolated compute zones. Full auditability. UnifiedAI Compute
-                is infrastructure built for national-grade confidentiality and trust.
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="animate-slide-right bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-cyan-500/20" style={{ animationDelay: "1200ms" }}>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              🔒 Privacy by Design
+            </h3>
+            <p className="text-gray-300 leading-relaxed text-lg">
+              Encrypted data movement. Isolated compute zones. Full auditability. UnifiedAI Compute
+              is infrastructure built for national-grade confidentiality and trust.
+            </p>
+          </div>
         </div>
       </div>
     </section>

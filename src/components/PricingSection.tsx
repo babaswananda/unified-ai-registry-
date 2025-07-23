@@ -1,8 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
 import { Check } from "lucide-react";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
 
 export default function PricingSection() {
@@ -78,7 +76,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-black text-white relative overflow-hidden">
+    <section id="pricing" className="py-24 text-white relative overflow-hidden">
       {/* Conditional Background - Lightweight on mobile */}
       <ConditionalBackground
         intensity={0.8}
@@ -93,10 +91,11 @@ export default function PricingSection() {
             <span>🌅 Sunrise Pricing</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Early Access for Founding Pioneers
+            Infrastructure Access Tiers
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-            Secure your position in the AI-native internet with exclusive founding member benefits
+            Structured identity endpoints with upgrade path: Dev → Founding → Institutional.
+            Each tier includes compute credits, priority support, and governance rights.
           </p>
         </div>
 
@@ -105,12 +104,28 @@ export default function PricingSection() {
           {tiers.map((tier, index) => (
             <div
               key={tier.name}
-              className={`relative bg-black/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border-2 transition-all duration-300 hover:scale-105 ${
+              className={`card relative bg-black/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border transition-all duration-300 hover:scale-105 overflow-hidden ${
                 tier.popular
                   ? "border-cyan-500 shadow-xl shadow-cyan-500/20"
                   : "border-cyan-500/20 hover:border-cyan-500/40"
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                '--glow-color': '34, 211, 238'
+              } as React.CSSProperties}
+              onMouseMove={(e) => {
+                const card = e.currentTarget;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
+                card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
+                card.style.setProperty('--glow-intensity', '1');
+              }}
+              onMouseLeave={(e) => {
+                const card = e.currentTarget;
+                card.style.setProperty('--glow-intensity', '0');
+              }}
             >
               {/* Popular Badge */}
               {tier.popular && (
@@ -120,8 +135,6 @@ export default function PricingSection() {
                   </div>
                 </div>
               )}
-
-
 
               {/* Tier Info */}
               <div className="mb-6">
@@ -135,8 +148,8 @@ export default function PricingSection() {
 
               {/* Features */}
               <div className="space-y-3 mb-8">
-                {tier.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-start space-x-3">
+                {tier.features.map((feature) => (
+                  <div key={`${tier.name}-feature-${feature}`} className="flex items-start space-x-3">
                     <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-300 text-sm">{feature}</span>
                   </div>
@@ -144,13 +157,15 @@ export default function PricingSection() {
               </div>
 
               {/* CTA Button */}
-              <Button 
-                variant={tier.buttonVariant} 
-                size="md" 
-                className="w-full"
+              <button
+                className={`w-full px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  tier.buttonVariant === 'primary'
+                    ? 'bg-cyan-500 hover:bg-cyan-400 text-black'
+                    : 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-600'
+                }`}
               >
                 {tier.buttonText}
-              </Button>
+              </button>
             </div>
           ))}
         </div>
@@ -161,8 +176,8 @@ export default function PricingSection() {
             💡 What's Included in Every Registration
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {includedFeatures.map((feature, index) => (
-              <div key={index} className="flex items-start space-x-3">
+            {includedFeatures.map((feature) => (
+              <div key={`included-feature-${feature}`} className="flex items-start space-x-3">
                 <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-dark-700">{feature}</span>
               </div>

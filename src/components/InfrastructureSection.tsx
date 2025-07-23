@@ -1,11 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import ScrollReveal from "@/components/ui/ScrollReveal";
-import MorphingBackground from "@/components/ui/MorphingBackground";
-import FloatingElements from "@/components/ui/FloatingElements";
-import AnimatedGrid from "@/components/ui/AnimatedGrid";
-import ParticleField from "@/components/ui/ParticleField";
+import ConditionalBackground from "@/components/ui/ConditionalBackground";
 
 export default function InfrastructureSection() {
   const infrastructureLayers = [
@@ -105,26 +101,18 @@ export default function InfrastructureSection() {
   ];
 
   return (
-    <section className="py-32 bg-black text-white relative overflow-hidden">
-      {/* Background Elements - Same as agents-are-coming */}
-      <MorphingBackground intensity={0.8} />
-      <AnimatedGrid
-        gridSize={100}
-        lineColor="rgba(0, 255, 255, 0.03)"
-        pulseColor="rgba(0, 255, 255, 0.2)"
+    <section className="py-32 text-white relative overflow-hidden">
+      {/* Background Effects */}
+      <ConditionalBackground
         intensity={0.8}
-      />
-      <ParticleField
         particleCount={100}
-        color="rgba(0, 255, 255, 0.4)"
-        darkColor="rgba(0, 255, 255, 0.6)"
+        floatingCount={0}
+        gridSize={100}
       />
-      <FloatingElements count={8} />
 
       <div className="container-max section-padding relative z-10">
         {/* Section Header */}
-        <ScrollReveal direction="up" delay={200}>
-          <div className="text-center mb-20 space-y-6">
+        <div className="text-center mb-20 space-y-6 animate-slide-up" style={{ animationDelay: "200ms", animationDuration: "800ms" }}>
             <div className="inline-flex items-center space-x-3 bg-cyan-500/10 border border-cyan-500/20 px-6 py-3 rounded-lg mb-8 backdrop-blur-sm">
               <span className="text-2xl">🔲</span>
               <span className="text-cyan-400 font-medium">AGENTIC HOSTING INFRASTRUCTURE</span>
@@ -140,69 +128,57 @@ export default function InfrastructureSection() {
               across any cloud, any location, any scale. This isn't a hosting company. You're building the Agentic Web Operating Grid.
             </p>
           </div>
-        </ScrollReveal>
 
         {/* Agentic Hosting Features */}
-        <ScrollReveal direction="up" delay={400}>
-          <div className="mb-24">
+        <div className="mb-24 animate-slide-up" style={{ animationDelay: "400ms", animationDuration: "800ms" }}>
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
               🧱 Core Agentic Hosting Features
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {agenticHostingFeatures.map((feature, index) => (
-                <ScrollReveal
+                <div
                   key={feature.title}
-                  direction="up"
-                  delay={600 + index * 100}
-                  duration={600}
+                  className="animate-slide-up bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:scale-105 transition-all duration-300 group"
+                  style={{ animationDelay: `${600 + index * 100}ms`, animationDuration: "600ms" }}
                 >
-                  <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:scale-105 transition-all duration-300 group">
-                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{feature.emoji}</div>
-                    <h4 className="text-lg font-bold text-white group-hover:text-cyan-400 mb-3 transition-colors duration-300">
-                      {feature.title}
-                    </h4>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </ScrollReveal>
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{feature.emoji}</div>
+                  <h4 className="text-lg font-bold text-white group-hover:text-cyan-400 mb-3 transition-colors duration-300">
+                    {feature.title}
+                  </h4>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
-        </ScrollReveal>
 
         {/* Core Infrastructure Layers */}
-        <ScrollReveal direction="up" delay={400}>
-          <div className="mb-24">
+        <div className="mb-24 animate-slide-up" style={{ animationDelay: "400ms", animationDuration: "800ms" }}>
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
               🏗 Core Infrastructure Layers
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {infrastructureLayers.map((layer, index) => (
-                <ScrollReveal
+                <div
                   key={layer.title}
-                  direction={index % 2 === 0 ? "left" : "right"}
-                  delay={600 + index * 150}
-                  duration={700}
+                  className={`animate-slide-${index % 2 === 0 ? "left" : "right"} bg-black/50 backdrop-blur-sm rounded-xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:scale-105 transition-all duration-300 group`}
+                  style={{ animationDelay: `${600 + index * 150}ms`, animationDuration: "700ms" }}
                 >
-                  <div className="bg-black/50 backdrop-blur-sm rounded-xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:scale-105 transition-all duration-300 group">
-                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">{layer.emoji}</div>
-                    <h4 className="text-2xl font-bold text-white group-hover:text-cyan-400 mb-4 transition-colors duration-300">
-                      {layer.title}
-                    </h4>
-                    <p className="text-gray-300 leading-relaxed text-lg">
-                      {layer.description}
-                    </p>
-                  </div>
-                </ScrollReveal>
+                  <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">{layer.emoji}</div>
+                  <h4 className="text-2xl font-bold text-white group-hover:text-cyan-400 mb-4 transition-colors duration-300">
+                    {layer.title}
+                  </h4>
+                  <p className="text-gray-300 leading-relaxed text-lg">
+                    {layer.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
-        </ScrollReveal>
 
         {/* Supply Chain as a Service */}
-        <ScrollReveal direction="up" delay={800}>
-          <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 text-white mb-24 relative overflow-hidden border border-cyan-500/20">
+        <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 text-white mb-24 relative overflow-hidden border border-cyan-500/20 animate-slide-up" style={{ animationDelay: "800ms", animationDuration: "800ms" }}>
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5" />
             <div className="relative z-10">
               <h3 className="text-4xl font-bold mb-6 text-center text-white">
@@ -218,7 +194,7 @@ export default function InfrastructureSection() {
                   <h4 className="text-2xl font-semibold mb-6 text-white">Includes:</h4>
                   <div className="space-y-4">
                     {scaasFeatures.map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3">
+                      <div key={`scaas-feature-${index}`} className="flex items-start space-x-3">
                         <span className="text-cyan-400 mt-1 text-xl">•</span>
                         <span className="text-gray-300">{feature}</span>
                       </div>
@@ -234,11 +210,9 @@ export default function InfrastructureSection() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
 
         {/* Technology as a Service */}
-        <ScrollReveal direction="up" delay={1000}>
-          <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 text-white mb-24 relative overflow-hidden border border-cyan-500/20">
+        <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 text-white mb-24 relative overflow-hidden border border-cyan-500/20 animate-slide-up" style={{ animationDelay: "1000ms", animationDuration: "800ms" }}>
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5" />
             <div className="relative z-10">
               <h3 className="text-4xl font-bold mb-6 text-center text-white">
@@ -251,7 +225,7 @@ export default function InfrastructureSection() {
 
               <div className="space-y-4 mb-8">
                 {taasServices.map((service, index) => (
-                  <div key={index} className="flex items-start space-x-3">
+                  <div key={`taas-service-${index}`} className="flex items-start space-x-3">
                     <span className="text-cyan-400 mt-1 text-xl">•</span>
                     <span className="text-gray-300">{service}</span>
                   </div>
@@ -266,11 +240,9 @@ export default function InfrastructureSection() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
 
         {/* Agency & Organization Onboarding */}
-        <ScrollReveal direction="up" delay={1200}>
-          <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 border border-cyan-500/20">
+        <div className="bg-black/50 backdrop-blur-sm rounded-xl p-12 border border-cyan-500/20 animate-slide-up" style={{ animationDelay: "1200ms", animationDuration: "800ms" }}>
             <div className="text-center mb-12">
               <h3 className="text-4xl font-bold text-white mb-6">
                 🤝 Agency & Organization Onboarding Portal
@@ -284,16 +256,13 @@ export default function InfrastructureSection() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {partnerTypes.map((type, index) => (
-                <ScrollReveal 
+                <div
                   key={type}
-                  direction="up" 
-                  delay={1400 + index * 100}
-                  duration={500}
+                  className="animate-slide-up bg-black/30 rounded-lg p-6 text-center border border-cyan-500/20"
+                  style={{ animationDelay: `${1400 + index * 100}ms`, animationDuration: "500ms" }}
                 >
-                  <div className="bg-black/30 rounded-lg p-6 text-center border border-cyan-500/20">
-                    <span className="text-gray-300 font-medium">{type}</span>
-                  </div>
-                </ScrollReveal>
+                  <span className="text-gray-300 font-medium">{type}</span>
+                </div>
               ))}
             </div>
             
@@ -317,7 +286,6 @@ export default function InfrastructureSection() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
       </div>
     </section>
   );

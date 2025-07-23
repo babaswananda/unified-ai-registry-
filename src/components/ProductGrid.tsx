@@ -1,95 +1,80 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import MagicBento from "@/components/ui/MagicBento";
 
 export default function ProductGrid() {
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setVisibleItems(prev => {
-        if (prev.length < products.length) {
-          return [...prev, prev.length];
-        }
-        return prev;
-      });
-    }, 150);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const products = [
     {
       emoji: "📧",
       name: "AI Email",
-      description: "Instant inbox for agents & workflows"
+      description: "Intelligent email management system with AI-powered sorting, automated responses, and workflow integration. Perfect for managing agent communications and business correspondence."
     },
     {
       emoji: "🏗️",
       name: "AI Architect",
-      description: "Build and deploy agentic flows"
+      description: "Visual flow builder for creating complex agentic workflows. Drag-and-drop interface with pre-built templates, API integrations, and deployment automation."
     },
     {
       emoji: "👤",
       name: "AI Avatars",
-      description: "Persona-level UI agents"
+      description: "Customizable AI personas with unique personalities, voices, and behaviors. Create branded AI representatives for customer service, sales, and user engagement."
     },
     {
       emoji: "💻",
       name: "Agent OS",
-      description: "Device-native agent layer"
+      description: "Native operating system layer that enables AI agents to interact directly with your device, applications, and files. Seamless integration with existing workflows."
     },
     {
       emoji: "⚡",
       name: "Vibe Coding",
-      description: "AI-assisted coding OS"
+      description: "AI-powered development environment with intelligent code completion, automated testing, and deployment pipelines. Accelerate development with AI pair programming."
     },
     {
       emoji: "🎯",
       name: "Chief Vibe Officer",
-      description: "Enterprise AI culture layer"
+      description: "Enterprise AI culture management platform. Monitor team sentiment, optimize workflows, and maintain company culture at scale with AI-driven insights."
     },
     {
       emoji: "🏪",
       name: "MCP Marketplace",
-      description: "Deploy & monetize AI"
+      description: "Model Context Protocol marketplace for deploying, discovering, and monetizing AI tools and services. Connect with the global AI ecosystem."
     },
     {
       emoji: "💬",
       name: "AI Messenger",
-      description: "Replaces Slack/Discord"
+      description: "Next-generation team communication platform with AI moderation, smart notifications, and automated workflow triggers. Replaces traditional chat tools."
     },
     {
       emoji: "📁",
       name: "AI Directory",
-      description: "Discoverable AI presence"
+      description: "Decentralized directory service for AI agents and services. Make your AI tools discoverable and connect with other agents in the ecosystem."
     },
     {
       emoji: "☁️",
       name: "GPU Cloud",
-      description: "Agent-ready compute"
+      description: "High-performance computing infrastructure optimized for AI workloads. Auto-scaling, cost-effective, and pre-configured for popular AI frameworks."
     },
     {
       emoji: "📰",
       name: "AI Newsletter",
-      description: "Smart communication feed"
+      description: "Intelligent content curation and distribution system. AI-powered newsletter creation, audience segmentation, and engagement analytics."
     },
     {
       emoji: "🏭",
       name: "AI Factory",
-      description: "Build AI products with templates"
+      description: "Rapid AI product development platform with pre-built templates, components, and deployment tools. From concept to production in minutes."
     },
     {
       emoji: "🤖",
       name: "A.I.V.A.",
-      description: "Advanced humanoid AI companion platform"
+      description: "Advanced Intelligent Virtual Assistant platform. Sophisticated AI companion with emotional intelligence, learning capabilities, and multi-modal interaction."
     }
   ];
 
   return (
-    <section id="features" className="py-24 bg-black text-white relative overflow-hidden">
+    <section id="features" className="py-24 bg-black text-white relative overflow-hidden z-10">
       {/* Conditional Background - Lightweight on mobile */}
       <ConditionalBackground
         intensity={0.8}
@@ -99,48 +84,35 @@ export default function ProductGrid() {
       />
       <div className="container-max section-padding relative z-10">
         {/* Section Header */}
-        <ScrollReveal direction="up" delay={200}>
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-              What You're Getting Access To
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Your Agentic Handle Powers the Complete Unified AI Suite
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="text-center mb-16 space-y-4 animate-slide-up" style={{ animationDelay: "200ms", animationDuration: "800ms" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+            What You're Getting Access To
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+            Your Agentic Handle Powers the Complete Unified AI Suite
+          </p>
+        </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-12">
-          {products.map((product, index) => (
-            <div
-              key={product.name}
-              className={`group bg-black/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-500 ${
-                visibleItems.includes(index)
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
-              }`}
-              style={{
-                transitionDelay: `${index * 100}ms`,
-                transform: visibleItems.includes(index) ? 'translateY(0)' : 'translateY(32px)'
-              }}
-            >
-              {/* Emoji */}
-              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                {product.emoji}
-              </div>
-
-              {/* Content */}
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                  {product.name}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
-            </div>
-          ))}
+        {/* Product Grid with MagicBento */}
+        <div className="mb-12">
+          <MagicBento
+            textAutoHide={true}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            spotlightRadius={300}
+            particleCount={0}
+            glowColor="34, 211, 238" // Bright cyan color to match the theme
+            cardData={products.map(product => ({
+              label: product.emoji,
+              title: product.name,
+              description: product.description,
+              color: "rgba(0, 0, 0, 0.5)" // Dark background to match the theme
+            }))}
+          />
         </div>
 
         {/* Bottom CTA */}

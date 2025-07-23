@@ -1,15 +1,21 @@
 import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import DomainRegistrySection from "@/components/DomainRegistrySection";
-import ProductGrid from "@/components/ProductGrid";
-import FeaturesDeepDive from "@/components/FeaturesDeepDive";
-import UnifiedAIComputeSection from "@/components/UnifiedAIComputeSection";
-import InfrastructureSection from "@/components/InfrastructureSection";
-import PricingSection from "@/components/PricingSection";
-import RoadmapSection from "@/components/RoadmapSection";
-import FoundingMemberSection from "@/components/FoundingMemberSection";
-import DeveloperSection from "@/components/DeveloperSection";
+import DetroitHeroSection from "@/components/DetroitHeroSection";
+import AgentRevolutionSection from "@/components/AgentRevolutionSection";
+import StructuredComputeSection from "@/components/StructuredComputeSection";
+import HyperlocalHandlesSection from "@/components/HyperlocalHandlesSection";
+import InstitutionalMandatesSection from "@/components/InstitutionalMandatesSection";
+import HITLSection from "@/components/HITLSection";
+import ForkdSection from "@/components/ForkdSection";
+import VibeCoderSection from "@/components/VibeCoderSection";
+import AIAgentsDevKitSection from "@/components/AIAgentsDevKitSection";
+import UnifiedAIMarketplaceSection from "@/components/UnifiedAIMarketplaceSection";
+import UnifiedAIDirectorySection from "@/components/UnifiedAIDirectorySection";
+import HardwareSuiteSection from "@/components/HardwareSuiteSection";
+import ContractManufacturingSection from "@/components/ContractManufacturingSection";
+import AIEmailSection from "@/components/AIEmailSection";
+import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function Home() {
   return (
@@ -22,17 +28,23 @@ export default function Home() {
       </div>
 
       <Navigation />
-      <HeroSection />
-      <DomainRegistrySection />
-      <ProductGrid />
-      <FeaturesDeepDive />
-      <UnifiedAIComputeSection />
-      <InfrastructureSection />
-      <PricingSection />
-      <RoadmapSection />
-      <FoundingMemberSection />
-      <DeveloperSection />
+      <DetroitHeroSection />
+      <AgentRevolutionSection />
+      <StructuredComputeSection />
+      <HyperlocalHandlesSection />
+      <InstitutionalMandatesSection />
+      <HITLSection />
+      <ForkdSection />
+      <VibeCoderSection />
+      <AIAgentsDevKitSection />
+      <UnifiedAIMarketplaceSection />
+      <UnifiedAIDirectorySection />
+      <HardwareSuiteSection />
+      <ContractManufacturingSection />
+      <AIEmailSection />
+      <CallToActionSection />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }

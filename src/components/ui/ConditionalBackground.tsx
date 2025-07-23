@@ -22,14 +22,51 @@ export default function ConditionalBackground({
   gridSize = 100,
   className = ""
 }: ConditionalBackgroundProps) {
-  const { shouldReduceAnimations, isMobile } = useMobileDetection();
+  const { shouldReduceAnimations, isMobile, isTablet } = useMobileDetection();
 
-  // Use completely static background for mobile devices
-  if (isMobile || shouldReduceAnimations) {
+  // Use static background only for devices that explicitly prefer reduced motion
+  if (shouldReduceAnimations) {
     return <StaticBackground className={className} />;
   }
 
-  // Use full animated background only for desktop devices
+  // Use simplified animated background for mobile devices
+  if (isMobile) {
+    return (
+      <>
+        <MorphingBackground intensity={intensity * 0.5} className={className} />
+        <ParticleField
+          particleCount={Math.floor(particleCount * 0.3)}
+          color="rgba(0, 255, 255, 0.3)"
+          darkColor="rgba(0, 255, 255, 0.4)"
+          className={className}
+        />
+      </>
+    );
+  }
+
+  // Use medium animated background for tablets
+  if (isTablet) {
+    return (
+      <>
+        <MorphingBackground intensity={intensity * 0.7} className={className} />
+        <AnimatedGrid
+          gridSize={gridSize * 1.5}
+          lineColor="rgba(0, 255, 255, 0.02)"
+          pulseColor="rgba(0, 255, 255, 0.1)"
+          intensity={intensity * 0.7}
+          className={className}
+        />
+        <ParticleField
+          particleCount={Math.floor(particleCount * 0.6)}
+          color="rgba(0, 255, 255, 0.3)"
+          darkColor="rgba(0, 255, 255, 0.5)"
+          className={className}
+        />
+      </>
+    );
+  }
+
+  // Use full animated background for desktop devices
   return (
     <>
       <MorphingBackground intensity={intensity} className={className} />

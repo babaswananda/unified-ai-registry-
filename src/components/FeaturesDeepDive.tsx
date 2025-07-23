@@ -1,37 +1,10 @@
 "use client";
 
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import MorphingBackground from "@/components/ui/MorphingBackground";
 import AnimatedGrid from "@/components/ui/AnimatedGrid";
 import ParticleField from "@/components/ui/ParticleField";
 
 export default function FeaturesDeepDive() {
-  const features = [
-    {
-      emoji: "🌐",
-      title: "Structured Identity, Not Just a Domain",
-      description: "Your agentic handle becomes a structured endpoint with metadata, permissions, and behavioral logic. Unlike traditional domains that serve static pages, your identity is machine-readable and agent-accessible.",
-      visual: "🌐 → 🤖 → ⚡"
-    },
-    {
-      emoji: "🔍",
-      title: "Discoverable by Agents, Not Crawlers",
-      description: "AI systems don't crawl pages—they query structured endpoints. Your domain appears in the new search layer where agents coordinate, discover services, and execute transactions autonomously.",
-      visual: "🔍 → 🧠 → 🤝"
-    },
-    {
-      emoji: "⚡",
-      title: "Built-In AI Deployment Protocols",
-      description: "Every domain comes with native compute integration. Deploy agents, apps, and services instantly with built-in connections to DigitalOcean, Gradient AI, and Unified AI Compute infrastructure.",
-      visual: "📦 → ☁️ → 🚀"
-    },
-    {
-      emoji: "🛡️",
-      title: "Instant Compute at the Edge",
-      description: "Your domain isn't just an address—it's a compute-ready endpoint. Set access rules, manage permissions, and control how AIs and agents interact with your services at the protocol level.",
-      visual: "🛡️ → ⚙️ → 🌍"
-    }
-  ];
 
   return (
     <section className="py-24 bg-black text-white relative overflow-hidden">
@@ -59,44 +32,98 @@ export default function FeaturesDeepDive() {
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="space-y-16">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-              }`}
-            >
-              {/* Content Column */}
-              <div className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                <div className="flex items-center space-x-4">
-                  <div className="text-5xl">
-                    {feature.emoji}
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white">
-                    {feature.title}
-                  </h3>
-                </div>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+        {/* Feature Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="card text-center space-y-4 bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 relative overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:bg-cyan-500/5"
+               style={{ '--glow-color': '34, 211, 238' } as React.CSSProperties}
+               onMouseMove={(e) => {
+                 const card = e.currentTarget;
+                 const rect = card.getBoundingClientRect();
+                 const x = e.clientX - rect.left;
+                 const y = e.clientY - rect.top;
+                 card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
+                 card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
+                 card.style.setProperty('--glow-intensity', '1');
+               }}
+               onMouseLeave={(e) => {
+                 const card = e.currentTarget;
+                 card.style.setProperty('--glow-intensity', '0');
+               }}>
+            <div className="text-6xl mb-4">🌐</div>
+            <h3 className="text-xl font-bold text-white mb-3">Structured Identity, Not Just a Domain</h3>
+            <p className="text-gray-300 text-sm">Your agentic handle becomes a structured endpoint with metadata, permissions, and behavioral logic. Unlike traditional domains that serve static pages, your identity is machine-readable and agent-accessible.</p>
+            <div className="text-cyan-400 font-mono text-lg mt-4">🌐 → 🤖 → ⚡</div>
+            <div className="text-gray-400 text-xs">Structured Identity</div>
+          </div>
 
-              {/* Visual Column */}
-              <div className={`${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
-                <div className="bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-12 text-center">
-                  <div className="text-6xl mb-6 font-mono tracking-wider text-cyan-400">
-                    {feature.visual}
-                  </div>
-                  <div className="text-gray-300 font-medium">
-                    {feature.title.split(",")[0]}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+          <div className="card text-center space-y-4 bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 relative overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:bg-cyan-500/5"
+               style={{ '--glow-color': '34, 211, 238' } as React.CSSProperties}
+               onMouseMove={(e) => {
+                 const card = e.currentTarget;
+                 const rect = card.getBoundingClientRect();
+                 const x = e.clientX - rect.left;
+                 const y = e.clientY - rect.top;
+                 card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
+                 card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
+                 card.style.setProperty('--glow-intensity', '1');
+               }}
+               onMouseLeave={(e) => {
+                 const card = e.currentTarget;
+                 card.style.setProperty('--glow-intensity', '0');
+               }}>
+            <div className="text-6xl mb-4">🔍</div>
+            <h3 className="text-xl font-bold text-white mb-3">Discoverable by Agents, Not Crawlers</h3>
+            <p className="text-gray-300 text-sm">AI systems don't crawl pages—they query structured endpoints. Your domain appears in the new search layer where agents coordinate, discover services, and execute transactions autonomously.</p>
+            <div className="text-cyan-400 font-mono text-lg mt-4">🔍 → 🧠 → 🤝</div>
+            <div className="text-gray-400 text-xs">Discoverable by Agents</div>
+          </div>
+
+          <div className="card text-center space-y-4 bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 relative overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:bg-cyan-500/5"
+               style={{ '--glow-color': '34, 211, 238' } as React.CSSProperties}
+               onMouseMove={(e) => {
+                 const card = e.currentTarget;
+                 const rect = card.getBoundingClientRect();
+                 const x = e.clientX - rect.left;
+                 const y = e.clientY - rect.top;
+                 card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
+                 card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
+                 card.style.setProperty('--glow-intensity', '1');
+               }}
+               onMouseLeave={(e) => {
+                 const card = e.currentTarget;
+                 card.style.setProperty('--glow-intensity', '0');
+               }}>
+            <div className="text-6xl mb-4">⚡</div>
+            <h3 className="text-xl font-bold text-white mb-3">Built-In AI Deployment Protocols</h3>
+            <p className="text-gray-300 text-sm">Every domain comes with native compute integration. Deploy agents, apps, and services instantly with built-in connections to DigitalOcean, Gradient AI, and Unified AI Compute infrastructure.</p>
+            <div className="text-cyan-400 font-mono text-lg mt-4">📦 → ☁️ → 🚀</div>
+            <div className="text-gray-400 text-xs">Built-In AI Deployment Protocols</div>
+          </div>
+
+          <div className="card text-center space-y-4 bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 relative overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:bg-cyan-500/5"
+               style={{ '--glow-color': '34, 211, 238' } as React.CSSProperties}
+               onMouseMove={(e) => {
+                 const card = e.currentTarget;
+                 const rect = card.getBoundingClientRect();
+                 const x = e.clientX - rect.left;
+                 const y = e.clientY - rect.top;
+                 card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
+                 card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
+                 card.style.setProperty('--glow-intensity', '1');
+               }}
+               onMouseLeave={(e) => {
+                 const card = e.currentTarget;
+                 card.style.setProperty('--glow-intensity', '0');
+               }}>
+            <div className="text-6xl mb-4">🛡️</div>
+            <h3 className="text-xl font-bold text-white mb-3">Instant Compute at the Edge</h3>
+            <p className="text-gray-300 text-sm">Your domain isn't just an address—it's a compute-ready endpoint. Set access rules, manage permissions, and control how AIs and agents interact with your services at the protocol level.</p>
+            <div className="text-cyan-400 font-mono text-lg mt-4">🛡️ → ⚙️ → 🌍</div>
+            <div className="text-gray-400 text-xs">Instant Compute at the Edge</div>
+          </div>
         </div>
+
+
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">

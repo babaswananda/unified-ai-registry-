@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "@/components/ui/ThemeToggle";
+import ShinyText from "@/components/ui/ShinyText";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,13 +20,10 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/registry", label: "Registry" },
-    { href: "#registry", label: "Browse Handles" },
-    { href: "#features", label: "Features" },
-    { href: "#pricing", label: "Pricing" },
+    { href: "/features", label: "Features" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/download-agentic-web", label: "Developers" },
     { href: "/partners", label: "Partners" },
-    { href: "/investors", label: "Investors" },
-    { href: "/agents-are-coming", label: "Agents" },
   ];
 
   return (
@@ -41,14 +38,13 @@ export default function Navigation() {
       <div className="container-max section-padding">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="text-3xl">
-              🌐
-            </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
-              Unified AI Registry
-            </span>
-          </div>
+          <a href="/" className="flex items-center">
+            <ShinyText
+              text="UNIFIED AI"
+              speed={3.3}
+              className="text-xl font-bold"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -65,18 +61,22 @@ export default function Navigation() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <ThemeToggle />
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-            <Button variant="gradient" size="sm">
-              Register Domain
-            </Button>
+
+            <a href="/signin">
+              <Button variant="ghost" size="sm">
+                Sign In
+              </Button>
+            </a>
+            <a href="/registry">
+              <Button variant="gradient" size="sm">
+                Register Domain
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
+
             <button
               className="p-2 text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -105,12 +105,16 @@ export default function Navigation() {
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="ghost" size="sm" className="w-full text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10">
-                  Sign In
-                </Button>
-                <Button variant="gradient" size="sm" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400">
-                  Register Domain
-                </Button>
+                <a href="/signin">
+                  <Button variant="ghost" size="sm" className="w-full text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10">
+                    Sign In
+                  </Button>
+                </a>
+                <a href="/registry">
+                  <Button variant="gradient" size="sm" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400">
+                    Register Domain
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

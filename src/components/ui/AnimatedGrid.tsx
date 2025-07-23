@@ -21,6 +21,19 @@ export default function AnimatedGrid({
   const animationRef = useRef<number>(0);
   const timeRef = useRef(0);
 
+  // Helper function to parse rgba color strings
+  const parseRgba = (color: string, opacity: number): string => {
+    if (color.startsWith('rgba')) {
+      const rgbaMatch = color.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*[\d\.]+\)/);
+      if (rgbaMatch) {
+        const [_, r, g, b] = rgbaMatch;
+        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+      }
+    }
+    // Default fallback
+    return `rgba(30, 41, 59, ${opacity})`;
+  };
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -80,15 +93,17 @@ export default function AnimatedGrid({
           const opacity = Math.max(0, wave);
           
           if (opacity > 0.1) {
-            // Draw pulsing intersection
-            ctx.fillStyle = pulseColor.replace(/[\d\.]+\)$/g, `${opacity})`);
+            // Draw pulsing intersection with explicit color values
+            const pulseRgba = parseRgba(pulseColor, opacity);
+            ctx.fillStyle = pulseRgba;
             ctx.beginPath();
             ctx.arc(x, y, 2 + opacity * 3, 0, Math.PI * 2);
             ctx.fill();
 
             // Draw radiating lines
             if (opacity > 0.3) {
-              ctx.strokeStyle = pulseColor.replace(/[\d\.]+\)$/g, `${opacity * 0.5})`);
+              const lineRgba = parseRgba(pulseColor, opacity * 0.5);
+              ctx.strokeStyle = lineRgba;
               ctx.lineWidth = 1;
               ctx.beginPath();
               
@@ -113,8 +128,7 @@ export default function AnimatedGrid({
         const streamX = (Math.sin(streamTime) * 0.3 + 0.5) * canvas.offsetWidth;
         const streamY = (Math.cos(streamTime * 0.7) * 0.3 + 0.5) * canvas.offsetHeight;
         
-        // Draw stream trail
-        ctx.strokeStyle = pulseColor.replace(/[\d\.]+\)$/g, `${0.6 * intensity})`);
+        // Draw stream trail with explicit color values
         ctx.lineWidth = 2;
         ctx.beginPath();
         
@@ -125,7 +139,8 @@ export default function AnimatedGrid({
           const trailY = (Math.cos(trailTime * 0.7) * 0.3 + 0.5) * canvas.offsetHeight;
           const trailOpacity = (trailLength - j) / trailLength * 0.6 * intensity;
           
-          ctx.strokeStyle = pulseColor.replace(/[\d\.]+\)$/g, `${trailOpacity})`);
+          const trailRgba = parseRgba(pulseColor, trailOpacity);
+          ctx.strokeStyle = trailRgba;
           
           if (j === 0) {
             ctx.moveTo(trailX, trailY);
@@ -135,8 +150,9 @@ export default function AnimatedGrid({
         }
         ctx.stroke();
         
-        // Draw stream head
-        ctx.fillStyle = pulseColor.replace(/[\d\.]+\)$/g, `${0.8 * intensity})`);
+        // Draw stream head with explicit color values
+        const headRgba = parseRgba(pulseColor, 0.8 * intensity);
+        ctx.fillStyle = headRgba;
         ctx.beginPath();
         ctx.arc(streamX, streamY, 3, 0, Math.PI * 2);
         ctx.fill();

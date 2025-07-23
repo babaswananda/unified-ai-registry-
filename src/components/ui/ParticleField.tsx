@@ -101,7 +101,12 @@ export default function ParticleField({
           
           if (distance < 120) {
             const opacity = (120 - distance) / 120 * 0.1;
-            ctx.strokeStyle = `rgba(30, 41, 59, ${opacity})`;
+            // Use explicit rgba values to avoid color animation warnings
+            const connectionColor = color.startsWith('rgba')
+              ? color.replace(/[\d\.]+\)$/g, `${opacity})`)
+              : `rgba(30, 41, 59, ${opacity})`;
+            
+            ctx.strokeStyle = connectionColor;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
@@ -113,13 +118,29 @@ export default function ParticleField({
 
       // Draw particles
       particlesRef.current.forEach(particle => {
-        const fadeOpacity = particle.life < 50 
-          ? particle.life / 50 
-          : particle.life > particle.maxLife - 50 
-            ? (particle.maxLife - particle.life) / 50 
+        const fadeOpacity = particle.life < 50
+          ? particle.life / 50
+          : particle.life > particle.maxLife - 50
+            ? (particle.maxLife - particle.life) / 50
             : 1;
 
-        ctx.fillStyle = color.replace(/[\d\.]+\)$/g, `${particle.opacity * fadeOpacity})`);
+        // Parse the color to get the base rgba values
+        let particleColor;
+        if (color.startsWith('rgba')) {
+          // Extract the rgba components
+          const rgbaMatch = color.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*[\d\.]+\)/);
+          if (rgbaMatch) {
+            const [_, r, g, b] = rgbaMatch;
+            particleColor = `rgba(${r}, ${g}, ${b}, ${particle.opacity * fadeOpacity})`;
+          } else {
+            particleColor = `rgba(30, 41, 59, ${particle.opacity * fadeOpacity})`;
+          }
+        } else {
+          // Default fallback
+          particleColor = `rgba(30, 41, 59, ${particle.opacity * fadeOpacity})`;
+        }
+
+        ctx.fillStyle = particleColor;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();

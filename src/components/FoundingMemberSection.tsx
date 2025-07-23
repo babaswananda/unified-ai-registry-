@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/Button";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import AnimatedProgressBar from "@/components/ui/AnimatedProgressBar";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import MorphingBackground from "@/components/ui/MorphingBackground";
 import AnimatedGrid from "@/components/ui/AnimatedGrid";
 import ParticleField from "@/components/ui/ParticleField";
@@ -68,9 +67,25 @@ export default function FoundingMemberSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {benefits.map((benefit, index) => (
             <div
-              key={index}
-              className="text-center space-y-4 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              key={`benefit-${benefit.title}`}
+              className="card text-center space-y-4 animate-fade-in bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 relative overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:transform hover:scale-105"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                '--glow-color': '34, 211, 238'
+              } as React.CSSProperties}
+              onMouseMove={(e) => {
+                const card = e.currentTarget;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
+                card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
+                card.style.setProperty('--glow-intensity', '1');
+              }}
+              onMouseLeave={(e) => {
+                const card = e.currentTarget;
+                card.style.setProperty('--glow-intensity', '0');
+              }}
             >
               <div className="text-6xl mx-auto">
                 {benefit.emoji}

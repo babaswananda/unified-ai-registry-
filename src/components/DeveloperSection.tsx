@@ -1,7 +1,6 @@
 "use client";
 
 import { Terminal, Code } from "lucide-react";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import MorphingBackground from "@/components/ui/MorphingBackground";
 import AnimatedGrid from "@/components/ui/AnimatedGrid";
 import ParticleField from "@/components/ui/ParticleField";
@@ -42,7 +41,7 @@ export default function DeveloperSection() {
   ];
 
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden">
+    <section className="py-24 text-white relative overflow-hidden">
       {/* Background Effects - Same as agents-are-coming */}
       <MorphingBackground intensity={0.8} />
       <AnimatedGrid
@@ -72,7 +71,7 @@ export default function DeveloperSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {devFeatures.map((feature, index) => (
             <div
-              key={index}
+              key={`dev-feature-${feature.title}`}
               className="bg-white rounded-2xl p-8 shadow-lg border border-dark-100 hover:shadow-xl transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >

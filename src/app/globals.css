@@ -3,6 +3,150 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* PARTICLE ANIMATION - GLOBAL */
+@keyframes particleFade {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateY(-40px);
+  }
+}
+
+/* HERO SECTION ANIMATIONS */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Hide Next.js development indicators and logos completely */
+[data-nextjs-toast-errors-parent],
+[data-nextjs-toast-errors],
+.__next-dev-overlay-backdrop,
+.__next-dev-overlay,
+[data-nextjs-dev-overlay],
+[data-nextjs-dev-indicator],
+[data-nextjs-dev-tools],
+.__next-dev-indicator,
+.__next-dev-tools,
+[class*="__next-dev"],
+[id*="__next-dev"],
+button[aria-label*="Next.js"],
+button[aria-label*="next.js"],
+button[title*="Next.js"],
+button[title*="next.js"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Hide any development overlays */
+div[style*="position: fixed"][style*="bottom"][style*="right"] button {
+  display: none !important;
+}
+
+/* Hide webpack HMR indicators */
+[data-webpack-dev-server] {
+  display: none !important;
+}
+
+/* Magic Bento Particle Effects */
+.particle-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 208, 255, 1);
+  box-shadow: 0 0 6px rgba(0, 208, 255, 0.6);
+  pointer-events: none;
+  z-index: 100;
+}
+
+.particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(0, 208, 255, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.particle-container:hover {
+  box-shadow: 0 4px 20px rgba(0, 208, 255, 0.2), 0 0 30px rgba(0, 208, 255, 0.2);
+}
+
 @layer base {
   * {
     @apply border-dark-200 dark:border-dark-700;
@@ -57,31 +201,17 @@
     }
   }
 
-  /* Performance optimizations for mobile */
-  @media (max-width: 768px) {
-    /* Disable heavy animations on mobile */
+  /* Performance optimizations for very small mobile devices only */
+  @media (max-width: 480px) {
+    /* Disable heavy animations on very small mobile devices */
     .mobile-disable-animation {
       display: none !important;
     }
 
-    /* Completely disable problematic animations */
-    canvas {
-      display: none !important;
-    }
-
-    /* Disable complex transforms and animations */
+    /* Reduce animation duration but don't disable completely */
     * {
-      animation-duration: 0.1s !important;
-      transition-duration: 0.2s !important;
-      transform: none !important;
-      will-change: auto !important;
-    }
-
-    /* Force hardware acceleration off */
-    .mobile-reduce-transforms {
-      transform: none !important;
-      backface-visibility: visible !important;
-      perspective: none !important;
+      animation-duration: 0.3s !important;
+      transition-duration: 0.3s !important;
     }
 
     /* Disable blur effects that can cause performance issues */
@@ -94,16 +224,17 @@
     }
   }
 
-  /* Reduce motion for users who prefer it */
+  /* Reduce motion for users who prefer it, but still allow some animations */
   @media (prefers-reduced-motion: reduce) {
-    .mobile-disable-animation {
+    /* Only disable complex animations */
+    .complex-animation {
       display: none !important;
     }
 
+    /* Allow simple animations but make them shorter */
     * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
+      animation-duration: 0.2s !important;
+      transition-duration: 0.2s !important;
     }
   }
 }

@@ -10,12 +10,12 @@ interface MobileDetection {
 }
 
 export function useMobileDetection(): MobileDetection {
-  // Start with mobile-first approach - assume mobile until proven otherwise
+  // Start with desktop-first approach for development - assume desktop until proven otherwise
   const [detection, setDetection] = useState<MobileDetection>({
-    isMobile: true,
+    isMobile: false,
     isTablet: false,
-    isDesktop: false,
-    shouldReduceAnimations: true,
+    isDesktop: true,
+    shouldReduceAnimations: false,
   });
 
   useEffect(() => {
@@ -23,30 +23,19 @@ export function useMobileDetection(): MobileDetection {
       const userAgent = navigator.userAgent.toLowerCase();
       const width = window.innerWidth;
 
-      // More aggressive mobile detection
-      const isMobile = width <= 768 ||
-        /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile/i.test(userAgent) ||
-        'ontouchstart' in window ||
-        navigator.maxTouchPoints > 0;
+      // Less aggressive mobile detection - primarily based on screen width
+      const isMobile = width <= 480;
 
       // Check for tablets
-      const isTablet = !isMobile && width > 768 && width <= 1024 && /ipad|android|tablet/i.test(userAgent);
+      const isTablet = width > 480 && width <= 1024;
 
       // Check for desktop
-      const isDesktop = !isMobile && !isTablet && width > 1024;
+      const isDesktop = width > 1024;
 
-      // Be very aggressive about reducing animations on mobile
+      // Only reduce animations for very small devices or when explicitly requested
       const shouldReduceAnimations =
-        isMobile ||
-        isTablet ||
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-        // Check for low-end devices
-        (navigator as any).hardwareConcurrency <= 4 ||
-        (navigator as any).deviceMemory <= 4 ||
-        // Check for slow connections
-        (navigator as any).connection?.effectiveType === 'slow-2g' ||
-        (navigator as any).connection?.effectiveType === '2g' ||
-        (navigator as any).connection?.effectiveType === '3g';
+        width <= 320 || // Very small devices
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       setDetection({
         isMobile,

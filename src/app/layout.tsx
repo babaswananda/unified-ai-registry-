@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Unified AI Registry - The Agentic Web Starts Here",
@@ -28,11 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased transition-colors duration-300">
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+    <html lang="en" className="scroll-smooth dark">
+      <body className="antialiased bg-black text-white">
+        {children}
       </body>
     </html>
   );

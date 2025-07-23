@@ -28,6 +28,11 @@ export default function MorphingBackground({
       ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
     };
 
+    // Helper function to create rgba color strings with consistent format
+    const createRgba = (r: number, g: number, b: number, alpha: number): string => {
+      return `rgba(${r}, ${g}, ${b}, ${alpha * intensity})`;
+    };
+
     const createGradient = (time: number) => {
       const gradient = ctx.createRadialGradient(
         canvas.offsetWidth * (0.5 + Math.sin(time * 0.001) * 0.2),
@@ -42,9 +47,10 @@ export default function MorphingBackground({
       const alpha2 = 0.01 + Math.cos(time * 0.0025) * 0.005;
       const alpha3 = 0.005 + Math.sin(time * 0.003) * 0.003;
 
-      gradient.addColorStop(0, `rgba(30, 41, 59, ${alpha1 * intensity})`);
-      gradient.addColorStop(0.4, `rgba(51, 65, 85, ${alpha2 * intensity})`);
-      gradient.addColorStop(0.7, `rgba(71, 85, 105, ${alpha3 * intensity})`);
+      // Use explicit color values to avoid animation warnings
+      gradient.addColorStop(0, createRgba(30, 41, 59, alpha1));
+      gradient.addColorStop(0.4, createRgba(51, 65, 85, alpha2));
+      gradient.addColorStop(0.7, createRgba(71, 85, 105, alpha3));
       gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
 
       return gradient;
@@ -63,8 +69,9 @@ export default function MorphingBackground({
       const alpha1 = 0.015 + Math.cos(time * 0.0022) * 0.008;
       const alpha2 = 0.008 + Math.sin(time * 0.0028) * 0.004;
 
-      gradient.addColorStop(0, `rgba(15, 23, 42, ${alpha1 * intensity})`);
-      gradient.addColorStop(0.6, `rgba(30, 41, 59, ${alpha2 * intensity})`);
+      // Use explicit color values to avoid animation warnings
+      gradient.addColorStop(0, createRgba(15, 23, 42, alpha1));
+      gradient.addColorStop(0.6, createRgba(30, 41, 59, alpha2));
       gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
 
       return gradient;
@@ -89,15 +96,16 @@ export default function MorphingBackground({
       // Tertiary flowing gradient
       ctx.globalCompositeOperation = "multiply";
       const tertiaryGradient = ctx.createLinearGradient(
-        0, 
-        0, 
-        canvas.offsetWidth, 
+        0,
+        0,
+        canvas.offsetWidth,
         canvas.offsetHeight
       );
       
       const flow = Math.sin(time * 0.001) * 0.5 + 0.5;
-      tertiaryGradient.addColorStop(0, `rgba(248, 250, 252, ${0.02 * flow * intensity})`);
-      tertiaryGradient.addColorStop(0.5, `rgba(241, 245, 249, ${0.01 * flow * intensity})`);
+      // Use explicit color values to avoid animation warnings
+      tertiaryGradient.addColorStop(0, createRgba(248, 250, 252, 0.02 * flow));
+      tertiaryGradient.addColorStop(0.5, createRgba(241, 245, 249, 0.01 * flow));
       tertiaryGradient.addColorStop(1, "rgba(0, 0, 0, 0)");
       
       ctx.fillStyle = tertiaryGradient;
