@@ -2,7 +2,6 @@
 
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 
