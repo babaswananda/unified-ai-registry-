@@ -2,6 +2,7 @@
 
 import { CheckCircle, ArrowRight } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Button } from "@/components/ui/Button";
 
 export default function UnifiedAIMarketplaceSection() {
@@ -56,12 +57,23 @@ export default function UnifiedAIMarketplaceSection() {
           {marketplaceCategories.map((category, index) => (
             <div
               key={category.name}
-              className="bg-black/50 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 text-center hover:border-blue-500/40 hover:scale-105 transition-all duration-300"
+              className="relative rounded-xl border border-blue-500/20 p-1 transition-all duration-300 hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-3xl mb-3">{category.emoji}</div>
-              <h3 className="text-lg font-bold text-white mb-2">{category.name}</h3>
-              <p className="text-gray-300 text-sm">{category.description}</p>
+              <GlowingEffect
+                variant="cyan"
+                spread={25}
+                glow={true}
+                disabled={false}
+                proximity={40}
+                inactiveZone={0.01}
+                borderWidth={1}
+              />
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 text-center h-full">
+                <div className="text-3xl mb-3">{category.emoji}</div>
+                <h3 className="text-lg font-bold text-white mb-2">{category.name}</h3>
+                <p className="text-gray-300 text-sm">{category.description}</p>
+              </div>
             </div>
           ))}
         </div>

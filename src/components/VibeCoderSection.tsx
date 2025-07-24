@@ -2,6 +2,7 @@
 
 import { Code, Palette, Users, Zap, Eye, GitBranch } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function VibeCoderSection() {
 
@@ -145,12 +146,23 @@ export default function VibeCoderSection() {
                 return (
                   <div
                     key={feature.title}
-                    className="bg-black/30 border border-gray-600 rounded-xl p-6 text-center hover:border-orange-500/30 transition-all duration-300"
+                    className="relative rounded-xl border border-gray-600 p-1 transition-all duration-300 hover:scale-105"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="text-3xl mb-3">{feature.emoji}</div>
-                    <h4 className="text-white font-bold mb-2">{feature.title}</h4>
-                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                    <GlowingEffect
+                      variant="default"
+                      spread={25}
+                      glow={true}
+                      disabled={false}
+                      proximity={40}
+                      inactiveZone={0.01}
+                      borderWidth={1}
+                    />
+                    <div className="relative bg-black/30 rounded-lg p-6 text-center h-full">
+                      <div className="text-3xl mb-3">{feature.emoji}</div>
+                      <h4 className="text-white font-bold mb-2">{feature.title}</h4>
+                      <p className="text-gray-300 text-sm">{feature.description}</p>
+                    </div>
                   </div>
                 );
               })}

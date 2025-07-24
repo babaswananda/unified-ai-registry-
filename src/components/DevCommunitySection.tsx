@@ -72,7 +72,7 @@ export default function DevCommunitySection() {
                 inactiveZone={0.01}
                 borderWidth={1}
               />
-              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full border border-cyan-500/10">
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full">
                 <div className="text-3xl mb-4">{tool.emoji}</div>
                 <h3 className={`text-lg font-bold mb-2 ${tool.color}`}>{tool.title}</h3>
                 <p className="text-gray-300 text-sm">{tool.description}</p>

@@ -2,6 +2,7 @@
 
 import { Users, RefreshCw, Shield, Brain, CheckCircle } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function HITLSection() {
   const features = [
@@ -127,12 +128,23 @@ export default function HITLSection() {
             return (
               <div
                 key={feature.title}
-                className="bg-black/50 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:border-orange-500/30 hover:scale-105 transition-all duration-300"
+                className="relative rounded-xl border border-gray-600 p-1 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-3xl mb-4">{feature.emoji}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-300 text-sm">{feature.description}</p>
+                <GlowingEffect
+                  variant="default"
+                  spread={30}
+                  glow={true}
+                  disabled={false}
+                  proximity={48}
+                  inactiveZone={0.01}
+                  borderWidth={1}
+                />
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full">
+                  <div className="text-3xl mb-4">{feature.emoji}</div>
+                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-300 text-sm">{feature.description}</p>
+                </div>
               </div>
             );
           })}

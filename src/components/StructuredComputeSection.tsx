@@ -111,7 +111,7 @@ export default function StructuredComputeSection() {
                 inactiveZone={0.01}
                 borderWidth={1}
               />
-              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full border border-cyan-500/10">
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full">
                 <div className="text-center space-y-4">
                   <div className="text-4xl mb-4">{feature.icon}</div>
                   <h3 className="text-lg font-bold text-cyan-400">

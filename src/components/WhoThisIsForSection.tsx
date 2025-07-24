@@ -79,9 +79,19 @@ export default function WhoThisIsForSection() {
           {audiences.map((audience, index) => (
             <div
               key={audience.title}
-              className="group bg-black/50 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:border-cyan-500/40 hover:scale-105 transition-all duration-300 animate-slide-up"
+              className="relative rounded-xl border border-gray-600 p-1 transition-all duration-300 hover:scale-105 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              <GlowingEffect
+                variant="cyan"
+                spread={30}
+                glow={true}
+                disabled={false}
+                proximity={48}
+                inactiveZone={0.01}
+                borderWidth={1}
+              />
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full">
               <div className="text-center space-y-4">
                 <div className="text-4xl mb-4">{audience.emoji}</div>
                 <h3 className={`text-lg font-bold bg-gradient-to-r ${audience.color} bg-clip-text text-transparent`}>

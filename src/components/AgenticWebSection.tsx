@@ -69,7 +69,7 @@ export default function AgenticWebSection() {
                 inactiveZone={0.01}
                 borderWidth={1}
               />
-              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/10">
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6">
                 <div className="flex items-start space-x-4">
                   <span className="text-2xl flex-shrink-0">{feature.emoji}</span>
                   <p className="text-lg text-gray-300">{feature.text}</p>
@@ -95,7 +95,7 @@ export default function AgenticWebSection() {
                 inactiveZone={0.01}
                 borderWidth={1}
               />
-              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-cyan-500/10 text-center">
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-8 text-center">
                 <h3 className="text-3xl font-bold text-cyan-400 mb-2">{tld.name}</h3>
                 <p className="text-gray-300 mb-4">{tld.description}</p>
                 <div className="text-2xl font-bold text-white">{tld.price}</div>
