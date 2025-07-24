@@ -35,56 +35,35 @@ export default function Home() {
       <Navigation />
       <DetroitHeroSection />
       <WhoThisIsForSection />
-
-      {/* Side-by-Side: Agent Revolution + Structured Compute */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <AgentRevolutionSection />
-        <StructuredComputeSection />
-      </div>
-
-      {/* Full Width: Handles */}
+      <AgentRevolutionSection />
+      <StructuredComputeSection />
       <HyperlocalHandlesSection />
 
-      {/* Parallax: Institutional Mandates */}
+      {/* Enhanced: Institutional Mandates */}
       <div className="relative bg-gradient-to-b from-black via-gray-900 to-black">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <InstitutionalMandatesSection />
       </div>
 
-      {/* Side-by-Side: HITL + Dev Community */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <HITLSection />
-        <DevCommunitySection />
-      </div>
+      <HITLSection />
+      <DevCommunitySection />
 
       {/* Featured Protocol Drop */}
       <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border-y border-orange-500/20">
         <ForkdSection />
       </div>
 
-      {/* Carousel: Dev Tools */}
-      <div className="bg-black/50">
-        <VibeCoderSection />
-        <AIAgentsDevKitSection />
-      </div>
+      <VibeCoderSection />
+      <AIAgentsDevKitSection />
+      <UnifiedAIMarketplaceSection />
+      <UnifiedAIDirectorySection />
 
-      {/* Side-by-Side: Marketplace + Directory */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <UnifiedAIMarketplaceSection />
-        <UnifiedAIDirectorySection />
-      </div>
-
-      {/* Parallax: GMT-7 */}
+      {/* Enhanced: GMT-7 */}
       <div className="relative overflow-hidden bg-gradient-to-b from-red-900/20 via-black to-orange-900/20">
-        <div className="absolute inset-0 bg-[url('/circuit.svg')] opacity-5"></div>
         <GMT7Section />
       </div>
 
-      {/* Side-by-Side: Hardware + Manufacturing */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <HardwareSuiteSection />
-        <ContractManufacturingSection />
-      </div>
+      <HardwareSuiteSection />
+      <ContractManufacturingSection />
 
       <AIEmailSection />
       <WhyNowSection />
