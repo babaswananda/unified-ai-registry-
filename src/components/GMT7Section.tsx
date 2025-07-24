@@ -80,6 +80,11 @@ export default function GMT7Section() {
                 <p className="text-red-400">it remembers, adapts, and evolves.</p>
               </div>
             </div>
+            <div className="mt-8 p-6 bg-orange-500/10 border border-orange-500/20 rounded-xl">
+              <p className="text-lg text-gray-300 text-center">
+                <span className="text-orange-400 font-semibold">Every GMT-7 deployment generates opportunities</span> for human operators to participate in training, review, and optimization — making it the engine behind the new operator economy.
+              </p>
+            </div>
           </div>
         </div>
 

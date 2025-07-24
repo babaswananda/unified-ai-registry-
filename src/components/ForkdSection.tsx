@@ -65,8 +65,13 @@ export default function ForkdSection() {
       />
       
       <div className="container-max section-padding relative z-10">
-        {/* Section Header */}
+        {/* Featured Protocol Drop Header */}
         <div className="text-center mb-16 animate-slide-up">
+          <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/40 px-8 py-4 rounded-full mb-8 shadow-lg shadow-orange-500/20">
+            <span className="text-3xl animate-pulse">🔥</span>
+            <span className="text-orange-400 font-bold text-lg">FEATURED PROTOCOL DROP</span>
+            <span className="text-3xl animate-pulse">🔥</span>
+          </div>
           <div className="inline-flex items-center space-x-3 bg-green-500/10 border border-green-500/20 px-6 py-3 rounded-full mb-8">
             <span className="text-2xl">🍴</span>
             <span className="text-green-400 font-semibold">ForkD</span>
