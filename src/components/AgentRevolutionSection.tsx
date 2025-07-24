@@ -2,6 +2,7 @@
 
 import { Check, Brain, Zap, Shield, Globe, Coins, Building } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import NewsTicker from "@/components/ui/NewsTicker";
 
 export default function AgentRevolutionSection() {
   const features = [
@@ -20,15 +21,34 @@ export default function AgentRevolutionSection() {
     "District AI Agents"
   ];
 
+  const tickerItems = [
+    "detroit.aiagents - FREE for Detroit",
+    "assistant.aiagents - $200",
+    "guardian.aiagents - $200",
+    "automotive.madeindetroit - $50",
+    "frontend.vibecoder - $75",
+    "operators.humanintheloop - $150",
+    "compute.iaas - $200",
+    "multimodal.gmt - $300",
+    "earlyaccess.gmt-7 - $500",
+    "manufacturing.aifactory - $100",
+    "blockchain.devcommunity - $75",
+    "protocol.agenticweb - $299",
+    "infrastructure.newinternet - $399"
+  ];
+
   return (
     <section className="py-24 text-white relative overflow-hidden">
-      <ConditionalBackground 
+      <ConditionalBackground
         intensity={0.7}
         particleCount={100}
         floatingCount={0}
         gridSize={100}
       />
-      
+
+      {/* News Ticker */}
+      <NewsTicker items={tickerItems} speed={60} className="mb-8" />
+
       <div className="container-max section-padding relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">

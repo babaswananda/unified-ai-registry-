@@ -3,6 +3,7 @@
 import { ArrowRight, Users, Building, Palette, Cog, MapPin } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { Button } from "@/components/ui/Button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function WhoThisIsForSection() {
   const audiences = [

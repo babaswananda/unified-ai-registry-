@@ -10,7 +10,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface DomainHandle {
   name: string;
-  category: 'aiagents' | 'madeindetroit' | 'vibecoder' | 'k12' | 'aifactory' | 'devcommunity' | 'humanintheloop' | 'iaas' | 'gmt' | 'gmt7';
+  category: 'aiagents' | 'madeindetroit' | 'vibecoder' | 'k12' | 'aifactory' | 'devcommunity' | 'humanintheloop' | 'iaas' | 'gmt' | 'gmt7' | 'agenticweb' | 'newinternet';
   price: number;
   description: string;
   features: string[];
@@ -104,10 +104,20 @@ export default function RegistryPage() {
     // .gmt-7 - GMT-7 Early Access ($500)
     { name: "earlyaccess.gmt-7", category: "gmt7", price: 500, description: "GMT-7 early access program", features: ["Beta Testing", "Priority Support", "Advanced Features"], available: true, premium: true },
     { name: "research.gmt-7", category: "gmt7", price: 500, description: "GMT-7 research access", features: ["Research License", "Academic Use", "Publication Rights"], available: true, premium: true },
+
+    // .agenticweb - Agentic Web Protocol ($299)
+    { name: "protocol.agenticweb", category: "agenticweb", price: 299, description: "Core agentic web protocol", features: ["Agent Deployment", "Web Integration", "Protocol Access"], available: true, premium: true },
+    { name: "agents.agenticweb", category: "agenticweb", price: 299, description: "AI agent marketplace", features: ["Agent Registry", "Deployment Tools", "Monetization"], available: true, premium: true },
+    { name: "deploy.agenticweb", category: "agenticweb", price: 299, description: "Agent deployment platform", features: ["One-Click Deploy", "Auto-scaling", "Monitoring"], available: true, premium: true },
+
+    // .newinternet - New Internet Infrastructure ($399)
+    { name: "infrastructure.newinternet", category: "newinternet", price: 399, description: "Next-gen internet infrastructure", features: ["Decentralized", "Agent-Native", "Sovereign"], available: true, premium: true },
+    { name: "protocol.newinternet", category: "newinternet", price: 399, description: "New internet protocol layer", features: ["Protocol Stack", "Interoperability", "Standards"], available: true, premium: true },
+    { name: "governance.newinternet", category: "newinternet", price: 399, description: "Internet governance framework", features: ["Decentralized Gov", "Voting Systems", "Policy Tools"], available: true, premium: true },
   ];
 
   const categories = [
-    { id: "all", name: "All Handles", emoji: "🌐", count: 85 },
+    { id: "all", name: "All Handles", emoji: "🌐", count: 95 },
     { id: "aiagents", name: ".aiagents", emoji: "🤖", count: 10 },
     { id: "madeindetroit", name: ".madeindetroit", emoji: "🏭", count: 10 },
     { id: "vibecoder", name: ".vibecoder", emoji: "💻", count: 10 },
@@ -118,6 +128,8 @@ export default function RegistryPage() {
     { id: "iaas", name: ".iaas", emoji: "⚡", count: 3 },
     { id: "gmt", name: ".gmt", emoji: "🧠", count: 2 },
     { id: "gmt7", name: ".gmt-7", emoji: "🚀", count: 2 },
+    { id: "agenticweb", name: ".agenticweb", emoji: "🌐", count: 3 },
+    { id: "newinternet", name: ".newinternet", emoji: "🌍", count: 3 },
   ];
 
   const filteredHandles = unifiedHandles
@@ -254,6 +266,8 @@ export default function RegistryPage() {
                           handle.category === 'iaas' ? 'bg-indigo-500/20 text-indigo-400' :
                           handle.category === 'gmt' ? 'bg-pink-500/20 text-pink-400' :
                           handle.category === 'gmt7' ? 'bg-rose-500/20 text-rose-400' :
+                          handle.category === 'agenticweb' ? 'bg-teal-500/20 text-teal-400' :
+                          handle.category === 'newinternet' ? 'bg-emerald-500/20 text-emerald-400' :
                           'bg-gray-500/20 text-gray-400'
                         }`}>
                           {handle.category.replace('-', ' ')}

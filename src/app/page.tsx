@@ -18,6 +18,7 @@ import HardwareSuiteSection from "@/components/HardwareSuiteSection";
 import ContractManufacturingSection from "@/components/ContractManufacturingSection";
 import AIEmailSection from "@/components/AIEmailSection";
 import CallToActionSection from "@/components/CallToActionSection";
+import AgenticWebSection from "@/components/AgenticWebSection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import StickyOperatorCTA from "@/components/ui/StickyOperatorCTA";
@@ -66,6 +67,7 @@ export default function Home() {
       <ContractManufacturingSection />
 
       <AIEmailSection />
+      <AgenticWebSection />
       <WhyNowSection />
       <CallToActionSection />
       <Footer />

@@ -1,6 +1,8 @@
 "use client";
 
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 
@@ -98,33 +100,28 @@ export default function StructuredComputeSection() {
           {computeFeatures.map((feature, index) => (
             <div
               key={feature.title}
-              className="card bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 relative overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:bg-cyan-500/5 hover:transform hover:scale-105"
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                '--glow-color': '34, 211, 238'
-              } as React.CSSProperties}
-              onMouseMove={(e) => {
-                const card = e.currentTarget;
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
-                card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
-                card.style.setProperty('--glow-intensity', '1');
-              }}
-              onMouseLeave={(e) => {
-                const card = e.currentTarget;
-                card.style.setProperty('--glow-intensity', '0');
-              }}
+              className="relative rounded-xl border border-cyan-500/20 p-1 transition-all duration-300 hover:scale-105"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-center space-y-4">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-bold text-cyan-400">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300 text-sm">
-                  {feature.description}
-                </p>
+              <GlowingEffect
+                variant="cyan"
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+                borderWidth={1}
+              />
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full border border-cyan-500/10">
+                <div className="text-center space-y-4">
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="text-lg font-bold text-cyan-400">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

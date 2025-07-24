@@ -3,6 +3,7 @@
 import { CheckCircle, ArrowRight, Code, Zap, Shield, TestTube, Factory, Brain } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { Button } from "@/components/ui/Button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function DevCommunitySection() {
   const devTools = [
@@ -59,12 +60,23 @@ export default function DevCommunitySection() {
           {devTools.map((tool, index) => (
             <div
               key={tool.title}
-              className="bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500/40 hover:scale-105 transition-all duration-300"
+              className="relative rounded-xl border border-cyan-500/20 p-1 transition-all duration-300 hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-3xl mb-4">{tool.emoji}</div>
-              <h3 className={`text-lg font-bold mb-2 ${tool.color}`}>{tool.title}</h3>
-              <p className="text-gray-300 text-sm">{tool.description}</p>
+              <GlowingEffect
+                variant="cyan"
+                spread={30}
+                glow={true}
+                disabled={false}
+                proximity={48}
+                inactiveZone={0.01}
+                borderWidth={1}
+              />
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full border border-cyan-500/10">
+                <div className="text-3xl mb-4">{tool.emoji}</div>
+                <h3 className={`text-lg font-bold mb-2 ${tool.color}`}>{tool.title}</h3>
+                <p className="text-gray-300 text-sm">{tool.description}</p>
+              </div>
             </div>
           ))}
         </div>
