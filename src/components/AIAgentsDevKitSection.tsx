@@ -2,6 +2,7 @@
 
 import { Bot, Settings, User, Cpu, Key, DollarSign } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 import { Button } from "@/components/ui/Button";
 
 export default function AIAgentsDevKitSection() {
@@ -74,15 +75,19 @@ export default function AIAgentsDevKitSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {devKitTypes.map((type, index) => {
               return (
-                <div
+                <SpotlightCard
                   key={type.title}
-                  className="bg-black/50 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 hover:border-blue-500/40 hover:scale-105 transition-all duration-300"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  variant="blue"
+                  className="border-blue-500/20"
+                  glowSpread={30}
+                  glowProximity={48}
                 >
-                  <div className="text-3xl mb-4">{type.emoji}</div>
-                  <h4 className="text-lg font-bold text-white mb-2">{type.title}</h4>
-                  <p className="text-gray-300 text-sm">{type.description}</p>
-                </div>
+                  <div className="p-6" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className="text-3xl mb-4">{type.emoji}</div>
+                    <h4 className="text-lg font-bold text-white mb-2">{type.title}</h4>
+                    <p className="text-gray-300 text-sm">{type.description}</p>
+                  </div>
+                </SpotlightCard>
               );
             })}
           </div>

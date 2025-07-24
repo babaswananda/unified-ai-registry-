@@ -132,7 +132,7 @@ export default function HITLSection() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <GlowingEffect
-                  variant="default"
+                  variant="orange"
                   spread={30}
                   glow={true}
                   disabled={false}

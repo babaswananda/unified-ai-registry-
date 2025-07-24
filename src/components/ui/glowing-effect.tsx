@@ -9,7 +9,7 @@ interface GlowingEffectProps {
   inactiveZone?: number;
   proximity?: number;
   spread?: number;
-  variant?: "default" | "white" | "cyan";
+  variant?: "cyan" | "orange" | "purple" | "silver" | "green" | "blue" | "pink" | "red" | "white";
   glow?: boolean;
   className?: string;
   disabled?: boolean;
@@ -23,7 +23,7 @@ const GlowingEffect = memo(
     inactiveZone = 0.7,
     proximity = 0,
     spread = 20,
-    variant = "default",
+    variant = "cyan",
     glow = false,
     className,
     movementDuration = 2,
@@ -123,35 +123,73 @@ const GlowingEffect = memo(
         case "white":
           return `repeating-conic-gradient(
             from 236.84deg at 50% 50%,
-            var(--black),
-            var(--black) calc(25% / var(--repeating-conic-gradient-times))
+            #ffffff 0%,
+            #f8fafc calc(50% / var(--repeating-conic-gradient-times)),
+            #ffffff calc(100% / var(--repeating-conic-gradient-times))
           )`;
         case "cyan":
-          return `radial-gradient(circle, #06b6d4 10%, #06b6d400 20%),
-            radial-gradient(circle at 40% 40%, #0891b2 5%, #0891b200 15%),
-            radial-gradient(circle at 60% 60%, #0e7490 10%, #0e749000 20%), 
-            radial-gradient(circle at 40% 60%, #155e75 10%, #155e7500 20%),
-            repeating-conic-gradient(
-              from 236.84deg at 50% 50%,
-              #06b6d4 0%,
-              #0891b2 calc(25% / var(--repeating-conic-gradient-times)),
-              #0e7490 calc(50% / var(--repeating-conic-gradient-times)), 
-              #155e75 calc(75% / var(--repeating-conic-gradient-times)),
-              #06b6d4 calc(100% / var(--repeating-conic-gradient-times))
-            )`;
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #06b6d4 0%,
+            #0891b2 calc(50% / var(--repeating-conic-gradient-times)),
+            #06b6d4 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
+        case "orange":
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #f97316 0%,
+            #ea580c calc(50% / var(--repeating-conic-gradient-times)),
+            #f97316 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
+        case "purple":
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #a855f7 0%,
+            #9333ea calc(50% / var(--repeating-conic-gradient-times)),
+            #a855f7 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
+        case "silver":
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #94a3b8 0%,
+            #64748b calc(50% / var(--repeating-conic-gradient-times)),
+            #94a3b8 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
+        case "green":
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #22c55e 0%,
+            #16a34a calc(50% / var(--repeating-conic-gradient-times)),
+            #22c55e calc(100% / var(--repeating-conic-gradient-times))
+          )`;
+        case "blue":
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #3b82f6 0%,
+            #2563eb calc(50% / var(--repeating-conic-gradient-times)),
+            #3b82f6 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
+        case "pink":
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #ec4899 0%,
+            #db2777 calc(50% / var(--repeating-conic-gradient-times)),
+            #ec4899 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
+        case "red":
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #ef4444 0%,
+            #dc2626 calc(50% / var(--repeating-conic-gradient-times)),
+            #ef4444 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
         default:
-          return `radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%),
-            radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%),
-            radial-gradient(circle at 60% 60%, #5a922c 10%, #5a922c00 20%), 
-            radial-gradient(circle at 40% 60%, #4c7894 10%, #4c789400 20%),
-            repeating-conic-gradient(
-              from 236.84deg at 50% 50%,
-              #dd7bbb 0%,
-              #d79f1e calc(25% / var(--repeating-conic-gradient-times)),
-              #5a922c calc(50% / var(--repeating-conic-gradient-times)), 
-              #4c7894 calc(75% / var(--repeating-conic-gradient-times)),
-              #dd7bbb calc(100% / var(--repeating-conic-gradient-times))
-            )`;
+          return `repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            #06b6d4 0%,
+            #0891b2 calc(50% / var(--repeating-conic-gradient-times)),
+            #06b6d4 calc(100% / var(--repeating-conic-gradient-times))
+          )`;
       }
     };
 
@@ -163,6 +201,13 @@ const GlowingEffect = memo(
             glow && "opacity-100",
             variant === "white" && "border-white",
             variant === "cyan" && "border-cyan-400",
+            variant === "orange" && "border-orange-400",
+            variant === "purple" && "border-purple-400",
+            variant === "silver" && "border-slate-400",
+            variant === "green" && "border-green-400",
+            variant === "blue" && "border-blue-400",
+            variant === "pink" && "border-pink-400",
+            variant === "red" && "border-red-400",
             disabled && "!block"
           )}
         />

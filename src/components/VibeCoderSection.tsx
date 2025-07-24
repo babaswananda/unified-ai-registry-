@@ -150,7 +150,7 @@ export default function VibeCoderSection() {
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <GlowingEffect
-                      variant="default"
+                      variant="purple"
                       spread={25}
                       glow={true}
                       disabled={false}

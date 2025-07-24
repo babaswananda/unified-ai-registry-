@@ -2,6 +2,7 @@
 
 import { GitFork, DollarSign, Code, Zap, Link, Shield } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 import { Button } from "@/components/ui/Button";
 
 export default function ForkdSection() {
@@ -97,15 +98,19 @@ export default function ForkdSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 animate-slide-up" style={{ animationDelay: "200ms" }}>
           {forkableItems.map((item, index) => {
             return (
-              <div
+              <SpotlightCard
                 key={item.title}
-                className="bg-black/50 backdrop-blur-sm border border-green-500/20 rounded-xl p-6 hover:border-green-500/40 hover:scale-105 transition-all duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                variant="green"
+                className="border-green-500/20"
+                glowSpread={30}
+                glowProximity={48}
               >
-                <div className="text-3xl mb-4">{item.emoji}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-300 text-sm">{item.description}</p>
-              </div>
+                <div className="p-6" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="text-3xl mb-4">{item.emoji}</div>
+                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-300 text-sm">{item.description}</p>
+                </div>
+              </SpotlightCard>
             );
           })}
         </div>

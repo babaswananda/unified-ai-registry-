@@ -2,6 +2,7 @@
 
 import { Factory, Zap, Settings, Award } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 import { Button } from "@/components/ui/Button";
 
 export default function ContractManufacturingSection() {
@@ -60,15 +61,19 @@ export default function ContractManufacturingSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 animate-slide-up" style={{ animationDelay: "200ms" }}>
           {services.map((service, index) => {
             return (
-              <div
+              <SpotlightCard
                 key={service.title}
-                className="bg-black/50 backdrop-blur-sm border border-orange-500/20 rounded-xl p-8 text-center hover:border-orange-500/40 hover:scale-105 transition-all duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                variant="orange"
+                className="border-orange-500/20"
+                glowSpread={35}
+                glowProximity={56}
               >
-                <div className="text-4xl mb-6">{service.emoji}</div>
-                <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-gray-300">{service.description}</p>
-              </div>
+                <div className="p-8 text-center" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="text-4xl mb-6">{service.emoji}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-300">{service.description}</p>
+                </div>
+              </SpotlightCard>
             );
           })}
         </div>
