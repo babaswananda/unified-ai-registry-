@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { Search, Filter, Star, Zap, Code, Brain, Globe } from "lucide-react";
+import { Search, Filter } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
@@ -107,17 +107,17 @@ export default function RegistryPage() {
   ];
 
   const categories = [
-    { id: "all", name: "All Handles", icon: Globe, count: 85 },
-    { id: "aiagents", name: ".aiagents", icon: Brain, count: 10 },
-    { id: "madeindetroit", name: ".madeindetroit", icon: Star, count: 10 },
-    { id: "vibecoder", name: ".vibecoder", icon: Code, count: 10 },
-    { id: "k12", name: ".k-12", icon: Filter, count: 10 },
-    { id: "aifactory", name: ".aifactory", icon: Zap, count: 5 },
-    { id: "devcommunity", name: ".devcommunity", icon: Code, count: 5 },
-    { id: "humanintheloop", name: ".humanintheloop", icon: Brain, count: 3 },
-    { id: "iaas", name: ".iaas", icon: Zap, count: 3 },
-    { id: "gmt", name: ".gmt", icon: Star, count: 2 },
-    { id: "gmt7", name: ".gmt-7", icon: Star, count: 2 },
+    { id: "all", name: "All Handles", emoji: "🌐", count: 85 },
+    { id: "aiagents", name: ".aiagents", emoji: "🤖", count: 10 },
+    { id: "madeindetroit", name: ".madeindetroit", emoji: "🏭", count: 10 },
+    { id: "vibecoder", name: ".vibecoder", emoji: "💻", count: 10 },
+    { id: "k12", name: ".k-12", emoji: "🏫", count: 10 },
+    { id: "aifactory", name: ".aifactory", emoji: "🏭", count: 5 },
+    { id: "devcommunity", name: ".devcommunity", emoji: "👾", count: 5 },
+    { id: "humanintheloop", name: ".humanintheloop", emoji: "🔄", count: 3 },
+    { id: "iaas", name: ".iaas", emoji: "⚡", count: 3 },
+    { id: "gmt", name: ".gmt", emoji: "🧠", count: 2 },
+    { id: "gmt7", name: ".gmt-7", emoji: "🚀", count: 2 },
   ];
 
   const filteredHandles = unifiedHandles
@@ -154,7 +154,7 @@ export default function RegistryPage() {
             <ScrollReveal direction="up" delay={200}>
               <div className="text-center mb-12">
                 <div className="inline-flex items-center space-x-3 bg-cyan-500/10 border border-cyan-500/20 px-6 py-3 rounded-full mb-8">
-                  <Globe className="w-5 h-5 text-cyan-400" />
+                  <span className="text-xl">🌐</span>
                   <span className="text-cyan-400 font-semibold">Domain Registry</span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -190,7 +190,6 @@ export default function RegistryPage() {
                   {/* Category Filters */}
                   <div className="flex flex-wrap gap-3 mb-6">
                     {categories.map((category) => {
-                      const Icon = category.icon;
                       return (
                         <button
                           key={category.id}
@@ -201,7 +200,7 @@ export default function RegistryPage() {
                               : "bg-black/30 border-gray-600 text-gray-300 hover:border-cyan-500/30"
                           }`}
                         >
-                          <Icon className="w-4 h-4" />
+                          <span className="text-lg">{category.emoji}</span>
                           <span className="text-sm font-medium">{category.name}</span>
                           <span className="text-xs bg-gray-700 px-2 py-1 rounded-full">{category.count}</span>
                         </button>
@@ -261,7 +260,7 @@ export default function RegistryPage() {
                         </span>
                       </div>
                       {handle.premium && (
-                        <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                        <span className="text-yellow-400 text-lg">⭐</span>
                       )}
                     </div>
 
