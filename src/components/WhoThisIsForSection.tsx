@@ -92,17 +92,18 @@ export default function WhoThisIsForSection() {
                 borderWidth={1}
               />
               <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 h-full">
-              <div className="text-center space-y-4">
-                <div className="text-4xl mb-4">{audience.emoji}</div>
-                <h3 className={`text-lg font-bold bg-gradient-to-r ${audience.color} bg-clip-text text-transparent`}>
-                  {audience.title}
-                </h3>
-                <p className="text-gray-300 text-sm font-medium">
-                  {audience.description}
-                </p>
-                <p className="text-gray-400 text-xs">
-                  {audience.details}
-                </p>
+                <div className="text-center space-y-4">
+                  <div className="text-4xl mb-4">{audience.emoji}</div>
+                  <h3 className={`text-lg font-bold bg-gradient-to-r ${audience.color} bg-clip-text text-transparent`}>
+                    {audience.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm font-medium">
+                    {audience.description}
+                  </p>
+                  <p className="text-gray-400 text-xs">
+                    {audience.details}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
