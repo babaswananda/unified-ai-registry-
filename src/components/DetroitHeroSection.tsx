@@ -36,9 +36,9 @@ export default function DetroitHeroSection() {
 
       <div className="container-max section-padding relative z-10 text-center">
         {/* Detroit Movement Badge */}
-        <div className="inline-flex items-center space-x-3 bg-cyan-500/10 border border-cyan-500/20 px-6 py-3 rounded-full mb-8 animate-slide-up">
+        <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 px-6 py-3 rounded-full mb-8 animate-slide-up">
           <span className="text-2xl">🏗️</span>
-          <span className="text-cyan-400 font-semibold">Infrastructure Root Layer</span>
+          <span className="text-orange-400 font-semibold">Built in Detroit. Backed by Policy. Powered by Agents.</span>
         </div>
 
         {/* Main Hero Text */}
@@ -50,10 +50,11 @@ export default function DetroitHeroSection() {
 
         {/* Subtitle */}
         <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-5xl mx-auto animate-slide-up" style={{ animationDelay: "400ms" }}>
-          From the streets of Trapper's Alley to city halls and campuses across Michigan, 
-          we're not just announcing an AI product — we're unveiling the{" "}
-          <span className="text-cyan-400 font-semibold">Infrastructure Root Layer</span>, 
-          where AI agents live and operate in real life.
+          The next era of infrastructure isn't concrete or copper — it's intelligent.
+          <br />
+          Unified AI is laying the economic, social, and compute foundation for a national and global AI infrastructure rollout — city by city, lane by lane.
+          <br />
+          <span className="text-orange-400 font-semibold">The protocol begins in Detroit. It scales worldwide.</span>
         </p>
 
         {/* Key Value Props */}

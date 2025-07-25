@@ -14,11 +14,15 @@ export default function AgentRevolutionSection() {
     { emoji: "🧠", text: "Built IRL for IRL impact", color: "text-orange-400" }
   ];
 
-  const agentTypes = [
-    "Detroit AI Agents",
-    "Michigan AI Agents", 
-    "School AI Agents",
-    "District AI Agents"
+  const summitMandates = [
+    { title: "Smart Infrastructure", emoji: "🏗️", desc: "Municipal AI integration" },
+    { title: "Automated Manufacturing", emoji: "🏭", desc: "Industrial reshoring" },
+    { title: "Workforce Retraining", emoji: "👥", desc: "AI skills development" },
+    { title: "Localized AI Solutions", emoji: "🎯", desc: "Community-specific deployment" },
+    { title: "Public-Private Partnerships", emoji: "🤝", desc: "Collaborative ecosystems" },
+    { title: "AI Ethics & Governance", emoji: "⚖️", desc: "Privacy & transparency" },
+    { title: "Economic Resilience", emoji: "💪", desc: "Supply chain sovereignty" },
+    { title: "Digital Equity", emoji: "🌐", desc: "Universal AI access" }
   ];
 
   const tickerItems = [
@@ -53,34 +57,34 @@ export default function AgentRevolutionSection() {
         {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
           <div className="inline-flex items-center space-x-3 bg-orange-500/10 border border-orange-500/20 px-6 py-3 rounded-full mb-8">
-            <span className="text-2xl">🧠</span>
-            <span className="text-orange-400 font-semibold">The AI Agent Revolution</span>
+            <span className="text-2xl">🔥</span>
+            <span className="text-orange-400 font-semibold">ORIGIN STORY: DETROIT — THE INFLECTION POINT</span>
           </div>
-          
+
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              The AI Agent Revolution Is Here
+            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+              Detroit AI Summit
             </span>
             <br />
-            <span className="text-white">And It Starts IRL</span>
+            <span className="text-white">Federal Mandate Alignment</span>
           </h2>
-          
-          <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto mb-12">
-            This is the era of local intelligence. Every institution, every entrepreneur, 
-            every family — backed by structured compute and localized AI deployment handles.
+
+          <p className="text-xl sm:text-2xl text-gray-300 max-w-5xl mx-auto mb-12">
+            At the recent <span className="text-orange-400 font-semibold">Detroit AI & Innovation Summit</span>, Mayor Mike Duggan and city leaders outlined a robust vision to propel Detroit—and by extension, America—into an AI-powered economic future. These initiatives align directly with Trump-era federal mandates on infrastructure reshoring and economic sovereignty.
           </p>
         </div>
 
-        {/* Agent Types Grid */}
+        {/* Summit Mandates Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 animate-slide-up" style={{ animationDelay: "200ms" }}>
-          {agentTypes.map((type, index) => (
+          {summitMandates.map((mandate, index) => (
             <div
-              key={type}
-              className="bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 text-center hover:border-cyan-500/40 hover:scale-105 transition-all duration-300"
+              key={mandate.title}
+              className="bg-black/50 backdrop-blur-sm border border-orange-500/20 rounded-xl p-6 text-center hover:border-orange-500/40 hover:scale-105 transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-3xl mb-3">🧠</div>
-              <h3 className="text-lg font-bold text-white">{type}</h3>
+              <div className="text-3xl mb-3">{mandate.emoji}</div>
+              <h3 className="text-lg font-bold text-white mb-2">{mandate.title}</h3>
+              <p className="text-gray-400 text-xs">{mandate.desc}</p>
             </div>
           ))}
         </div>
@@ -102,39 +106,47 @@ export default function AgentRevolutionSection() {
           })}
         </div>
 
-        {/* Global Protocol Teaser */}
-        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-8 text-center animate-slide-up" style={{ animationDelay: "600ms" }}>
+        {/* IRL Response */}
+        <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-2xl p-8 text-center animate-slide-up" style={{ animationDelay: "600ms" }}>
           <div className="flex items-center justify-center space-x-3 mb-6">
-            <span className="text-3xl">🌐</span>
-            <h3 className="text-2xl font-bold text-cyan-400">Unified AI: The Global AI Agent IRL Protocol</h3>
+            <span className="text-3xl">🚀</span>
+            <h3 className="text-2xl font-bold text-orange-400">OUR RESPONSE: THE UNIFIED AI INFRASTRUCTURE ROOT LAYER (IRL)</h3>
           </div>
-          
-          <p className="text-lg text-gray-300 mb-6 max-w-3xl mx-auto">
-            Detroit leads America's AI revolution, but Unified AI is the Infrastructure Root Layer 
-            for agent infrastructure worldwide.
+
+          <p className="text-lg text-gray-300 mb-6 max-w-4xl mx-auto">
+            Unified AI's Infrastructure Root Layer (IRL) is the real-world operational backbone that activates and embodies these mandates in Detroit and beyond.
+            <span className="text-orange-400 font-semibold"> This is not theory—it is IRL deployment driving the new American AI economy.</span>
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="bg-black/30 rounded-lg p-4">
-              <h4 className="text-cyan-400 font-semibold mb-2">.aiagents</h4>
-              <p className="text-gray-300 text-sm">Global registry</p>
+              <h4 className="text-orange-400 font-semibold mb-2">🏛️ Municipal Integration</h4>
+              <p className="text-gray-300 text-sm">AI Alley at Trapper's Alley</p>
             </div>
             <div className="bg-black/30 rounded-lg p-4">
-              <h4 className="text-blue-400 font-semibold mb-2">.agentsia</h4>
-              <p className="text-gray-300 text-sm">French protocol</p>
+              <h4 className="text-red-400 font-semibold mb-2">🏭 Industrial Deployment</h4>
+              <p className="text-gray-300 text-sm">Reshoring with AI workflows</p>
             </div>
             <div className="bg-black/30 rounded-lg p-4">
-              <h4 className="text-purple-400 font-semibold mb-2">.ai智能体</h4>
-              <p className="text-gray-300 text-sm">China protocol</p>
+              <h4 className="text-blue-400 font-semibold mb-2">🎓 Education & Workforce</h4>
+              <p className="text-gray-300 text-sm">Detroit schools AI rollout</p>
             </div>
             <div className="bg-black/30 rounded-lg p-4">
-              <h4 className="text-green-400 font-semibold mb-2">.ki-agenten</h4>
-              <p className="text-gray-300 text-sm">Germany protocol</p>
+              <h4 className="text-purple-400 font-semibold mb-2">🏙️ Localized Sovereignty</h4>
+              <p className="text-gray-300 text-sm">Crypto-native infrastructure</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4">
+              <h4 className="text-cyan-400 font-semibold mb-2">🔒 Data Sovereignty</h4>
+              <p className="text-gray-300 text-sm">Secure protocols</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-2">💼 Operator Economy</h4>
+              <p className="text-gray-300 text-sm">Real income streams for HITL</p>
             </div>
           </div>
-          
+
           <p className="text-xl font-bold text-white mt-6">
-            You're not just claiming a digital handle — you're taking your place in the AI world.
+            Detroit's summit was the spark. <span className="text-orange-400">Unified AI IRL is the engine driving America's sovereign AI infrastructure future</span>—built IRL, built for IRL impact, built for America.
           </p>
         </div>
       </div>
