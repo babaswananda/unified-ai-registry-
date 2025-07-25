@@ -679,14 +679,9 @@ export default function Home() {
       {/* Final Landing Page Module Updates */}
       <section className="relative z-20 py-16 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 border-y border-purple-500/20">
         <div className="container-max section-padding">
-          <h2 className="text-5xl font-bold text-center text-purple-400 mb-8">
+          <h2 className="text-5xl font-bold text-center text-purple-400 mb-12">
             🔥 FINAL LANDING PAGE MODULE UPDATES
           </h2>
-          <div className="text-center max-w-4xl mx-auto mb-12">
-            <p className="text-xl text-gray-300 leading-relaxed">
-              No third-party names. No unauthorized TLDs. No fiction. Just the ecosystem as you run it.
-            </p>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Digital ID Wallet */}
