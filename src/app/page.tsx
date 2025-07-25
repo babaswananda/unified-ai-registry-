@@ -34,7 +34,7 @@ export default function Home() {
       <ConditionalBackground
         intensity={0.8}
         particleCount={150}
-        floatingCount={15}
+        floatingCount={0}
         gridSize={80}
         className="absolute inset-0"
       />
