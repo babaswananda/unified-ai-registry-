@@ -281,6 +281,125 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Visual Infrastructure Map */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-cyan-400 mb-8">
+            🗺️ VISUAL INFRASTRUCTURE MAP
+          </h3>
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-cyan-500/20">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-cyan-400 mb-4">🏗️ Infrastructure Layer</h4>
+                  <div className="space-y-3">
+                    <div className="bg-cyan-500/10 border border-cyan-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Sovereign AI Handles</span>
+                    </div>
+                    <div className="bg-cyan-500/10 border border-cyan-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Agent Registry Protocol</span>
+                    </div>
+                    <div className="bg-cyan-500/10 border border-cyan-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Data Sovereignty Layer</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-green-400 mb-4">🤖 Agent Layer</h4>
+                  <div className="space-y-3">
+                    <div className="bg-green-500/10 border border-green-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Voice-Driven Agents</span>
+                    </div>
+                    <div className="bg-green-500/10 border border-green-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Human-In-Loop Oversight</span>
+                    </div>
+                    <div className="bg-green-500/10 border border-green-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Multi-Sector Deployment</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-orange-400 mb-4">🌐 Physical Layer</h4>
+                  <div className="space-y-3">
+                    <div className="bg-orange-500/10 border border-orange-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Device Integration</span>
+                    </div>
+                    <div className="bg-orange-500/10 border border-orange-500/20 rounded p-3">
+                      <span className="text-white font-semibold">IRL Terminals</span>
+                    </div>
+                    <div className="bg-orange-500/10 border border-orange-500/20 rounded p-3">
+                      <span className="text-white font-semibold">Real-World Operations</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center mt-8">
+                <p className="text-xl text-gray-300 font-bold">
+                  This is not a SaaS play. This is an infrastructure layer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Device & Hardware Integration */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-purple-400 mb-8">
+            🔌 DEVICE & HARDWARE INTEGRATION
+          </h3>
+          <div className="max-w-5xl mx-auto text-center mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Where do these agents run? How do they show up in the real world?
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: "🏪", title: "AI Agent-Enabled Kiosks", desc: "POS systems, control panels, public terminals" },
+              { icon: "📞", title: "Voice Terminals", desc: "311, DMV, public library kiosks, city services" },
+              { icon: "📱", title: "Mobile-Native Handles", desc: "QR/biometric auth, smartphone integration" },
+              { icon: "🪧", title: "IRL Signage", desc: "Agent-powered infrastructure, smart displays" }
+            ].map((item, index) => (
+              <div key={index} className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
+                <div className="text-4xl mb-4 text-center">{item.icon}</div>
+                <h4 className="text-lg font-bold text-white mb-3 text-center">{item.title}</h4>
+                <p className="text-gray-300 text-sm leading-relaxed text-center">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Infrastructure-Grade Security */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-red-400 mb-8">
+            🔒 INFRASTRUCTURE-GRADE SECURITY
+          </h3>
+          <div className="max-w-5xl mx-auto text-center mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Compliant, secure, and sovereign. Built for sensitive sectors.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {[
+              "Sovereign AI Handle verification (multi-factor, biometrics)",
+              "Compliant with HIPAA, FERPA, CJIS, FedRAMP (as applicable)",
+              "Local-first data processing and agent memory constraints",
+              "Human oversight + agent sandboxing guarantees",
+              "NIST/NISTIR-aligned AI governance models",
+              "UnifiedAI is not a wrapper around existing APIs — sovereign infrastructure built from ground up"
+            ].map((item, index) => (
+              <div key={index} className="flex items-start space-x-3 p-4 bg-black/30 rounded-lg border border-red-500/20">
+                <span className="text-red-400 font-bold text-lg">🛡️</span>
+                <p className="text-gray-300">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* AI Agent Handles */}
       <section className="relative z-20 py-16">
         <div className="container-max section-padding">
@@ -314,6 +433,131 @@ export default function Home() {
               <p className="text-xl text-gray-300">
                 Free, multi-language AI handles to enable equitable access for educational deployments.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* U.S. Domestic Infrastructure Emphasis */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-blue-400 mb-8">
+            🇺🇸 U.S. DOMESTIC INFRASTRUCTURE ALIGNMENT
+          </h3>
+          <div className="max-w-5xl mx-auto text-center mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Explicitly aligned with reshoring, critical infrastructure, and domestic innovation mandates.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {[
+              "Executive Orders on domestic AI development and deployment",
+              "CHIPS & Science Act manufacturing and technology provisions",
+              "Made in America mandates for federal procurement",
+              "National AI Research Resource (NAIRR) framework alignment",
+              "Critical infrastructure protection and resilience",
+              "Domestic supply chain security and sovereignty"
+            ].map((item, index) => (
+              <div key={index} className="flex items-start space-x-3 p-4 bg-black/30 rounded-lg border border-blue-500/20">
+                <span className="text-blue-400 font-bold text-lg">🏭</span>
+                <p className="text-gray-300">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Agent Lifecycle */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-green-400 mb-8">
+            👷 AGENT LIFECYCLE: From Domain to Deployment
+          </h3>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Register Sovereign Handle", desc: "e.g. guardian.aiagents", icon: "🪪" },
+                { step: "2", title: "Assign Function", desc: "Via dashboard or dev tools", icon: "⚙️" },
+                { step: "3", title: "Configure Agent", desc: "Voice, permissions, memory, device bindings", icon: "🎛️" },
+                { step: "4", title: "Deploy Environment", desc: "Physical or digital environment", icon: "🚀" },
+                { step: "5", title: "Monitor Oversight", desc: "Human oversight, compliance dashboards", icon: "👥" },
+                { step: "6", title: "Iterate Skillset", desc: "Fine-tuning and plug-ins", icon: "🔄" }
+              ].map((item, index) => (
+                <div key={index} className="relative">
+                  <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-green-500/20 hover:border-green-500/40 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                        {item.step}
+                      </div>
+                      <div className="text-3xl">{item.icon}</div>
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-3">{item.title}</h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Human-AI Workforce Alignment */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-yellow-400 mb-8">
+            🧑‍🏭 HUMAN-AI WORKFORCE ALIGNMENT
+          </h3>
+          <div className="max-w-5xl mx-auto text-center mb-12">
+            <p className="text-2xl text-yellow-400 font-bold mb-6">
+              AI agents do not replace jobs — they modernize functions.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-yellow-500/20">
+                <div className="text-4xl mb-4">🤝</div>
+                <h4 className="text-lg font-bold text-white mb-3">Collaboration Focus</h4>
+                <p className="text-gray-300 text-sm">UnifiedAI collaborates with retraining and workforce development programs</p>
+              </div>
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-yellow-500/20">
+                <div className="text-4xl mb-4">👥</div>
+                <h4 className="text-lg font-bold text-white mb-3">Human Oversight</h4>
+                <p className="text-gray-300 text-sm">Every agent rollout includes Human-In-The-Loop oversight roles</p>
+              </div>
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-yellow-500/20">
+                <div className="text-4xl mb-4">📈</div>
+                <h4 className="text-lg font-bold text-white mb-3">Function Enhancement</h4>
+                <p className="text-gray-300 text-sm">Agents augment human capabilities rather than replacing workers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Early Deployment Zones */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-purple-400 mb-8">
+            🎯 EARLY DEPLOYMENT ZONES
+          </h3>
+          <div className="max-w-5xl mx-auto text-center mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Reference deployments and sandbox pilots demonstrating real-world infrastructure.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20">
+              <div className="text-4xl mb-4 text-center">🏙️</div>
+              <h4 className="text-lg font-bold text-white mb-3 text-center">Municipal Pilots</h4>
+              <p className="text-gray-300 text-sm text-center">Initial rollouts underway in Detroit, Atlanta, Oakland</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20">
+              <div className="text-4xl mb-4 text-center">🏛️</div>
+              <h4 className="text-lg font-bold text-white mb-3 text-center">Innovation Hubs</h4>
+              <p className="text-gray-300 text-sm text-center">Municipal AI pilots with City Innovation Hubs</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20">
+              <div className="text-4xl mb-4 text-center">🏭</div>
+              <h4 className="text-lg font-bold text-white mb-3 text-center">Private Deployments</h4>
+              <p className="text-gray-300 text-sm text-center">U.S. factories and university labs</p>
             </div>
           </div>
         </div>
@@ -353,6 +597,80 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sovereign Handle Registry Stats */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-cyan-400 mb-8">
+            📊 SOVEREIGN HANDLE REGISTRY
+          </h3>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-8 mb-12">
+              <h4 className="text-3xl font-bold text-cyan-400 mb-4">Current Registry Stats</h4>
+              <p className="text-2xl text-white font-bold mb-6">
+                Over 2,300 AI handles already claimed by institutional partners and developers across 8 sectors.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-cyan-400">2,300+</div>
+                  <div className="text-gray-300 text-sm">Handles Claimed</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-400">8</div>
+                  <div className="text-gray-300 text-sm">Active Sectors</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-400">150+</div>
+                  <div className="text-gray-300 text-sm">Institutional Partners</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-400">24/7</div>
+                  <div className="text-gray-300 text-sm">Infrastructure Uptime</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Direct CTAs for Key Audiences */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-orange-400 mb-12">
+            🎯 DIRECT ACCESS FOR KEY AUDIENCES
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-red-500/20 text-center">
+              <div className="text-4xl mb-4">🏛️</div>
+              <h4 className="text-lg font-bold text-white mb-4">Government Officials</h4>
+              <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-3 font-bold">
+                Schedule Infrastructure Briefing
+              </Button>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-blue-500/20 text-center">
+              <div className="text-4xl mb-4">🎓</div>
+              <h4 className="text-lg font-bold text-white mb-4">Universities</h4>
+              <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 font-bold">
+                Deploy Campus-Wide AI Handles
+              </Button>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-green-500/20 text-center">
+              <div className="text-4xl mb-4">🏭</div>
+              <h4 className="text-lg font-bold text-white mb-4">Manufacturers</h4>
+              <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 font-bold">
+                Deploy Floor Operator Agents
+              </Button>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20 text-center">
+              <div className="text-4xl mb-4">🎨</div>
+              <h4 className="text-lg font-bold text-white mb-4">Creators</h4>
+              <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 font-bold">
+                Claim Verified NIL AI Agent Identity
+              </Button>
             </div>
           </div>
         </div>
