@@ -20,6 +20,7 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/registry", label: "Registry" },
+    { href: "/infrastructure", label: "Infrastructure" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
     { href: "/download-agentic-web", label: "Developers" },
