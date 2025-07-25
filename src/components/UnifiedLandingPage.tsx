@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { Button } from "@/components/ui/Button";
-import SpotlightCard from "@/components/ui/SpotlightCard";
+
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import NewsTicker from "@/components/ui/NewsTicker";
 
@@ -294,7 +294,7 @@ export default function UnifiedLandingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
             {summitPoints.map((point, index) => (
               <div
                 key={index}
@@ -310,10 +310,10 @@ export default function UnifiedLandingPage() {
                   inactiveZone={0.01}
                   borderWidth={1}
                 />
-                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-8">
-                  <div className="flex items-start space-x-6">
-                    <span className="text-red-400 font-bold text-2xl">•</span>
-                    <p className="text-gray-300 text-xl leading-relaxed">{point}</p>
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-red-400 font-bold">•</span>
+                    <p className="text-gray-300">{point}</p>
                   </div>
                 </div>
               </div>
@@ -323,18 +323,18 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Infrastructure Root Layer */}
-      <section className="relative z-20 py-40">
+      <section className="relative z-20 py-24">
         <div className="container-max section-padding">
-          <div className="text-center mb-24">
-            <h2 className="text-6xl sm:text-7xl font-bold mb-12">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               <span className="text-blue-400">🧱 Infrastructure Root Layer (IRL)</span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-7xl mx-auto mb-16 leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
               Unified AI IRL is a protocol stack, not a product:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
             {irlFeatures.map((feature, index) => (
               <div
                 key={index}
@@ -350,10 +350,10 @@ export default function UnifiedLandingPage() {
                   inactiveZone={0.01}
                   borderWidth={1}
                 />
-                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-8">
-                  <div className="flex items-start space-x-6">
-                    <span className="text-blue-400 font-bold text-2xl">•</span>
-                    <p className="text-gray-300 text-xl leading-relaxed">{feature}</p>
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-blue-400 font-bold">•</span>
+                    <p className="text-gray-300">{feature}</p>
                   </div>
                 </div>
               </div>
@@ -636,51 +636,51 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative z-20 py-40">
+      <section className="relative z-20 py-24">
         <div className="container-max section-padding text-center">
-          <h2 className="text-7xl sm:text-8xl font-bold mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8">
             <span className="text-orange-400">🔥 Launch is Now</span>
           </h2>
 
-          <p className="text-4xl text-gray-300 max-w-6xl mx-auto mb-20 leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
             AI Agents IRL—the new operational layer for smart societies.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             <Button
               variant="gradient"
               size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white px-8 py-6 text-xl font-semibold"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white px-6 py-3 font-semibold"
             >
               Become Operator
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
 
             <Button
               variant="gradient"
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white px-8 py-6 text-xl font-semibold"
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white px-6 py-3 font-semibold"
             >
               Launch City
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
 
             <Button
               variant="gradient"
               size="lg"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white px-8 py-6 text-xl font-semibold"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white px-6 py-3 font-semibold"
             >
               Download Infra Deck
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
 
             <Button
               variant="gradient"
               size="lg"
-              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-8 py-6 text-xl font-semibold"
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-6 py-3 font-semibold"
             >
               Contact for Institutional Rollout
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
         </div>
