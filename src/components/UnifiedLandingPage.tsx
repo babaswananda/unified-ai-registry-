@@ -221,19 +221,19 @@ export default function UnifiedLandingPage() {
               {/* Left Sidebar - Role Selector */}
               <div className="w-1/3 bg-gradient-to-b from-cyan-500/10 to-blue-500/10 border-r border-cyan-500/20 p-8">
                 <h3 className="text-2xl font-bold text-cyan-400 mb-8">🎯 Select Your Role</h3>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {targetAudience.map((audience, index) => (
-                    <div
+                    <button
                       key={index}
-                      className="p-4 rounded-lg border border-cyan-500/20 hover:bg-cyan-500/10 cursor-pointer transition-all"
+                      className="w-full p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border-l-4 border-cyan-500 text-left transition-all duration-300 hover:scale-105"
                     >
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-cyan-500/30 rounded-full flex items-center justify-center text-xl">
                           {index === 0 ? "🏛️" : index === 1 ? "🎓" : index === 2 ? "🏭" : index === 3 ? "🏥" : index === 4 ? "🏦" : index === 5 ? "🎨" : "👨‍💻"}
-                        </span>
+                        </div>
                         <span className="text-white font-semibold">{audience}</span>
                       </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -278,28 +278,24 @@ export default function UnifiedLandingPage() {
                   </div>
                 </div>
 
-                {/* Orbiting Nodes */}
-                <div className="absolute inset-0">
-                  {irlFeatures.slice(0, 6).map((feature, index) => {
-                    const angle = (index * 60) * (Math.PI / 180);
-                    const radius = 200;
-                    const x = Math.cos(angle) * radius;
-                    const y = Math.sin(angle) * radius;
-
-                    return (
-                      <div
-                        key={index}
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                        style={{
-                          transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
-                        }}
-                      >
-                        <div className="p-3 bg-black/70 border border-blue-500/30 rounded-lg text-center">
-                          <div className="text-blue-400 font-semibold text-xs">{feature.split(' ').slice(0, 2).join(' ')}</div>
-                        </div>
+                {/* Simple Grid Nodes */}
+                <div className="grid grid-cols-3 gap-8 mt-16">
+                  {irlFeatures.slice(0, 6).map((feature, index) => (
+                    <div key={index} className="relative">
+                      <GlowingEffect
+                        variant="blue"
+                        spread={20}
+                        glow={true}
+                        disabled={false}
+                        proximity={30}
+                        inactiveZone={0.01}
+                        borderWidth={1}
+                      />
+                      <div className="bg-black/70 border border-blue-500/30 rounded-lg p-4 text-center hover:bg-blue-500/10 transition-colors">
+                        <div className="text-blue-400 font-semibold text-sm">{feature}</div>
                       </div>
-                    );
-                  })}
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -308,13 +304,30 @@ export default function UnifiedLandingPage() {
                 <h3 className="text-3xl font-bold text-center text-pink-400 mb-8">🛠️ Hardware Suite</h3>
                 <div className="flex space-x-6 overflow-x-auto pb-4">
                   {hardwareSuite.map((hardware, index) => (
-                    <div key={index} className="flex-shrink-0 w-64 p-6 bg-black/30 rounded-xl border border-pink-500/20 text-center hover:scale-105 transition-transform">
-                      <div className="text-5xl mb-4">{hardware.emoji}</div>
-                      <h4 className="text-lg font-bold text-white mb-2">{hardware.name}</h4>
-                      <p className="text-gray-300 text-sm mb-4">{hardware.desc}</p>
-                      <Button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 text-sm">
-                        View Specs
-                      </Button>
+                    <div key={index} className="flex-shrink-0 w-72 relative group">
+                      <GlowingEffect
+                        variant="pink"
+                        spread={25}
+                        glow={true}
+                        disabled={false}
+                        proximity={40}
+                        inactiveZone={0.01}
+                        borderWidth={1}
+                      />
+                      <div className="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-pink-500/10 p-8 text-center transform group-hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/20 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+                        <div className="relative z-10">
+                          <div className="text-6xl mb-6 transform group-hover:rotate-12 transition-transform duration-300">{hardware.emoji}</div>
+                          <h4 className="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">{hardware.name}</h4>
+                          <p className="text-gray-300 text-sm mb-6">{hardware.desc}</p>
+                          <div className="space-y-2">
+                            <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 font-bold">
+                              View Specs
+                            </Button>
+                            <div className="text-pink-400 font-mono text-xs">SKU: {hardware.name.replace(/\s+/g, '').toUpperCase()}-001</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -354,27 +367,51 @@ export default function UnifiedLandingPage() {
                     { step: 3, title: "Download Deck", desc: "Get institutional briefing materials", icon: "📊", status: "pending" },
                     { step: 4, title: "Contact Support", desc: "Enterprise rollout assistance", icon: "🤝", status: "pending" }
                   ].map((item, index) => (
-                    <div key={index} className={`flex items-center p-6 rounded-xl border transition-all cursor-pointer ${
-                      item.status === 'active'
-                        ? 'bg-green-500/10 border-green-500/50'
-                        : 'bg-black/30 border-gray-500/20 hover:border-green-500/30'
-                    }`}>
-                      <div className="text-4xl mr-6">{item.icon}</div>
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <span className="text-green-400 font-bold">Step {item.step}</span>
-                          {item.status === 'active' && <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>}
+                    <div key={index} className="relative">
+                      {/* Step Connector Line */}
+                      {index < 3 && (
+                        <div className="absolute left-6 top-16 w-0.5 h-8 bg-gradient-to-b from-green-500 to-gray-500"></div>
+                      )}
+
+                      <div className={`flex items-start space-x-4 transition-all cursor-pointer ${
+                        item.status === 'active' ? 'transform scale-105' : ''
+                      }`}>
+                        {/* Step Number Circle */}
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg border-2 ${
+                          item.status === 'active'
+                            ? 'bg-green-500 border-green-400 text-white animate-pulse'
+                            : 'bg-gray-700 border-gray-500 text-gray-400'
+                        }`}>
+                          {item.step}
                         </div>
-                        <h4 className="text-white font-semibold mb-1">{item.title}</h4>
-                        <p className="text-gray-300 text-sm">{item.desc}</p>
+
+                        {/* Step Content */}
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center space-x-3">
+                              <span className="text-2xl">{item.icon}</span>
+                              <h4 className={`font-bold text-lg ${
+                                item.status === 'active' ? 'text-green-400' : 'text-white'
+                              }`}>{item.title}</h4>
+                            </div>
+                            <Button className={`${
+                              item.status === 'active'
+                                ? 'bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400'
+                                : 'bg-gray-600 cursor-not-allowed'
+                            } text-white px-4 py-2 text-sm`}>
+                              {item.status === 'active' ? '▶ Start' : '🔒 Locked'}
+                            </Button>
+                          </div>
+                          <p className="text-gray-300 text-sm pl-11">{item.desc}</p>
+                          {item.status === 'active' && (
+                            <div className="mt-2 pl-11">
+                              <div className="w-full bg-gray-700 rounded-full h-2">
+                                <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full w-1/3 animate-pulse"></div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                      <Button className={`${
-                        item.status === 'active'
-                          ? 'bg-gradient-to-r from-green-500 to-emerald-500'
-                          : 'bg-gray-600'
-                      } text-white px-6 py-2`}>
-                        {item.status === 'active' ? 'Start' : 'Locked'}
-                      </Button>
                     </div>
                   ))}
                 </div>
