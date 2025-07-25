@@ -109,15 +109,17 @@ export default function UnifiedLandingPage() {
 
   return (
     <div className="relative z-10">
-      <ConditionalBackground 
+      <ConditionalBackground
         intensity={0.6}
         particleCount={80}
         floatingCount={0}
         gridSize={120}
       />
-      
-      {/* News Ticker */}
-      <NewsTicker items={tickerItems} speed={60} className="mb-8" />
+
+      {/* News Ticker - Add top padding to account for nav */}
+      <div className="pt-20">
+        <NewsTicker items={tickerItems} speed={60} className="mb-8" />
+      </div>
       
       {/* Hero Section */}
       <section className="py-40 text-center">
