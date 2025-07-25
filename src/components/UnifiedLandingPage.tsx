@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Shield, Zap, Users, Building, Factory, Heart, DollarSign, ShoppingCart, Globe, Smartphone, Monitor, CreditCard, Server } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { Button } from "@/components/ui/Button";
 import SpotlightCard from "@/components/ui/SpotlightCard";
@@ -108,7 +108,7 @@ export default function UnifiedLandingPage() {
   ];
 
   return (
-    <div className="relative z-10">
+    <div className="relative">
       <ConditionalBackground
         intensity={0.6}
         particleCount={80}
@@ -117,12 +117,12 @@ export default function UnifiedLandingPage() {
       />
 
       {/* News Ticker - Add top padding to account for nav */}
-      <div className="pt-20">
+      <div className="relative z-20 pt-20">
         <NewsTicker items={tickerItems} speed={60} className="mb-8" />
       </div>
       
       {/* Hero Section */}
-      <section className="py-40 text-center">
+      <section className="relative z-20 py-40 text-center">
         <div className="container-max section-padding">
           <div className="mb-16">
             <div className="inline-flex items-center space-x-4 bg-black/50 border border-orange-500/30 px-10 py-5 rounded-full mb-16">
@@ -202,7 +202,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Who This Is For */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -245,7 +245,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Launch Tools & Registry Handles */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -283,7 +283,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Origin Context */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -323,7 +323,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Infrastructure Root Layer */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -363,7 +363,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Structured Compute Network */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -400,7 +400,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Handle Registry & Identity */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -437,7 +437,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Operator Class Training */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -474,7 +474,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Developer Toolchain */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -511,7 +511,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Structured Compute */}
-      <section className="py-24">
+      <section className="relative z-20 py-24">
         <div className="container-max section-padding">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
@@ -556,7 +556,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Hardware & Manufacturing */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -597,7 +597,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Trump-era Mandates */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
             <h2 className="text-6xl sm:text-7xl font-bold mb-12">
@@ -636,7 +636,7 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-40">
+      <section className="relative z-20 py-40">
         <div className="container-max section-padding text-center">
           <h2 className="text-7xl sm:text-8xl font-bold mb-16">
             <span className="text-orange-400">🔥 Launch is Now</span>
