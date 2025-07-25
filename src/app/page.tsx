@@ -676,6 +676,171 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Final Landing Page Module Updates */}
+      <section className="relative z-20 py-16 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 border-y border-purple-500/20">
+        <div className="container-max section-padding">
+          <h2 className="text-5xl font-bold text-center text-purple-400 mb-8">
+            🔥 FINAL LANDING PAGE MODULE UPDATES
+          </h2>
+          <div className="text-center max-w-4xl mx-auto mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              No third-party names. No unauthorized TLDs. No fiction. Just the ecosystem as you run it.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {/* Digital ID Wallet */}
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-blue-500/20">
+              <h3 className="text-2xl font-bold text-blue-400 mb-4">🪪 .digitalidwallet – The Root Identity Layer</h3>
+              <p className="text-gray-300 mb-6">Your sovereign AI-native wallet, issued as a Top-Level Domain.</p>
+              <div className="space-y-3">
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Functions as your chat handle, payment address, digital vault, and agent key</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Every other domain is an alias, asset, or expansion of this root</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Enables AI commerce, verified identity, and programmable credentials</p>
+                </div>
+              </div>
+              <p className="text-blue-400 font-bold mt-6">This is your new operating system for the internet. Every human, creator, business, and agency runs through it.</p>
+            </div>
+
+            {/* AI Marketplace */}
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-green-500/20">
+              <h3 className="text-2xl font-bold text-green-400 mb-4">🛍️ .aimarketplace – The Intelligence Commerce Network</h3>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start space-x-3">
+                  <span className="text-green-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">A top-level domain powering the decentralized exchange for AI-native services, agents, utilities, and digital products</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-green-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Domain-based storefronts and service endpoints, fully wallet-connected</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-green-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">No intermediaries, no approvals — permissionless publishing and payment</p>
+                </div>
+              </div>
+              <p className="text-green-400 font-bold">Think Shopify meets programmable agents — but built for the autonomous era.</p>
+            </div>
+
+            {/* AI Directory */}
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-yellow-500/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">📇 .aidirectory – The Master Registry of AI Handles & Agents</h3>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start space-x-3">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">TLD powering the global directory of registered AI handles, services, agents, and operator pages</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Searchable by function, domain, category, industry, identity, and use case</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Verified entries are wallet-authenticated, real, and bound to sovereign identity</p>
+                </div>
+              </div>
+              <p className="text-yellow-400 font-bold">This is the yellow pages of the new internet — intelligent, decentralized, and self-sovereign.</p>
+            </div>
+
+            {/* Dev Community Portal */}
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-purple-500/20">
+              <h3 className="text-2xl font-bold text-purple-400 mb-4">🧑‍💻 Dev Community Portal</h3>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start space-x-3">
+                  <span className="text-purple-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Ecosystem onboarding and dev hub for the AI-Crypto native internet</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-purple-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Access SDKs, templates, system modules, integration tools</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-purple-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Deploy on real domains, linked to real wallets</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-purple-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Contribute and earn through build-to-earn grants and publishing rails</p>
+                </div>
+              </div>
+              <p className="text-purple-400 font-bold">Every dev is issued a wallet + workspace — no accounts, no dependencies.</p>
+            </div>
+          </div>
+
+          {/* Get That Paid */}
+          <div className="mt-8 max-w-4xl mx-auto">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-8 border border-orange-500/20">
+              <h3 className="text-2xl font-bold text-orange-400 mb-4">💰 getthatpaid</h3>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start space-x-3">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">The verified payments and earnings layer</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Domain-linked microcommerce rails: donations, gigs, products, services, calls, content</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <p className="text-gray-300 text-sm">Pay into any handle. Stream to any wallet. Monetize any domain.</p>
+                </div>
+              </div>
+              <p className="text-orange-400 font-bold">Handles powered by .digitalidwallet plug in directly. No middlemen, ever.</p>
+            </div>
+          </div>
+
+          {/* Unified Stack Recap */}
+          <div className="mt-12 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400 mb-8">🌐 Unified Stack Recap</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+              <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                <div className="font-mono text-blue-400 font-bold">.digitalidwallet</div>
+                <div className="text-gray-300 text-sm">root identity</div>
+              </div>
+              <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+                <div className="font-mono text-green-400 font-bold">.aimarketplace</div>
+                <div className="text-gray-300 text-sm">service layer</div>
+              </div>
+              <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+                <div className="font-mono text-yellow-400 font-bold">.aidirectory</div>
+                <div className="text-gray-300 text-sm">discovery layer</div>
+              </div>
+              <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                <div className="font-mono text-orange-400 font-bold">get.paid</div>
+                <div className="text-gray-300 text-sm">monetization rails</div>
+              </div>
+              <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+                <div className="font-mono text-purple-400 font-bold">All other TLDs</div>
+                <div className="text-gray-300 text-sm">alias domains & verticals</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Final Statement */}
+          <div className="mt-16 text-center max-w-5xl mx-auto">
+            <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/20 rounded-lg p-8">
+              <p className="text-2xl text-white font-bold mb-4">
+                This is not a platform. It's not an app. It's the architecture of the next internet.
+              </p>
+              <p className="text-xl text-gray-300 mb-4">
+                Every wallet is a portal. Every domain is programmable. Every user becomes an operator.
+              </p>
+              <p className="text-2xl text-purple-400 font-bold">
+                The world's first intelligence economy is here — and you own the rails.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Key Takeaway & CTA */}
       <section className="relative z-20 py-24 bg-gradient-to-r from-orange-500/10 to-red-500/10 border-y border-orange-500/20">
         <div className="container-max section-padding text-center">
