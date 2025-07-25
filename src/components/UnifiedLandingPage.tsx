@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
 import { Button } from "@/components/ui/Button";
 
@@ -8,6 +9,18 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 import NewsTicker from "@/components/ui/NewsTicker";
 
 export default function UnifiedLandingPage() {
+  const [activeTab, setActiveTab] = useState("overview");
+
+  const tabs = [
+    { id: "overview", label: "🤖 Overview", icon: "🤖" },
+    { id: "audience", label: "🎯 Who This Is For", icon: "🎯" },
+    { id: "tools", label: "🔥 Launch Tools", icon: "🔥" },
+    { id: "infrastructure", label: "🧱 Infrastructure", icon: "🧱" },
+    { id: "hardware", label: "🛠️ Hardware", icon: "🛠️" },
+    { id: "policy", label: "🇺🇸 Policy", icon: "🇺🇸" },
+    { id: "deploy", label: "🚀 Deploy", icon: "🚀" }
+  ];
+
   const tickerItems = [
     "detroit.aiagents - $0",
     "assistant.aiagents - $200",
@@ -110,8 +123,8 @@ export default function UnifiedLandingPage() {
   return (
     <div className="relative">
       <ConditionalBackground
-        intensity={0.6}
-        particleCount={80}
+        intensity={0.3}
+        particleCount={20}
         floatingCount={0}
         gridSize={120}
       />
@@ -144,33 +157,131 @@ export default function UnifiedLandingPage() {
           <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             The intelligent infrastructure rollout begins city by city, country by country. This is a global launch—anchored in Detroit, designed to scale worldwide.
           </p>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
-            {brandPillars.map((pillar, index) => (
-              <div
-                key={index}
-                className="relative rounded-xl border border-orange-500/20 p-1 transition-all duration-300 hover:scale-105"
-                style={{ animationDelay: `${index * 0.1}s` }}
+      {/* Tab Navigation */}
+      <section className="relative z-20 py-8 border-b border-gray-800">
+        <div className="container-max section-padding">
+          <div className="flex flex-wrap justify-center gap-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+                  activeTab === tab.id
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                }`}
               >
-                <GlowingEffect
-                  variant="orange"
-                  spread={25}
-                  glow={true}
-                  disabled={false}
-                  proximity={40}
-                  inactiveZone={0.01}
-                  borderWidth={1}
-                />
-                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4 text-center">
-                  <div className="text-2xl mb-2">{pillar.emoji}</div>
-                  <h3 className="text-sm font-bold text-white mb-1">{pillar.title}</h3>
-                  <p className="text-gray-300 text-xs">{pillar.desc}</p>
-                </div>
-              </div>
+                {tab.label}
+              </button>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      {/* Tab Content */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          {/* Overview Tab - Diagonal Brand Pillars */}
+          {activeTab === "overview" && (
+            <div className="space-y-16">
+              <div className="text-center">
+                <h3 className="text-3xl font-bold text-orange-400 mb-12">Core Principles</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {brandPillars.map((pillar, index) => (
+                  <div
+                    key={index}
+                    className={`relative p-6 rounded-2xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 to-red-500/10 transform hover:scale-105 transition-all duration-300 ${
+                      index % 2 === 0 ? 'lg:translate-y-8' : 'lg:-translate-y-8'
+                    }`}
+                  >
+                    <div className="text-4xl mb-4">{pillar.emoji}</div>
+                    <h4 className="text-lg font-bold text-white mb-2">{pillar.title}</h4>
+                    <p className="text-gray-300 text-sm">{pillar.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center space-y-4">
+                <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 text-lg font-bold rounded-full">
+                  🚀 Deploy IRL Infrastructure
+                </Button>
+                <div className="flex justify-center gap-4">
+                  <Button variant="ghost" className="border border-blue-500 text-blue-400 hover:bg-blue-500/10">
+                    📋 Pre-register
+                  </Button>
+                  <Button variant="ghost" className="border border-purple-500 text-purple-400 hover:bg-purple-500/10">
+                    🎬 Watch "The Agent Chair"
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Who This Is For Tab - Interactive Role Cards */}
+          {activeTab === "audience" && (
+            <div className="space-y-12">
+              <h3 className="text-4xl font-bold text-center text-cyan-400">🎯 Who This Is For</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {targetAudience.map((audience, index) => (
+                  <div
+                    key={index}
+                    className="group relative p-6 rounded-xl border border-cyan-500/20 bg-black/30 hover:bg-cyan-500/10 transition-all duration-500 cursor-pointer overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-cyan-500/20 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                    <div className="relative z-10">
+                      <div className="text-3xl mb-4">
+                        {index === 0 ? "🏛️" : index === 1 ? "🎓" : index === 2 ? "🏭" : index === 3 ? "🏥" : index === 4 ? "🏦" : index === 5 ? "🎨" : "👨‍💻"}
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{audience}</h4>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p className="text-cyan-300 text-sm">Click to explore deployment options →</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-white">
+                  Don't just use AI. <span className="text-cyan-400">Own your role in it.</span>
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Launch Tools Tab - Pricing Table */}
+          {activeTab === "tools" && (
+            <div className="space-y-12">
+              <h3 className="text-4xl font-bold text-center text-orange-400">🔥 Launch Tools & Registry Handles</h3>
+              <div className="bg-black/50 rounded-2xl border border-orange-500/20 overflow-hidden">
+                <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 p-4">
+                  <div className="grid grid-cols-4 gap-4 font-bold text-white">
+                    <div>Handle</div>
+                    <div>Description</div>
+                    <div>Status</div>
+                    <div>Price</div>
+                  </div>
+                </div>
+                <div className="divide-y divide-gray-800">
+                  {launchAssets.map((asset, index) => (
+                    <div key={index} className="grid grid-cols-4 gap-4 p-4 hover:bg-orange-500/5 transition-colors">
+                      <div className="font-mono text-orange-400">{asset.asset}</div>
+                      <div className="text-gray-300">{asset.description}</div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                        <span className="text-green-400 text-sm">Available</span>
+                      </div>
+                      <div className="font-bold text-white">{asset.price}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto" style={{ display: 'none' }}>
             <Button
               variant="gradient"
               size="lg"
