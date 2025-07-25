@@ -12,13 +12,10 @@ export default function UnifiedLandingPage() {
   const [activeTab, setActiveTab] = useState("overview");
 
   const tabs = [
-    { id: "overview", label: "🤖 Overview", icon: "🤖" },
-    { id: "audience", label: "🎯 Who This Is For", icon: "🎯" },
-    { id: "tools", label: "🔥 Launch Tools", icon: "🔥" },
-    { id: "infrastructure", label: "🧱 Infrastructure", icon: "🧱" },
-    { id: "hardware", label: "🛠️ Hardware", icon: "🛠️" },
-    { id: "policy", label: "🇺🇸 Policy", icon: "🇺🇸" },
-    { id: "deploy", label: "🚀 Deploy", icon: "🚀" }
+    { id: "overview", label: "🤖 Overview" },
+    { id: "marketplace", label: "🎯 Marketplace" },
+    { id: "infrastructure", label: "🧱 Infrastructure" },
+    { id: "deployment", label: "🚀 Deployment" }
   ];
 
   const tickerItems = [
@@ -218,62 +215,177 @@ export default function UnifiedLandingPage() {
             </div>
           )}
 
-          {/* Who This Is For Tab - Interactive Role Cards */}
-          {activeTab === "audience" && (
-            <div className="space-y-12">
-              <h3 className="text-4xl font-bold text-center text-cyan-400">🎯 Who This Is For</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {targetAudience.map((audience, index) => (
-                  <div
-                    key={index}
-                    className="group relative p-6 rounded-xl border border-cyan-500/20 bg-black/30 hover:bg-cyan-500/10 transition-all duration-500 cursor-pointer overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-cyan-500/20 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-                    <div className="relative z-10">
-                      <div className="text-3xl mb-4">
-                        {index === 0 ? "🏛️" : index === 1 ? "🎓" : index === 2 ? "🏭" : index === 3 ? "🏥" : index === 4 ? "🏦" : index === 5 ? "🎨" : "👨‍💻"}
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{audience}</h4>
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p className="text-cyan-300 text-sm">Click to explore deployment options →</p>
+          {/* Who This Is For Tab - Side Panel Selector */}
+          {activeTab === "marketplace" && (
+            <div className="flex h-screen">
+              {/* Left Sidebar - Role Selector */}
+              <div className="w-1/3 bg-gradient-to-b from-cyan-500/10 to-blue-500/10 border-r border-cyan-500/20 p-8">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-8">🎯 Select Your Role</h3>
+                <div className="space-y-4">
+                  {targetAudience.map((audience, index) => (
+                    <div
+                      key={index}
+                      className="p-4 rounded-lg border border-cyan-500/20 hover:bg-cyan-500/10 cursor-pointer transition-all"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <span className="text-2xl">
+                          {index === 0 ? "🏛️" : index === 1 ? "🎓" : index === 2 ? "🏭" : index === 3 ? "🏥" : index === 4 ? "🏦" : index === 5 ? "🎨" : "👨‍💻"}
+                        </span>
+                        <span className="text-white font-semibold">{audience}</span>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-white">
-                  Don't just use AI. <span className="text-cyan-400">Own your role in it.</span>
-                </p>
+
+              {/* Right: Live Pricing Dashboard */}
+              <div className="flex-1 p-8">
+                <h3 className="text-3xl font-bold text-orange-400 mb-8">🔥 Live Registry Pricing</h3>
+                <div className="space-y-4 h-3/4 overflow-y-auto">
+                  {launchAssets.map((asset, index) => (
+                    <div key={index} className="flex items-center justify-between p-4 bg-black/30 rounded-lg border border-orange-500/20 hover:bg-orange-500/5 transition-colors">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <div>
+                          <div className="font-mono text-orange-400 font-bold">{asset.asset}</div>
+                          <div className="text-gray-400 text-sm">{asset.description}</div>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-white font-bold text-xl">{asset.price}</div>
+                        <Button className="bg-orange-500 hover:bg-orange-400 text-white px-4 py-1 text-sm mt-2">
+                          Buy Now
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
 
-          {/* Launch Tools Tab - Pricing Table */}
-          {activeTab === "tools" && (
-            <div className="space-y-12">
-              <h3 className="text-4xl font-bold text-center text-orange-400">🔥 Launch Tools & Registry Handles</h3>
-              <div className="bg-black/50 rounded-2xl border border-orange-500/20 overflow-hidden">
-                <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 p-4">
-                  <div className="grid grid-cols-4 gap-4 font-bold text-white">
-                    <div>Handle</div>
-                    <div>Description</div>
-                    <div>Status</div>
-                    <div>Price</div>
+          {/* Infrastructure Tab - Interactive Network + Hardware Showcase */}
+          {activeTab === "infrastructure" && (
+            <div className="h-screen">
+              {/* Top: Network Visualization */}
+              <div className="h-1/2 relative bg-gradient-to-br from-blue-500/5 to-purple-500/5 border-b border-blue-500/20">
+                <h3 className="text-3xl font-bold text-center text-blue-400 pt-8 mb-8">🧱 Infrastructure Network</h3>
+
+                {/* Central IRL Hub */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center animate-pulse">
+                    <span className="text-xl font-bold text-white">IRL</span>
                   </div>
                 </div>
-                <div className="divide-y divide-gray-800">
-                  {launchAssets.map((asset, index) => (
-                    <div key={index} className="grid grid-cols-4 gap-4 p-4 hover:bg-orange-500/5 transition-colors">
-                      <div className="font-mono text-orange-400">{asset.asset}</div>
-                      <div className="text-gray-300">{asset.description}</div>
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-                        <span className="text-green-400 text-sm">Available</span>
+
+                {/* Orbiting Nodes */}
+                <div className="absolute inset-0">
+                  {irlFeatures.slice(0, 6).map((feature, index) => {
+                    const angle = (index * 60) * (Math.PI / 180);
+                    const radius = 200;
+                    const x = Math.cos(angle) * radius;
+                    const y = Math.sin(angle) * radius;
+
+                    return (
+                      <div
+                        key={index}
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                        style={{
+                          transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+                        }}
+                      >
+                        <div className="p-3 bg-black/70 border border-blue-500/30 rounded-lg text-center">
+                          <div className="text-blue-400 font-semibold text-xs">{feature.split(' ').slice(0, 2).join(' ')}</div>
+                        </div>
                       </div>
-                      <div className="font-bold text-white">{asset.price}</div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Bottom: Hardware Carousel */}
+              <div className="h-1/2 p-8 bg-gradient-to-br from-pink-500/5 to-purple-500/5">
+                <h3 className="text-3xl font-bold text-center text-pink-400 mb-8">🛠️ Hardware Suite</h3>
+                <div className="flex space-x-6 overflow-x-auto pb-4">
+                  {hardwareSuite.map((hardware, index) => (
+                    <div key={index} className="flex-shrink-0 w-64 p-6 bg-black/30 rounded-xl border border-pink-500/20 text-center hover:scale-105 transition-transform">
+                      <div className="text-5xl mb-4">{hardware.emoji}</div>
+                      <h4 className="text-lg font-bold text-white mb-2">{hardware.name}</h4>
+                      <p className="text-gray-300 text-sm mb-4">{hardware.desc}</p>
+                      <Button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 text-sm">
+                        View Specs
+                      </Button>
                     </div>
                   ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Deployment Tab - Interactive Timeline + Wizard */}
+          {activeTab === "deployment" && (
+            <div className="h-screen flex">
+              {/* Left: Policy Timeline */}
+              <div className="w-1/2 p-8 bg-gradient-to-br from-red-500/5 to-blue-500/5 border-r border-red-500/20">
+                <h3 className="text-3xl font-bold text-red-400 mb-8">🇺🇸 Policy Timeline</h3>
+                <div className="relative h-3/4 overflow-y-auto">
+                  <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500 to-blue-500"></div>
+                  <div className="space-y-8">
+                    {trumpMandates.map((mandate, index) => (
+                      <div key={index} className="relative pl-16">
+                        <div className="absolute left-6 w-4 h-4 bg-red-500 rounded-full border-4 border-black"></div>
+                        <div className="bg-black/30 border border-red-500/20 rounded-lg p-4">
+                          <div className="text-red-400 font-semibold mb-2">Federal Mandate {index + 1}</div>
+                          <p className="text-gray-300 text-sm">{mandate}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Deployment Wizard */}
+              <div className="w-1/2 p-8">
+                <h3 className="text-3xl font-bold text-green-400 mb-8">🚀 Deployment Wizard</h3>
+                <div className="space-y-6">
+                  {[
+                    { step: 1, title: "Become Operator", desc: "Get certified for infrastructure deployment", icon: "👨‍💻", status: "active" },
+                    { step: 2, title: "Launch City", desc: "Deploy city-wide AI infrastructure", icon: "🏙️", status: "pending" },
+                    { step: 3, title: "Download Deck", desc: "Get institutional briefing materials", icon: "📊", status: "pending" },
+                    { step: 4, title: "Contact Support", desc: "Enterprise rollout assistance", icon: "🤝", status: "pending" }
+                  ].map((item, index) => (
+                    <div key={index} className={`flex items-center p-6 rounded-xl border transition-all cursor-pointer ${
+                      item.status === 'active'
+                        ? 'bg-green-500/10 border-green-500/50'
+                        : 'bg-black/30 border-gray-500/20 hover:border-green-500/30'
+                    }`}>
+                      <div className="text-4xl mr-6">{item.icon}</div>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <span className="text-green-400 font-bold">Step {item.step}</span>
+                          {item.status === 'active' && <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>}
+                        </div>
+                        <h4 className="text-white font-semibold mb-1">{item.title}</h4>
+                        <p className="text-gray-300 text-sm">{item.desc}</p>
+                      </div>
+                      <Button className={`${
+                        item.status === 'active'
+                          ? 'bg-gradient-to-r from-green-500 to-emerald-500'
+                          : 'bg-gray-600'
+                      } text-white px-6 py-2`}>
+                        {item.status === 'active' ? 'Start' : 'Locked'}
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 text-center">
+                  <p className="text-xl font-bold text-white mb-4">
+                    AI Agents IRL—the new operational layer for smart societies.
+                  </p>
+                  <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 text-lg font-bold rounded-full">
+                    🚀 Begin Full Deployment
+                  </Button>
                 </div>
               </div>
             </div>
