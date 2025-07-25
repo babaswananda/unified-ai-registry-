@@ -1,9 +1,24 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import UnifiedLandingPage from "@/components/UnifiedLandingPage";
+import NewsTicker from "@/components/ui/NewsTicker";
 
 export default function Home() {
+  const tickerItems = [
+    "detroit.aiagents - $0",
+    "assistant.aiagents - $200",
+    "guardian.aiagents - $200",
+    "operator.aiagents - $150",
+    "educator.aiagents - $200",
+    "stream.aiagents - $200",
+    "retail.aiagents - $200",
+    "finance.aiagents - $200",
+    "manufacturing.aifactory - $100",
+    "blockchain.devcommunity - $75",
+    "protocol.agenticweb - $299",
+    "infrastructure.newinternet - $399"
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden relative">
       {/* Background Effects */}
@@ -14,7 +29,10 @@ export default function Home() {
       </div>
 
       <Navigation />
-      <UnifiedLandingPage />
+
+      {/* News Ticker */}
+      <NewsTicker items={tickerItems} />
+
       <Footer />
       <ScrollToTop />
     </main>
