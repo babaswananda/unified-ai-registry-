@@ -244,12 +244,12 @@ export default function UnifiedLandingPage() {
       {/* Hardware Suite */}
       <section className="relative z-20 py-16">
         <div className="container-max section-padding">
-          <h3 className="text-3xl font-bold text-center text-pink-400 mb-12">🛠️ Hardware Suite</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h3 className="text-3xl font-bold text-center text-white mb-8">🛠️ Hardware Suite</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {hardwareSuite.map((hardware, index) => (
               <div key={index} className="relative group">
                 <GlowingEffect
-                  variant="pink"
+                  variant="blue"
                   spread={25}
                   glow={true}
                   disabled={false}
@@ -257,19 +257,14 @@ export default function UnifiedLandingPage() {
                   inactiveZone={0.01}
                   borderWidth={1}
                 />
-                <div className="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-pink-500/10 p-8 text-center transform group-hover:scale-105 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/20 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                  <div className="relative z-10">
-                    <div className="text-6xl mb-6 transform group-hover:rotate-12 transition-transform duration-300">{hardware.emoji}</div>
-                    <h4 className="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">{hardware.name}</h4>
-                    <p className="text-gray-300 text-sm mb-6">{hardware.desc}</p>
-                    <div className="space-y-2">
-                      <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 font-bold">
-                        View Specs
-                      </Button>
-                      <div className="text-pink-400 font-mono text-xs">SKU: {hardware.name.replace(/\s+/g, '').toUpperCase()}-001</div>
-                    </div>
-                  </div>
+                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 text-center transform group-hover:scale-105 transition-all duration-300">
+                  <div className="text-4xl mb-4">{hardware.emoji}</div>
+                  <h4 className="text-lg font-bold text-white mb-2">{hardware.name}</h4>
+                  <p className="text-gray-300 text-sm mb-4">{hardware.desc}</p>
+                  <Button className="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 text-sm">
+                    View Specs
+                  </Button>
+                  <div className="text-gray-400 font-mono text-xs mt-2">SKU: {hardware.name.replace(/\s+/g, '').toUpperCase()}-001</div>
                 </div>
               </div>
             ))}
@@ -365,6 +360,238 @@ export default function UnifiedLandingPage() {
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Origin Context */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-3xl font-bold text-center text-red-400 mb-8">🧭 Origin Context</h3>
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
+            {[
+              "Detroit-anchored infrastructure deployment with global scaling capability",
+              "Policy-backed framework aligned with federal reshoring mandates",
+              "Sovereign compute clusters designed for public sector reliability",
+              "AI-native identity systems built for institutional governance",
+              "Edge-first deployment optimized for real-world sensor integration"
+            ].map((point, index) => (
+              <div
+                key={index}
+                className="relative rounded-xl border border-red-500/20 p-1 transition-all duration-300 hover:scale-105"
+              >
+                <GlowingEffect
+                  variant="red"
+                  spread={25}
+                  glow={true}
+                  disabled={false}
+                  proximity={40}
+                  inactiveZone={0.01}
+                  borderWidth={1}
+                />
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-red-400 font-bold">•</span>
+                    <p className="text-gray-300">{point}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Structured Compute Network */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-3xl font-bold text-center text-green-400 mb-8">⚙️ Structured Compute Network</h3>
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
+            {[
+              "Deploy sovereign compute clusters using the Structured Compute Standard (SCS)",
+              "Designed for public sector AI workloads and edge-first data handling",
+              "Compatible with AI-powered kiosks, phones, vehicles, and real-world sensors",
+              "Built for local resilience, auditability, and national security compliance"
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="relative rounded-xl border border-green-500/20 p-1 transition-all duration-300 hover:scale-105"
+              >
+                <GlowingEffect
+                  variant="green"
+                  spread={25}
+                  glow={true}
+                  disabled={false}
+                  proximity={40}
+                  inactiveZone={0.01}
+                  borderWidth={1}
+                />
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-green-400 font-bold">•</span>
+                    <p className="text-gray-300">{feature}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Handle Registry & Identity */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-3xl font-bold text-center text-purple-400 mb-8">🪪 Handle Registry & Identity</h3>
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
+            {[
+              "Crypto-native handle system for AI agent identification and authentication",
+              "Decentralized identity management compatible with government systems",
+              "Secure, auditable identity verification for public sector deployment",
+              "Integration with existing federal identity and access management protocols"
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="relative rounded-xl border border-purple-500/20 p-1 transition-all duration-300 hover:scale-105"
+              >
+                <GlowingEffect
+                  variant="purple"
+                  spread={25}
+                  glow={true}
+                  disabled={false}
+                  proximity={40}
+                  inactiveZone={0.01}
+                  borderWidth={1}
+                />
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-purple-400 font-bold">•</span>
+                    <p className="text-gray-300">{feature}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Operator Class Training */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-3xl font-bold text-center text-orange-400 mb-8">🚀 Operator Class Training & Certification</h3>
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
+            {[
+              "Comprehensive training program for AI infrastructure operators",
+              "Certification pathways for government and institutional deployment",
+              "Hands-on experience with sovereign compute cluster management",
+              "Security clearance-compatible training modules for federal contractors"
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="relative rounded-xl border border-orange-500/20 p-1 transition-all duration-300 hover:scale-105"
+              >
+                <GlowingEffect
+                  variant="orange"
+                  spread={25}
+                  glow={true}
+                  disabled={false}
+                  proximity={40}
+                  inactiveZone={0.01}
+                  borderWidth={1}
+                />
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-orange-400 font-bold">•</span>
+                    <p className="text-gray-300">{feature}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Developer Toolchain */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-3xl font-bold text-center text-cyan-400 mb-8">💻 Developer Toolchain</h3>
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
+            {[
+              "Open-source development tools for AI agent deployment",
+              "Government-grade security libraries and compliance frameworks",
+              "Integration APIs for existing federal IT infrastructure",
+              "Documentation and support for institutional development teams"
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="relative rounded-xl border border-cyan-500/20 p-1 transition-all duration-300 hover:scale-105"
+              >
+                <GlowingEffect
+                  variant="cyan"
+                  spread={25}
+                  glow={true}
+                  disabled={false}
+                  proximity={40}
+                  inactiveZone={0.01}
+                  borderWidth={1}
+                />
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-cyan-400 font-bold">•</span>
+                    <p className="text-gray-300">{feature}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+            <span className="text-orange-400">🔥 Launch is Now</span>
+          </h2>
+
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+            AI Agents IRL—the new operational layer for smart societies.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <Button
+              variant="gradient"
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white px-6 py-3 font-semibold"
+            >
+              Become Operator
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+
+            <Button
+              variant="gradient"
+              size="lg"
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white px-6 py-3 font-semibold"
+            >
+              Launch City
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+
+            <Button
+              variant="gradient"
+              size="lg"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white px-6 py-3 font-semibold"
+            >
+              Download Infra Deck
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+
+            <Button
+              variant="gradient"
+              size="lg"
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-6 py-3 font-semibold"
+            >
+              Contact for Institutional Rollout
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
           </div>
         </div>
       </section>
