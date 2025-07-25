@@ -181,73 +181,150 @@ export default function InfrastructurePage() {
                 <span className="text-orange-400">🔥 ORIGIN STORY:</span>
                 <br />
                 <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-                  DETROIT IS GROUND ZERO
+                  DETROIT — THE INFLECTION POINT
                 </span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-                At the Detroit AI & Innovation Summit, city leaders made history:
-                <br />
-                <span className="text-orange-400 font-semibold">Detroit became the first city in America to commit to a unified AI handle system for all students, local businesses, and public infrastructure.</span>
+              <p className="text-xl text-gray-300 max-w-5xl mx-auto mb-12">
+                At the recent <span className="text-orange-400 font-semibold">Detroit AI & Innovation Summit</span>, Mayor Mike Duggan and city leaders outlined a robust vision to propel Detroit—and by extension, America—into an AI-powered economic future. The summit highlighted critical mandates and priorities:
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <SpotlightCard
-                variant="orange"
-                className="border-orange-500/20"
-                glowSpread={35}
-                glowProximity={56}
-              >
-                <div className="p-8">
-                  <div className="text-4xl mb-4">🏛️</div>
-                  <h3 className="text-xl font-bold text-white mb-4">Mayor Duggan's Initiative</h3>
-                  <p className="text-gray-300">Mayor Duggan's Office led the initiative to issue AI handles to every public school student, making Detroit the model city for AI infrastructure.</p>
+            {/* Summit Mandates */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {[
+                { title: "Smart Infrastructure", desc: "Modernizing municipal utilities, transport, and public services with AI integration", emoji: "🏗️", color: "blue" },
+                { title: "Automated Manufacturing", desc: "AI-driven automation to restore Detroit's industrial edge and support U.S. reshoring efforts", emoji: "🏭", color: "orange" },
+                { title: "Workforce Retraining", desc: "Equipping workers with AI and tech skills to meet evolving labor demands", emoji: "👥", color: "green" },
+                { title: "Localized AI Solutions", desc: "Deploying AI that directly addresses community-specific challenges", emoji: "🎯", color: "purple" },
+                { title: "Public-Private Partnerships", desc: "Accelerating innovation through collaborative ecosystems", emoji: "🤝", color: "cyan" },
+                { title: "AI Ethics and Governance", desc: "Ensuring transparent, ethical AI use with strong data privacy safeguards", emoji: "⚖️", color: "silver" },
+                { title: "Economic Resilience", desc: "Reinforcing supply chains, production, and technological independence through AI", emoji: "💪", color: "red" },
+                { title: "Digital Equity", desc: "Closing technology access gaps and expanding AI benefits across all communities", emoji: "🌐", color: "pink" }
+              ].map((mandate, index) => (
+                <div
+                  key={index}
+                  className="relative rounded-xl border border-orange-500/20 p-1 transition-all duration-300 hover:scale-105"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <GlowingEffect
+                    variant={mandate.color as any}
+                    spread={20}
+                    glow={true}
+                    disabled={false}
+                    proximity={35}
+                    inactiveZone={0.01}
+                    borderWidth={1}
+                  />
+                  <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4 h-full">
+                    <div className="text-2xl mb-3">{mandate.emoji}</div>
+                    <h3 className="text-sm font-bold text-white mb-2">{mandate.title}</h3>
+                    <p className="text-gray-300 text-xs">{mandate.desc}</p>
+                  </div>
                 </div>
-              </SpotlightCard>
+              ))}
+            </div>
 
-              <SpotlightCard
-                variant="red"
-                className="border-red-500/20"
-                glowSpread={35}
-                glowProximity={56}
-              >
-                <div className="p-8">
-                  <div className="text-4xl mb-4">🏗️</div>
-                  <h3 className="text-xl font-bold text-white mb-4">AI Alley Activation</h3>
-                  <p className="text-gray-300">The Unified AI Infrastructure Root Layer (IRL) was activated at Trapper's Alley — now redeveloped as the "AI Alley."</p>
-                </div>
-              </SpotlightCard>
+            {/* Trump-era Federal Mandates */}
+            <div className="bg-gradient-to-r from-red-500/10 to-blue-500/10 border border-red-500/20 rounded-2xl p-8 mb-16">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                <span className="text-red-400">🇺🇸 TRUMP-ERA FEDERAL MANDATES</span>
+              </h3>
+              <p className="text-lg text-gray-300 mb-6 text-center">
+                These initiatives align directly with Trump-era federal mandates on infrastructure reshoring and economic sovereignty:
+              </p>
 
-              <SpotlightCard
-                variant="orange"
-                className="border-orange-500/20"
-                glowSpread={35}
-                glowProximity={56}
-              >
-                <div className="p-8">
-                  <div className="text-4xl mb-4">👥</div>
-                  <h3 className="text-xl font-bold text-white mb-4">National Convergence</h3>
-                  <p className="text-gray-300">Operators, developers, and creators from across the country gathered to deploy the first vertical stacks of the Unified AI economy.</p>
-                </div>
-              </SpotlightCard>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  "Incentivizing the return of manufacturing and technology production to American soil",
+                  "Securing critical infrastructure through domestic AI and advanced tech deployment",
+                  "Accelerating industrial modernization with AI-powered factories and supply chains",
+                  "Empowering workforce retraining to ensure American labor leads the digital economy",
+                  "Establishing U.S. leadership in AI research, deployment, and global standard-setting",
+                  "Building sovereign, decentralized infrastructure to safeguard national interests"
+                ].map((mandate, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="text-red-400 font-bold">•</div>
+                    <p className="text-gray-300">{mandate}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-              <SpotlightCard
-                variant="red"
-                className="border-red-500/20"
-                glowSpread={35}
-                glowProximity={56}
-              >
-                <div className="p-8">
-                  <div className="text-4xl mb-4">🇺🇸</div>
-                  <h3 className="text-xl font-bold text-white mb-4">Federal Alignment</h3>
-                  <p className="text-gray-300">Trump-era mandates on reshoring U.S. infrastructure aligned with this protocol, making it a sovereign, economically strategic rollout.</p>
-                </div>
-              </SpotlightCard>
+            {/* IRL Response */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-2xl p-8 mb-16">
+              <h3 className="text-3xl font-bold text-center mb-6">
+                <span className="text-orange-400">🚀 OUR RESPONSE:</span>
+                <br />
+                <span className="text-white">THE UNIFIED AI INFRASTRUCTURE ROOT LAYER (IRL)</span>
+              </h3>
+              <p className="text-lg text-gray-300 mb-8 text-center max-w-4xl mx-auto">
+                Unified AI's Infrastructure Root Layer (IRL) is the real-world operational backbone that activates and embodies these mandates in Detroit and beyond.
+                <span className="text-orange-400 font-semibold"> This is not theory—it is IRL deployment driving the new American AI economy:</span>
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { title: "Municipal Integration", desc: "Delivering smart, AI-native infrastructure across city systems—utilities, transportation, public safety—anchored first in Detroit's AI Alley at Trapper's Alley", emoji: "🏛️", color: "blue" },
+                  { title: "Industrial Deployment", desc: "Powering automated manufacturing with AI-optimized workflows, supporting reshoring and supply chain sovereignty", emoji: "🏭", color: "orange" },
+                  { title: "Education & Workforce", desc: "Rolling out AI infrastructure and operator economy roles across Detroit's public schools, retraining workers as integral participants in the new AI-powered gig economy", emoji: "🎓", color: "green" },
+                  { title: "Localized Sovereignty", desc: "Deploying decentralized, crypto-native infrastructure tailored to Detroit's unique economic and social fabric—building a replicable Model City for AI infrastructure nationwide", emoji: "🏙️", color: "purple" },
+                  { title: "Economic & Data Sovereignty", desc: "Embedding secure, cryptographically controlled AI protocols that ensure data privacy, compliance, and local governance control", emoji: "🔒", color: "cyan" },
+                  { title: "Operator Economy", desc: "Creating real income streams for human operators in the loop—trainers, curators, strategists—integral to AI workflows powering Detroit's next-gen economy", emoji: "💼", color: "pink" }
+                ].map((response, index) => (
+                  <SpotlightCard
+                    key={index}
+                    variant={response.color as any}
+                    className="border-orange-500/20"
+                    glowSpread={30}
+                    glowProximity={48}
+                  >
+                    <div className="p-6" style={{ animationDelay: `${index * 0.1}s` }}>
+                      <div className="text-3xl mb-4">{response.emoji}</div>
+                      <h4 className="text-lg font-bold text-white mb-3">{response.title}</h4>
+                      <p className="text-gray-300 text-sm">{response.desc}</p>
+                    </div>
+                  </SpotlightCard>
+                ))}
+              </div>
             </div>
 
             <div className="text-center">
-              <p className="text-2xl font-bold text-white mb-4">
-                Detroit is no longer just Motor City — it's the <span className="text-orange-400">Model City for AI Infrastructure.</span>
+              <h3 className="text-3xl font-bold text-white mb-4">
+                <span className="text-orange-400">🎯 WHY DETROIT?</span>
+              </h3>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Detroit is no longer simply the Motor City. It is the <span className="text-orange-400 font-semibold">Model City for AI infrastructure sovereignty and American technological renewal.</span> The city's leadership at the AI & Innovation Summit set the vision—and Unified AI IRL is the infrastructure execution making that vision a living reality.
+              </p>
+
+              <div className="bg-gradient-to-r from-red-500/10 to-blue-500/10 border border-red-500/20 rounded-xl p-6 max-w-3xl mx-auto">
+                <h4 className="text-xl font-bold text-white mb-4">
+                  <span className="text-red-400">🔗 ALIGNING WITH NATIONAL PRIORITIES</span>
+                </h4>
+                <p className="text-gray-300 mb-4">
+                  Unified AI IRL's deployment is fully aligned with the Trump-era mandates reshaping America's industrial and technological landscape:
+                </p>
+                <div className="text-left space-y-2">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-red-400">•</span>
+                    <span className="text-gray-300"><span className="text-white font-semibold">Reshoring with Sovereignty:</span> Our infrastructure powers the physical return and modernization of U.S.-based manufacturing</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-blue-400">•</span>
+                    <span className="text-gray-300"><span className="text-white font-semibold">Economic Security:</span> Cryptographically secure, sovereign protocols protect critical systems from foreign dependency</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-green-400">•</span>
+                    <span className="text-gray-300"><span className="text-white font-semibold">Workforce Empowerment:</span> Operator Economy roles train and hire workers for AI-centric jobs</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-orange-400">•</span>
+                    <span className="text-gray-300"><span className="text-white font-semibold">Technological Leadership:</span> Unified AI's open, tokenized infrastructure ecosystem accelerates U.S. dominance in AI innovation</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-2xl font-bold text-white mt-8">
+                Detroit's summit was the spark. <span className="text-orange-400">Unified AI IRL is the engine driving America's sovereign AI infrastructure future</span>—built IRL, built for IRL impact, built for America.
               </p>
             </div>
           </div>
