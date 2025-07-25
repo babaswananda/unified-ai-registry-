@@ -50,17 +50,14 @@ export default function Home() {
       <section className="relative z-20 py-24 text-center">
         <div className="container-max section-padding">
           <h1 className="text-5xl lg:text-7xl font-bold mb-8">
-            <span className="text-red-400">🚨</span> The Infrastructure Era Has Officially Begun
+            <span className="text-red-400">🚨</span> ANNOUNCEMENT: The Infrastructure Era Has Begun — AI Agents IRL Are Live
           </h1>
-          <h2 className="text-3xl lg:text-4xl font-bold text-orange-400 mb-6">
-            Unified AI Declares the Arrival of "AI Agents IRL"
-          </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12">
-            This isn't a product launch. It's the rollout of a new operational layer for society.
+          <p className="text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+            This is not a product launch. This is the operational rollout of a new societal infrastructure layer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 text-lg font-bold">
-              Contact: infrastructure@unified.ai
+              Contact: infrastructure@unifiedai
             </Button>
             <Button variant="ghost" className="border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 px-8 py-4 text-lg">
               Partner With Us
@@ -77,10 +74,13 @@ export default function Home() {
           </h3>
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              The era of embedded intelligence is here. AI agents are live, operational, and embedded in real-world systems — reshaping education, manufacturing, healthcare, content creation, and more.
+              AI agents are no longer theoretical or confined to code—they are operational in real life.
+            </p>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Education, manufacturing, healthcare, government, commerce, and media are being transformed by intelligent, voice-driven, identity-bound AI agents physically integrated with real-world operations.
             </p>
             <p className="text-2xl font-bold text-cyan-400">
-              The AI Industrial Infrastructure Revolution is underway.
+              This marks the start of the AI Industrial Infrastructure Revolution.
             </p>
           </div>
         </div>
@@ -90,28 +90,46 @@ export default function Home() {
       <section className="relative z-20 py-16">
         <div className="container-max section-padding">
           <h3 className="text-4xl font-bold text-center text-blue-400 mb-12">
-            🧠 Unified AI — The Root Infrastructure Layer
+            🧠 INFRASTRUCTURE COMPANY: UnifiedAI
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto text-center mb-12">
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              UnifiedAI is the root protocol and infrastructure layer powering this transformation:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             <div className="text-center p-6 bg-black/50 rounded-lg border border-blue-500/20">
               <div className="text-4xl mb-4">🎤</div>
               <h4 className="text-lg font-bold text-white mb-2">Real Voice Agents</h4>
               <p className="text-gray-300 text-sm">Voice-driven AI with real-world interfaces</p>
             </div>
             <div className="text-center p-6 bg-black/50 rounded-lg border border-blue-500/20">
-              <div className="text-4xl mb-4">⚡</div>
-              <h4 className="text-lg font-bold text-white mb-2">Real-Time Operations</h4>
-              <p className="text-gray-300 text-sm">Infrastructure-grade rollouts powering live systems</p>
+              <div className="text-4xl mb-4">🪪</div>
+              <h4 className="text-lg font-bold text-white mb-2">Sovereign AI Handles</h4>
+              <p className="text-gray-300 text-sm">Infrastructure-grade handles bound to devices and operations</p>
             </div>
             <div className="text-center p-6 bg-black/50 rounded-lg border border-blue-500/20">
-              <div className="text-4xl mb-4">🪪</div>
-              <h4 className="text-lg font-bold text-white mb-2">AI Identity</h4>
-              <p className="text-gray-300 text-sm">End-to-end identity and compliance protocols</p>
+              <div className="text-4xl mb-4">⚡</div>
+              <h4 className="text-lg font-bold text-white mb-2">Real-Time IRL Integration</h4>
+              <p className="text-gray-300 text-sm">Operational AI integration with physical systems</p>
+            </div>
+            <div className="text-center p-6 bg-black/50 rounded-lg border border-blue-500/20">
+              <div className="text-4xl mb-4">👥</div>
+              <h4 className="text-lg font-bold text-white mb-2">Human In The Loop</h4>
+              <p className="text-gray-300 text-sm">Human oversight for accountability and ethical compliance</p>
             </div>
             <div className="text-center p-6 bg-black/50 rounded-lg border border-blue-500/20">
               <div className="text-4xl mb-4">🌐</div>
-              <h4 className="text-lg font-bold text-white mb-2">IRL Integration</h4>
-              <p className="text-gray-300 text-sm">Physical device integration and deployment</p>
+              <h4 className="text-lg font-bold text-white mb-2">Ecosystem Governance</h4>
+              <p className="text-gray-300 text-sm">Governance and scaling of agent-native ecosystem</p>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <h4 className="text-xl font-bold text-white mb-4">Domains and contact:</h4>
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="text-blue-400 font-mono">infrastructure@infrastructure.unifiedai</span>
+              <span className="text-blue-400 font-mono">portal.unifiedai</span>
+              <span className="text-blue-400 font-mono">support.unifiedai</span>
             </div>
           </div>
         </div>
@@ -145,7 +163,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-12">
             <p className="text-xl font-bold text-red-400">
-              Unified AI answers these mandates — executing now.
+              UnifiedAI is executing now — no waiting for approval.
             </p>
           </div>
         </div>
@@ -155,11 +173,17 @@ export default function Home() {
       <section className="relative z-20 py-16">
         <div className="container-max section-padding">
           <h3 className="text-4xl font-bold text-center text-green-400 mb-8">
-            🚀 Rolling Out Under One Banner: AI Agents IRL
+            🚀 ROLLOUT UNDER THE UNIFYING BANNER: AI AGENTS IRL
           </h3>
           <div className="text-center max-w-4xl mx-auto mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed mb-4">
+              All verticals and deployments roll under the campaign:
+            </p>
+            <p className="text-2xl font-bold text-green-400 mb-4">
+              "AI Agents IRL" — real agents, real devices, real-world impact.
+            </p>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Every deployment is connected to a real device and a real use case. The experimental phase is over — this is infrastructure rollout.
+              Experimental AI is over. The infrastructure era is live.
             </p>
           </div>
 
@@ -184,65 +208,65 @@ export default function Home() {
       {/* Vertical Ecosystem Details */}
       <section className="relative z-20 py-16">
         <div className="container-max section-padding">
-          <h3 className="text-4xl font-bold text-center text-purple-400 mb-12">
-            📂 Ecosystem Rollout Categories
+          <h3 className="text-4xl font-bold text-center text-purple-400 mb-8">
+            📂 ECOSYSTEM ROLLOUT CATEGORIES
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="text-center max-w-4xl mx-auto mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Each vertical has an institutional-grade press release aligned to its use case:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {[
               {
                 icon: "📺",
                 title: "StreamNow",
-                desc: "AI-powered content platform: UGC, licensed, original content with creator agents, NIL infrastructure."
+                desc: "AI-powered content platform • UGC, licensed, original content with embedded creator agents • NIL licensing, payment rails, and studio portals"
               },
               {
                 icon: "👶",
                 title: "KidsChat",
-                desc: "Safe, education-grade agents for children, museums, schools, and parent controls."
+                desc: "Safe, education-grade agents for children • Museum, school, and parent controls • Multi-language free AI handles for K-12 education"
               },
               {
                 icon: "🏭",
-                title: "Manufacturing & Industrial",
-                desc: "Factory floor AI integration: operator assist, predictive maintenance, reshoring alignment."
+                title: "Manufacturing & Industrial AI",
+                desc: "Factory floor integration • Operator-assist agents, predictive maintenance • Aligned with reshoring mandates"
               },
               {
                 icon: "🏙️",
                 title: "SmartCity & Local Government",
-                desc: "AI city dashboards, voice terminals, citizen service agents."
+                desc: "City dashboards and voice terminals • Citizen service agents (311, permits, FAQs)"
               },
               {
                 icon: "🎓",
                 title: "Education Infrastructure",
-                desc: "District-wide AI rollouts, tutoring agents, curriculum design."
+                desc: "District-wide AI rollouts • Intelligent tutoring and curriculum agents • Charter and public school onboarding"
               },
               {
                 icon: "🏥",
                 title: "Healthcare Portals",
-                desc: "Patient agents, wellness dashboards, HIPAA-compliant."
+                desc: "Patient-agent portals and wellness dashboards • Mental health companions • HIPAA-compliant infrastructure"
               },
               {
                 icon: "🏦",
                 title: "Financial Systems & Banking",
-                desc: "Compliance agents, AI onboarding, underbanked support."
+                desc: "Compliance and identity onboarding agents • Support for underbanked populations"
               },
               {
                 icon: "🏛️",
                 title: "Government Workflows",
-                desc: "Workforce agents, logistics, records, scheduling."
+                desc: "Workforce, logistics, records, and scheduling agents • Department-specific assistants (DMV, state offices)"
               },
               {
                 icon: "🎨",
                 title: "Creator Economy & NIL",
-                desc: "Athlete, artist agents, content monetization, rights protection."
-              },
-              {
-                icon: "🎮",
-                title: "Vibathon & VibeCoder",
-                desc: "Creator portal for agent aesthetics, tone, personality design."
+                desc: "Agents for athletes, artists, and influencers • Content monetization and rights management • Compliance with NIL and attribution mandates"
               },
               {
                 icon: "💼",
                 title: "Business Infrastructure Protocol",
-                desc: "SMB portals, payment systems, digital business cards."
+                desc: "AI-powered SMB portals, handles, and payment systems • Real storefront AI integration"
               }
             ].map((vertical, index) => (
               <div key={index} className="relative group">
@@ -253,6 +277,44 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Agent Handles */}
+      <section className="relative z-20 py-16">
+        <div className="container-max section-padding">
+          <h3 className="text-4xl font-bold text-center text-yellow-400 mb-8">
+            🌐 AI AGENT HANDLES — DIMENSION & MULTI-LANGUAGE
+          </h3>
+          <div className="max-w-5xl mx-auto text-center mb-12">
+            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+              UnifiedAI's sovereign AI handles are foundational for identity and trust.
+            </p>
+            <h4 className="text-2xl font-bold text-white mb-6">Secure agent handle TLDs include:</h4>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { handle: "ki-agenten", lang: "German" },
+              { handle: "agentesdeia", lang: "Spanish" },
+              { handle: "agentsia", lang: "Russian" },
+              { handle: "xn–ai-xy7jg8cuug21c", lang: "ai에이전트 (Korean)" },
+              { handle: "xn–ai-xg4ad4fre1nlc", lang: "aiエージェント (Japanese)" },
+              { handle: "xn–ai-yo3c219fum3a", lang: "ai智能体 (Chinese)" }
+            ].map((item, index) => (
+              <div key={index} className="bg-black/50 backdrop-blur-sm rounded-lg p-4 border border-yellow-500/20">
+                <div className="font-mono text-yellow-400 font-bold text-lg mb-2">{item.handle}</div>
+                <div className="text-gray-300 text-sm">{item.lang}</div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-6 max-w-4xl mx-auto">
+              <h4 className="text-2xl font-bold text-yellow-400 mb-4">K-12 Free AI Handles Program</h4>
+              <p className="text-xl text-gray-300">
+                Free, multi-language AI handles to enable equitable access for educational deployments.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -300,18 +362,22 @@ export default function Home() {
       <section className="relative z-20 py-24 bg-gradient-to-r from-orange-500/10 to-red-500/10 border-y border-orange-500/20">
         <div className="container-max section-padding text-center">
           <h2 className="text-5xl font-bold mb-8">
-            <span className="text-orange-400">🧨 This Is Infrastructure — Not Just Apps.</span>
+            <span className="text-orange-400">🧨 KEY TAKEAWAY: THIS IS INFRASTRUCTURE — NOT APPS</span>
           </h2>
+          <p className="text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            This is the operational rollout of a new societal layer — AI agents embedded throughout commerce, governance, education, and daily life.
+          </p>
           <p className="text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Unified AI is the backbone layer for real-world AI agents. The rollout is live.
+            UnifiedAI is not a product. It is the backbone infrastructure powering AI agents IRL.
           </p>
           <div className="space-y-6">
-            <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-12 py-6 text-xl font-bold rounded-full animate-pulse">
-              Contact Institutional Partners: infrastructure@unified.ai
-            </Button>
-            <p className="text-lg text-gray-400">
+            <h3 className="text-3xl font-bold text-white mb-6">📍 ONBOARDING</h3>
+            <p className="text-xl text-gray-300 mb-8">
               Now onboarding strategic partners, institutional buyers, and U.S.-based manufacturers.
             </p>
+            <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-12 py-6 text-xl font-bold rounded-full animate-pulse">
+              Contact: infrastructure@unifiedai
+            </Button>
           </div>
         </div>
       </section>
