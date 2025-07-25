@@ -47,7 +47,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-20 py-24 text-center">
+      <section className="relative z-30 py-24 text-center">
         <div className="container-max section-padding">
           <h1 className="text-5xl lg:text-7xl font-bold mb-8">
             <span className="text-red-400">🚨</span> ANNOUNCEMENT: The Infrastructure Era Has Begun — AI Agents IRL Are Live
@@ -69,7 +69,7 @@ export default function Home() {
       {/* Master Theme Section */}
       <section className="relative z-20 py-16">
         <div className="container-max section-padding">
-          <h3 className="text-4xl font-bold text-center text-orange-400 mb-8">
+          <h3 className="text-4xl font-bold text-center text-cyan-400 mb-8">
             🔥 MASTER THEME: AI Agents IRL
           </h3>
           <div className="max-w-5xl mx-auto text-center">
@@ -89,7 +89,7 @@ export default function Home() {
       {/* Infrastructure Company Introduction */}
       <section className="relative z-20 py-16">
         <div className="container-max section-padding">
-          <h3 className="text-4xl font-bold text-center text-blue-400 mb-12">
+          <h3 className="text-4xl font-bold text-center text-cyan-400 mb-12">
             🧠 INFRASTRUCTURE COMPANY: UnifiedAI
           </h3>
           <div className="max-w-5xl mx-auto text-center mb-12">
@@ -98,7 +98,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
-            <div className="text-center p-6 bg-black/50 rounded-lg border border-blue-500/20">
+            <div className="text-center p-6 bg-black/50 rounded-lg border border-cyan-500/20">
               <div className="text-4xl mb-4">🎤</div>
               <h4 className="text-lg font-bold text-white mb-2">Real Voice Agents</h4>
               <p className="text-gray-300 text-sm">Voice-driven AI with real-world interfaces</p>
@@ -644,31 +644,31 @@ export default function Home() {
             🎯 DIRECT ACCESS FOR KEY AUDIENCES
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-red-500/20 text-center">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20 text-center">
               <div className="text-4xl mb-4">🏛️</div>
               <h4 className="text-lg font-bold text-white mb-4">Government Officials</h4>
-              <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-3 font-bold">
+              <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-white py-3 font-bold">
                 Schedule Infrastructure Briefing
               </Button>
             </div>
-            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-blue-500/20 text-center">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20 text-center">
               <div className="text-4xl mb-4">🎓</div>
               <h4 className="text-lg font-bold text-white mb-4">Universities</h4>
-              <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 font-bold">
+              <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-white py-3 font-bold">
                 Deploy Campus-Wide AI Handles
               </Button>
             </div>
-            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-green-500/20 text-center">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20 text-center">
               <div className="text-4xl mb-4">🏭</div>
               <h4 className="text-lg font-bold text-white mb-4">Manufacturers</h4>
-              <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 font-bold">
+              <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-white py-3 font-bold">
                 Deploy Floor Operator Agents
               </Button>
             </div>
-            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20 text-center">
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20 text-center">
               <div className="text-4xl mb-4">🎨</div>
               <h4 className="text-lg font-bold text-white mb-4">Creators</h4>
-              <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 font-bold">
+              <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-white py-3 font-bold">
                 Claim Verified NIL AI Agent Identity
               </Button>
             </div>
@@ -676,12 +676,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final Landing Page Module Updates */}
-      <section className="relative z-20 py-16 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 border-y border-purple-500/20">
+      {/* Ecosystem Architecture */}
+      <section className="relative z-30 py-16 bg-gradient-to-r from-cyan-500/5 to-cyan-500/5 border-y border-cyan-500/20">
         <div className="container-max section-padding">
-          <h2 className="text-5xl font-bold text-center text-cyan-400 mb-12">
-            🔥 FINAL LANDING PAGE MODULE UPDATES
-          </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Digital ID Wallet */}
