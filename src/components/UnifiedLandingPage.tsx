@@ -122,30 +122,30 @@ export default function UnifiedLandingPage() {
       </div>
       
       {/* Hero Section */}
-      <section className="relative z-20 py-40 text-center">
+      <section className="relative z-20 py-24 text-center">
         <div className="container-max section-padding">
-          <div className="mb-16">
-            <div className="inline-flex items-center space-x-4 bg-black/50 border border-orange-500/30 px-10 py-5 rounded-full mb-16">
-              <span className="text-4xl">🤖</span>
-              <span className="text-orange-400 font-bold text-xl">AI Agents IRL</span>
+          <div className="mb-8">
+            <div className="inline-flex items-center space-x-3 bg-black/50 border border-orange-500/30 px-6 py-3 rounded-full mb-8">
+              <span className="text-2xl">🤖</span>
+              <span className="text-orange-400 font-bold">AI Agents IRL</span>
             </div>
           </div>
 
-          <h1 className="text-7xl sm:text-8xl lg:text-9xl font-bold mb-16 leading-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-orange-400 via-white to-red-400 bg-clip-text text-transparent">
               AI Agents IRL
             </span>
           </h1>
 
-          <p className="text-3xl sm:text-4xl text-gray-300 max-w-7xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto mb-6 leading-relaxed">
             Built in Detroit. Backed by policy. Powered by agents.
           </p>
 
-          <p className="text-2xl text-gray-400 max-w-6xl mx-auto mb-20 leading-relaxed">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             The intelligent infrastructure rollout begins city by city, country by country. This is a global launch—anchored in Detroit, designed to scale worldwide.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
             {brandPillars.map((pillar, index) => (
               <div
                 key={index}
@@ -161,56 +161,56 @@ export default function UnifiedLandingPage() {
                   inactiveZone={0.01}
                   borderWidth={1}
                 />
-                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <div className="text-3xl mb-3">{pillar.emoji}</div>
-                  <h3 className="text-lg font-bold text-white mb-2">{pillar.title}</h3>
-                  <p className="text-gray-300 text-sm">{pillar.desc}</p>
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <div className="text-2xl mb-2">{pillar.emoji}</div>
+                  <h3 className="text-sm font-bold text-white mb-1">{pillar.title}</h3>
+                  <p className="text-gray-300 text-xs">{pillar.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
             <Button
               variant="gradient"
               size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white px-6 py-3 font-semibold"
             >
               Deploy IRL
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
 
             <Button
               variant="gradient"
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white px-6 py-3 font-semibold"
             >
               Pre-register
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
 
             <Button
               variant="gradient"
               size="lg"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white px-6 py-3 font-semibold"
             >
               Watch "The Agent Chair"
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Who This Is For */}
-      <section className="relative z-20 py-40">
+      <section className="relative z-20 py-24">
         <div className="container-max section-padding">
-          <div className="text-center mb-24">
-            <h2 className="text-6xl sm:text-7xl font-bold mb-12">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               <span className="text-cyan-400">🎯 Who This Is For</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto mb-24">
+          <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto mb-12">
             {targetAudience.map((audience, index) => (
               <div
                 key={index}
@@ -226,10 +226,10 @@ export default function UnifiedLandingPage() {
                   inactiveZone={0.01}
                   borderWidth={1}
                 />
-                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-8">
-                  <div className="flex items-start space-x-6">
-                    <span className="text-cyan-400 font-bold text-2xl">•</span>
-                    <p className="text-gray-300 text-xl leading-relaxed">{audience}</p>
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-cyan-400 font-bold">•</span>
+                    <p className="text-gray-300">{audience}</p>
                   </div>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function UnifiedLandingPage() {
           </div>
 
           <div className="text-center">
-            <p className="text-4xl font-bold text-white mb-8 leading-relaxed">
+            <p className="text-xl font-bold text-white">
               Don't just use AI. <span className="text-cyan-400">Own your role in it.</span>
             </p>
           </div>
@@ -245,15 +245,15 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Launch Tools & Registry Handles */}
-      <section className="relative z-20 py-40">
+      <section className="relative z-20 py-24">
         <div className="container-max section-padding">
-          <div className="text-center mb-24">
-            <h2 className="text-6xl sm:text-7xl font-bold mb-12">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               <span className="text-orange-400">🔥 Launch Tools & Registry Handles</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-4 max-w-5xl mx-auto">
             {launchAssets.map((asset, index) => (
               <div
                 key={index}
@@ -269,11 +269,11 @@ export default function UnifiedLandingPage() {
                   inactiveZone={0.01}
                   borderWidth={1}
                 />
-                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-8">
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
-                    <div className="font-bold text-orange-400 text-xl">{asset.asset}</div>
-                    <div className="md:col-span-2 text-gray-300 text-lg">{asset.description}</div>
-                    <div className="text-white font-bold text-xl">{asset.price}</div>
+                <div className="relative bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                    <div className="font-bold text-orange-400">{asset.asset}</div>
+                    <div className="md:col-span-2 text-gray-300 text-sm">{asset.description}</div>
+                    <div className="text-white font-bold">{asset.price}</div>
                   </div>
                 </div>
               </div>
@@ -283,13 +283,13 @@ export default function UnifiedLandingPage() {
       </section>
 
       {/* Origin Context */}
-      <section className="relative z-20 py-40">
+      <section className="relative z-20 py-24">
         <div className="container-max section-padding">
           <div className="text-center mb-24">
-            <h2 className="text-6xl sm:text-7xl font-bold mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               <span className="text-red-400">📍 Origin Context: Global in Focus</span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-7xl mx-auto mb-16 leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
               At the 2025 Detroit AI & Innovation Summit, leaders introduced America's AI future:
             </p>
           </div>
