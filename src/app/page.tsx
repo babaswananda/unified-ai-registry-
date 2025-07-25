@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import NewsTicker from "@/components/ui/NewsTicker";
 import { Button } from "@/components/ui/Button";
+import ConditionalBackground from "@/components/ui/ConditionalBackground";
 
 export default function Home() {
   const tickerItems = [
@@ -28,6 +29,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
       </div>
+
+      {/* Animated Background */}
+      <ConditionalBackground
+        intensity={0.8}
+        particleCount={150}
+        floatingCount={15}
+        gridSize={80}
+        className="absolute inset-0"
+      />
 
       <Navigation />
 
