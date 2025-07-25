@@ -236,7 +236,7 @@ export default function Home() {
               },
               {
                 icon: "🎮",
-                title: "VibeCoders & ThemeLab",
+                title: "Vibathon & VibeCoder",
                 desc: "Creator portal for agent aesthetics, tone, personality design."
               },
               {
@@ -287,7 +287,7 @@ export default function Home() {
                   "Finance", "Licensing", "Creators", "Export Agencies"
                 ].map((partner, index) => (
                   <div key={index} className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-3 text-center">
-                    <span className="text-cyan-400 font-semibold">{partner}</span>
+                    <span className="text-white font-semibold">{partner}</span>
                   </div>
                 ))}
               </div>
