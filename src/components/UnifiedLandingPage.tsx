@@ -194,9 +194,7 @@ export default function UnifiedLandingPage() {
                 {brandPillars.map((pillar, index) => (
                   <div
                     key={index}
-                    className={`relative p-6 rounded-2xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 to-red-500/10 transform hover:scale-105 transition-all duration-300 ${
-                      index % 2 === 0 ? 'lg:translate-y-8' : 'lg:-translate-y-8'
-                    }`}
+                    className="relative p-6 rounded-2xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 to-red-500/10 transform hover:scale-105 transition-all duration-300"
                   >
                     <div className="text-4xl mb-4">{pillar.emoji}</div>
                     <h4 className="text-lg font-bold text-white mb-2">{pillar.title}</h4>
