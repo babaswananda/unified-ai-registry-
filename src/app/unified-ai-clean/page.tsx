@@ -380,7 +380,7 @@ export default function UnifiedAICleanPage() {
 
             <div className="relative z-10">
               <h2 className="text-4xl font-bold mb-8 text-center">
-                <LetterGlitch text="🔨 ForkD: Where Builders Reclaim the Stack" />
+                🔨 ForkD: Where Builders Reclaim the Stack
               </h2>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
