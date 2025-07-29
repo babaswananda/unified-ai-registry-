@@ -112,7 +112,6 @@ export default function UnifiedAICleanPage() {
               <div className="relative">
                 <Button
                   size="lg"
-                  variant="outline"
                   className="relative border-0 text-white bg-gradient-to-r from-purple-500/20 to-pink-500/20 hover:from-purple-500/30 hover:to-pink-500/30 backdrop-blur-xl px-12 py-6 text-xl transition-all duration-300"
                 >
                   <GlowingEffect

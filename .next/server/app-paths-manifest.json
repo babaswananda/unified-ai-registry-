@@ -1,3 +1,4 @@
 {
-  "/unified-ai-clean/page": "app/unified-ai-clean/page.js"
+  "/unified-ai-clean/page": "app/unified-ai-clean/page.js",
+  "/page": "app/page.js"
 }
