@@ -28,7 +28,7 @@ export default function ForkDPage() {
             
             <div className="relative z-10">
               <h1 className="text-6xl font-bold mb-8">
-                <LetterGlitch text="🔨 ForkD: Where Builders Reclaim the Stack" />
+                🔨 ForkD: Where Builders Reclaim the Stack
               </h1>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
