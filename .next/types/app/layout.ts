@@ -1,4 +1,4 @@
-// File: /Users/trillionaire/Documents/augment-projects/iaas registry/unified-ai-registry/src/app/layout.tsx
+// File: /Volumes/Apple Backups/July 12 2025/augment-projects/iaas registry/unified-ai-registry-github/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

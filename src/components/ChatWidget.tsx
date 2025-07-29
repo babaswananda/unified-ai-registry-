@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
+import { GlowingEffect } from './ui/glowing-effect';
 
 interface Message {
   id: string;
@@ -15,7 +16,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "👋 Hi! I'm your Unified AI assistant. I can help you register handles, check availability, and process payments. What would you like to do?",
+      text: "👋 Hi! I'm your Handle Registry assistant. I can help you claim AI agent handles, check domain availability, and access ForkD compute layers. What would you like to explore?",
       sender: 'agent',
       timestamp: new Date()
     }
@@ -90,36 +91,37 @@ export default function ChatWidget() {
   };
 
   return (
-    <>
-      {/* Chat Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-400 hover:to-purple-400 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-      >
-        {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
-      </button>
-
+    <div className="fixed bottom-6 right-6 z-50">
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-40 w-96 h-[500px] md:w-96 md:h-[500px] sm:w-80 sm:h-[400px] xs:fixed xs:inset-4 xs:w-auto xs:h-auto xs:max-h-[80vh] bg-black/90 backdrop-blur-sm border border-gray-600 rounded-xl shadow-2xl flex flex-col">
+        <div className="absolute bottom-16 right-0 w-80 h-96 bg-black/95 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl flex flex-col">
+          <GlowingEffect
+            spread={40}
+            glow={true}
+            disabled={false}
+            proximity={64}
+            inactiveZone={0.01}
+            borderWidth={1}
+            variant="cyan"
+          />
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-t-xl">
-            <h3 className="text-white font-bold">Unified AI Assistant</h3>
-            <p className="text-blue-100 text-sm">Handle registration & support</p>
+          <div className="relative z-10 p-4 border-b border-cyan-500/20">
+            <h3 className="text-white font-bold">🤖 Handle Registry Assistant</h3>
+            <p className="text-gray-400 text-sm">AI agents, domains & compute access</p>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="relative z-10 flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
+                  className={`max-w-[80%] p-3 rounded-lg border ${
                     message.sender === 'user'
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-gray-700 text-gray-100'
+                      ? 'bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white border-cyan-500/20'
+                      : 'bg-gray-800/80 text-gray-100 border-gray-600/20 backdrop-blur-sm'
                   }`}
                 >
                   <p className="text-sm whitespace-pre-wrap">{message.text}</p>
@@ -132,11 +134,11 @@ export default function ChatWidget() {
             
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-gray-700 text-gray-100 p-3 rounded-lg">
+                <div className="bg-gray-800/80 text-gray-100 p-3 rounded-lg border border-gray-600/20 backdrop-blur-sm">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                   </div>
                 </div>
               </div>
@@ -146,21 +148,21 @@ export default function ChatWidget() {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-gray-600">
+          <div className="relative z-10 p-4 border-t border-cyan-500/20">
             <div className="flex space-x-2">
               <textarea
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask about handle registration, pricing, or availability..."
-                className="flex-1 bg-gray-800 text-white border border-gray-600 rounded-lg px-3 py-2 text-sm resize-none focus:outline-none focus:border-blue-500"
+                placeholder="Ask about AI agent handles, domains, ForkD access, or pricing..."
+                className="flex-1 bg-gray-800/80 text-white border border-cyan-500/20 rounded-lg px-3 py-2 text-sm resize-none focus:outline-none focus:border-cyan-400 backdrop-blur-sm"
                 rows={2}
                 disabled={isLoading}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!inputText.trim() || isLoading}
-                className="bg-blue-500 hover:bg-blue-400 disabled:bg-gray-600 disabled:cursor-not-allowed text-white p-2 rounded-lg transition-colors"
+                className="bg-gradient-to-r from-[#40ffaa] to-[#4079ff] hover:from-[#40ffaa]/80 hover:to-[#4079ff]/80 disabled:bg-gray-600 disabled:cursor-not-allowed text-white p-2 rounded-lg transition-all duration-300 border border-cyan-500/20"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -168,6 +170,25 @@ export default function ChatWidget() {
           </div>
         </div>
       )}
-    </>
+
+      {/* Chat Toggle Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="relative bg-gradient-to-r from-[#40ffaa] to-[#4079ff] hover:from-[#40ffaa]/80 hover:to-[#4079ff]/80 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 border border-cyan-500/20"
+      >
+        <GlowingEffect
+          spread={30}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+          borderWidth={1}
+          variant="cyan"
+        />
+        <div className="relative z-10">
+          {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+        </div>
+      </button>
+    </div>
   );
 }

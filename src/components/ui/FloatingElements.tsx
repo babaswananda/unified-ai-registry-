@@ -28,7 +28,7 @@ export default function FloatingElements({
   const animationRef = useRef<number>(0);
   const initializedRef = useRef(false);
 
-  const elementSymbols = ["⚡", "🌐", "🔗", "💻", "🚀", "✨", "🔮", "💎", "🎯", "🛡️"];
+  const elementSymbols = ["•", "•", "•", "•", "•", "•", "•", "•", "•", "•"];
 
   // Generate stable elements with unique IDs
   useEffect(() => {

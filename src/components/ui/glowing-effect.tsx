@@ -236,7 +236,7 @@ const GlowingEffect = memo(
             className={cn(
               "glow",
               "rounded-[inherit]",
-              'after:content-[""] after:rounded-[inherit] after:absolute after:inset-[calc(-1*var(--glowingeffect-border-width))]',
+              'after:content-[""] after:rounded-[inherit] after:absolute after:inset-[-1px]',
               "after:[border:var(--glowingeffect-border-width)_solid_transparent]",
               "after:[background:var(--gradient)] after:[background-attachment:fixed]",
               "after:opacity-[var(--active)] after:transition-opacity after:duration-300",

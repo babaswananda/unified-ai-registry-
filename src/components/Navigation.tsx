@@ -20,6 +20,7 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/registry", label: "Registry" },
+    { href: "/ai-theme-park", label: "🎢 Theme Park", special: true },
     { href: "/infrastructure", label: "Infrastructure" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
@@ -53,7 +54,11 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 font-medium transition-colors duration-200"
+                className={`font-medium transition-colors duration-200 ${
+                  link.special
+                    ? "text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text hover:from-purple-300 hover:via-pink-300 hover:to-cyan-300 animate-pulse"
+                    : "text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400"
+                }`}
               >
                 {link.label}
               </a>
@@ -99,7 +104,11 @@ export default function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 font-medium py-3 px-2 rounded-lg hover:bg-cyan-500/10 transition-all duration-200"
+                  className={`block font-medium py-3 px-2 rounded-lg transition-all duration-200 ${
+                    link.special
+                      ? "text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text hover:bg-purple-500/10"
+                      : "text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-cyan-500/10"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

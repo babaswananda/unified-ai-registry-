@@ -1,0 +1,371 @@
+/* AI Theme Park Custom Styles */
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Glass morphism effects */
+.glass-card {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+/* Ambient lighting effects */
+.ambient-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Sacred geometry patterns */
+.sacred-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+}
+
+/* Holographic text effect */
+.holographic-text {
+  background: linear-gradient(
+    45deg,
+    #00ffff,
+    #ff00ff,
+    #ffff00,
+    #00ffff
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Neural network connection lines */
+.neural-connection {
+  position: relative;
+}
+
+.neural-connection::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.5), transparent);
+  transform: translateY(-50%);
+}
+
+/* Quantum particle effects */
+.quantum-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(6, 182, 212, 0.8);
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.quantum-particle:nth-child(2) {
+  animation-delay: 1s;
+  background: rgba(168, 85, 247, 0.8);
+}
+
+.quantum-particle:nth-child(3) {
+  animation-delay: 2s;
+  background: rgba(236, 72, 153, 0.8);
+}
+
+/* Cyberpunk grid overlay */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Energy field effect */
+.energy-field {
+  position: relative;
+  overflow: hidden;
+}
+
+.energy-field::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(6, 182, 212, 0.1),
+    transparent,
+    rgba(168, 85, 247, 0.1),
+    transparent
+  );
+  animation: spin-slow 30s linear infinite;
+  pointer-events: none;
+}
+
+/* Portal entrance effect */
+.portal-entrance {
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.2) 0%,
+    rgba(168, 85, 247, 0.1) 50%,
+    transparent 100%
+  );
+}
+
+.portal-entrance::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #00ffff,
+    #ff00ff,
+    #ffff00,
+    #00ffff
+  );
+  animation: spin-slow 15s linear infinite;
+  opacity: 0.3;
+}
+
+.portal-entrance::after {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.8) 30%,
+    transparent 70%
+  );
+}
+
+/* Sacred tech entrance effect */
+.sacred-entrance {
+  position: relative;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(6, 182, 212, 0.1) 0%,
+    rgba(168, 85, 247, 0.05) 50%,
+    transparent 100%
+  );
+}
+
+.sacred-entrance::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(6, 182, 212, 0.1) 50%,
+    transparent 70%
+  );
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Premium handle glow */
+.premium-handle {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(6, 182, 212, 0.1));
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.premium-handle:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Phone device glow */
+.ai-phone-device {
+  position: relative;
+  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.3));
+}
+
+.ai-phone-device::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(6, 182, 212, 0.2),
+    transparent,
+    rgba(168, 85, 247, 0.2),
+    transparent
+  );
+  border-radius: inherit;
+  animation: spin-slow 20s linear infinite;
+  z-index: -1;
+}
+
+/* Culture drop hover effects */
+.culture-item {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.culture-item:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.culture-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.culture-item:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Countdown urgency pulse */
+.countdown-urgent {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.countdown-urgent .countdown-number {
+  color: #ff6b6b;
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+/* Agent chat button magnetic effect */
+.agent-chat-button {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.agent-chat-button:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.agent-chat-button::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.agent-chat-button:hover::before {
+  opacity: 0.7;
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-spin-slow {
+    animation-duration: 30s;
+  }
+
+  .quantum-particle {
+    width: 2px;
+    height: 2px;
+  }
+
+  .neural-connection::after {
+    display: none;
+  }
+
+  .holographic-text {
+    font-size: 2.5rem;
+  }
+
+  .sacred-entrance::before {
+    animation-duration: 12s;
+  }
+}
