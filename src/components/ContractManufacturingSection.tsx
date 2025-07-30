@@ -2,7 +2,7 @@
 
 import { Factory, Zap, Settings, Award } from "lucide-react";
 import ConditionalBackground from "@/components/ui/ConditionalBackground";
-import SpotlightCard from "@/components/ui/SpotlightCard";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Button } from "@/components/ui/Button";
 
 export default function ContractManufacturingSection() {
