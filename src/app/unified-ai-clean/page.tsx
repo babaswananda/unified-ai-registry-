@@ -898,7 +898,7 @@ export default function UnifiedAICleanPage() {
                 </div>
               </div>
 
-              <div className="relative border-[1px] border-red-500/20 rounded-xl p-6 bg-black backdrop-blur-xl">
+              <div className="relative border-[1px] border-cyan-500/20 rounded-xl p-6 bg-black backdrop-blur-xl">
                 <GlowingEffect
                   spread={40}
                   glow={true}
@@ -906,7 +906,6 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
                 />
                 <div className="text-center">
                   <h4 className="font-bold text-lg mb-2">
