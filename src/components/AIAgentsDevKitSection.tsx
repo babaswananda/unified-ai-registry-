@@ -77,7 +77,6 @@ export default function AIAgentsDevKitSection() {
               return (
                 <SpotlightCard
                   key={type.title}
-                  variant="blue"
                   className="border-blue-500/20"
                   glowSpread={30}
                   glowProximity={48}
