@@ -12,6 +12,7 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { ArrowRight, Eye, Zap, Globe } from "lucide-react";
 import ChatWidget from "@/components/ChatWidget";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 export default function UnifiedAICleanPage() {
   const [showMessage, setShowMessage] = useState(false);
@@ -2356,6 +2357,9 @@ export default function UnifiedAICleanPage() {
 
       {/* Chat Widget */}
       <ChatWidget />
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </main>
   );
 }
