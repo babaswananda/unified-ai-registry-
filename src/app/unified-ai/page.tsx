@@ -7,7 +7,7 @@ import ShinyText from "@/components/ui/ShinyText";
 import GradientText from "@/components/ui/GradientText";
 import DecryptedText from "@/components/ui/DecryptedText";
 import PixelCard from "@/components/ui/PixelCard";
-import SpotlightCard from "@/components/SpotlightCard/SpotlightCard";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import LetterGlitch from "@/components/ui/LetterGlitch";
 import ParticleField from "@/components/ui/ParticleField";
 import ScrollReveal from "@/components/ui/ScrollReveal";
