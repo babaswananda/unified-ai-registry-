@@ -2295,14 +2295,6 @@ export default function UnifiedAICleanPage() {
                     className="w-full bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white px-8 py-4 text-lg border-0 font-bold"
                     onClick={() => window.open('/unified-ai-clean/forkd', '_blank')}
                   >
-                    <GlowingEffect
-                      spread={40}
-                      glow={true}
-                      disabled={false}
-                      proximity={64}
-                      inactiveZone={0.01}
-                      borderWidth={1}
-                    />
                     🔥 Access ForkD Manifesto
                   </Button>
                   <Button
