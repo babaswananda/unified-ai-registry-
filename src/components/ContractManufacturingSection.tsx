@@ -63,10 +63,7 @@ export default function ContractManufacturingSection() {
             return (
               <SpotlightCard
                 key={service.title}
-                variant="orange"
                 className="border-orange-500/20"
-                glowSpread={35}
-                glowProximity={56}
               >
                 <div className="p-8 text-center" style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="text-4xl mb-6">{service.emoji}</div>
