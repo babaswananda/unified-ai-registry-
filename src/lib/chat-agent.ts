@@ -11,7 +11,7 @@ interface DomainRegistrationRequest {
   handle: string
   category: string
   userEmail: string
-  paymentMethod: 'crypto' | 'stripe'
+  paymentMethod: 'crypto'
 }
 
 interface PaymentResult {
@@ -108,13 +108,9 @@ export class UnifiedAIChatAgent {
     return data.available
   }
 
-  // Process payment through Crossmint or Stripe
+  // Process payment through Crossmint
   private async processPayment(request: DomainRegistrationRequest): Promise<PaymentResult> {
-    if (request.paymentMethod === 'crypto') {
-      return this.processCryptoPayment(request)
-    } else {
-      return this.processStripePayment(request)
-    }
+    return this.processCryptoPayment(request)
   }
 
   private async processCryptoPayment(request: DomainRegistrationRequest): Promise<PaymentResult> {
@@ -144,26 +140,7 @@ export class UnifiedAIChatAgent {
     }
   }
 
-  private async processStripePayment(request: DomainRegistrationRequest): Promise<PaymentResult> {
-    try {
-      // Stripe payment implementation
-      const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
-      
-      const paymentIntent = await stripe.paymentIntents.create({
-        amount: this.getDomainPrice(request.category) * 100, // Convert to cents
-        currency: 'usd',
-        metadata: {
-          handle: request.handle,
-          category: request.category,
-          userEmail: request.userEmail
-        }
-      })
 
-      return { success: true, transactionId: paymentIntent.id }
-    } catch (error) {
-      return { success: false, error: 'Stripe payment failed' }
-    }
-  }
 
   // Register domain through DNS services
   private async registerThroughDNS(request: DomainRegistrationRequest): Promise<PaymentResult> {
@@ -288,7 +265,6 @@ Just tell me the handle you want and I'll check availability!`
 
 **Payment Methods:**
 • 💰 Crypto payments via Crossmint
-• 💳 Credit card via Stripe
 • 🔗 Integrated with dnser.pencil.li, 3dns.box, hns.id`
   }
 
