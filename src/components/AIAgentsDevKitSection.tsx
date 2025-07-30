@@ -78,8 +78,6 @@ export default function AIAgentsDevKitSection() {
                 <SpotlightCard
                   key={type.title}
                   className="border-blue-500/20"
-                  glowSpread={30}
-                  glowProximity={48}
                 >
                   <div className="p-6" style={{ animationDelay: `${index * 0.1}s` }}>
                     <div className="text-3xl mb-4">{type.emoji}</div>
