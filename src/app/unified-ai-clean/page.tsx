@@ -140,7 +140,7 @@ export default function UnifiedAICleanPage() {
               proximity={64}
               inactiveZone={0.01}
               borderWidth={1}
-              variant="red"
+              
             />
             <div className="relative z-10 text-center">
               <h2 className="text-3xl font-bold mb-6">
@@ -372,7 +372,7 @@ export default function UnifiedAICleanPage() {
               proximity={64}
               inactiveZone={0.01}
               borderWidth={1}
-              variant="red"
+              
             />
 
             {/* Glitch Effect Background */}
@@ -787,7 +787,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
+                  
                 />
                 <div className="relative z-10">
                   <div className="text-3xl mb-3">🔥</div>
@@ -936,7 +936,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="orange"
+                  
                 />
                 <div className="text-center">
                   <h4 className="font-bold text-lg mb-2">
@@ -1078,7 +1078,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
+                  
                 />
                 <h4 className="relative z-10 text-red-400 font-bold text-xl mb-3">⚠️ ForkD Resistance Pack</h4>
                 <p className="relative z-10 text-red-300 mb-4">@builder.forkd + compute access + raw model keys</p>
@@ -1134,7 +1134,7 @@ export default function UnifiedAICleanPage() {
                     proximity={64}
                     inactiveZone={0.01}
                     borderWidth={1}
-                    variant="cyan"
+                    
                   />
                   <span className="relative z-10 text-2xl mr-4">🔹</span>
                   <div className="relative z-10 flex-1">
@@ -1154,7 +1154,7 @@ export default function UnifiedAICleanPage() {
                     proximity={64}
                     inactiveZone={0.01}
                     borderWidth={1}
-                    variant="cyan"
+                    
                   />
                   <span className="relative z-10 text-2xl mr-4">🔸</span>
                   <div className="relative z-10 flex-1">
@@ -1174,7 +1174,7 @@ export default function UnifiedAICleanPage() {
                     proximity={64}
                     inactiveZone={0.01}
                     borderWidth={1}
-                    variant="cyan"
+                    
                   />
                   <span className="relative z-10 text-2xl mr-4">🔸</span>
                   <div className="relative z-10 flex-1">
@@ -1194,7 +1194,7 @@ export default function UnifiedAICleanPage() {
                     proximity={64}
                     inactiveZone={0.01}
                     borderWidth={1}
-                    variant="cyan"
+                    
                   />
                   <span className="relative z-10 text-2xl mr-4">🔺</span>
                   <div className="relative z-10 flex-1">
@@ -1214,7 +1214,7 @@ export default function UnifiedAICleanPage() {
                     proximity={64}
                     inactiveZone={0.01}
                     borderWidth={1}
-                    variant="cyan"
+                    
                   />
                   <span className="relative z-10 text-2xl mr-4">🔺</span>
                   <div className="relative z-10 flex-1">
@@ -1234,7 +1234,7 @@ export default function UnifiedAICleanPage() {
                     proximity={64}
                     inactiveZone={0.01}
                     borderWidth={1}
-                    variant="cyan"
+                    
                   />
                   <span className="relative z-10 text-2xl mr-4">🔸</span>
                   <div className="relative z-10 flex-1">
@@ -1255,7 +1255,7 @@ export default function UnifiedAICleanPage() {
                     proximity={64}
                     inactiveZone={0.01}
                     borderWidth={1}
-                    variant="red"
+                    
                   />
                   <span className="relative z-10 text-2xl mr-4">⚠️</span>
                   <div className="relative z-10 flex-1">
@@ -1276,7 +1276,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="cyan"
+                  
                 />
                 <p className="relative z-10 text-cyan-400 font-semibold">
                   🔐 Higher tiers unlock all previous tier benefits + exclusive access
@@ -1418,7 +1418,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
+                  
                 />
                 <div className="flex items-center mb-4">
                   <span className="w-3 h-3 bg-red-400 rounded-full mr-3 animate-pulse"></span>
@@ -1822,7 +1822,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
+                  
                 />
                 <div className="relative z-10">
                   <div className="text-4xl mb-4">🚫</div>
@@ -1845,7 +1845,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
+                  
                 />
                 <div className="relative z-10">
                   <div className="text-4xl mb-4">🔥</div>
@@ -1976,7 +1976,7 @@ export default function UnifiedAICleanPage() {
                 proximity={64}
                 inactiveZone={0.01}
                 borderWidth={1}
-                variant="red"
+                
               />
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">🔥 ForkD Developer Preview</h3>
@@ -2101,7 +2101,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
+                  
                 />
                 <h3 className="text-2xl font-bold mb-6">
                   <ShinyText text="🔥 ForkD Tier Benefits" speed={6} className="text-white" />
@@ -2260,7 +2260,7 @@ export default function UnifiedAICleanPage() {
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={1}
-                  variant="red"
+                  
                 />
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold mb-6">

@@ -143,10 +143,10 @@ export default function UnifiedLandingPage() {
               🚀 Deploy IRL Infrastructure
             </Button>
             <div className="flex justify-center gap-4">
-              <Button variant="ghost" className="border border-blue-500 text-blue-400 hover:bg-blue-500/10">
+              <Button  className="border border-blue-500 text-blue-400 hover:bg-blue-500/10">
                 📋 Pre-register
               </Button>
-              <Button variant="ghost" className="border border-purple-500 text-purple-400 hover:bg-purple-500/10">
+              <Button  className="border border-purple-500 text-purple-400 hover:bg-purple-500/10">
                 🎬 Watch "The Agent Chair"
               </Button>
             </div>
@@ -223,7 +223,7 @@ export default function UnifiedLandingPage() {
               {irlFeatures.slice(0, 6).map((feature, index) => (
                 <div key={index} className="relative">
                   <GlowingEffect
-                    variant="blue"
+                    
                     spread={20}
                     glow={true}
                     disabled={false}
@@ -249,7 +249,7 @@ export default function UnifiedLandingPage() {
             {hardwareSuite.map((hardware, index) => (
               <div key={index} className="relative group">
                 <GlowingEffect
-                  variant="blue"
+                  
                   spread={25}
                   glow={true}
                   disabled={false}
@@ -381,7 +381,7 @@ export default function UnifiedLandingPage() {
                 className="relative rounded-xl border border-red-500/20 p-1 transition-all duration-300 hover:scale-105"
               >
                 <GlowingEffect
-                  variant="red"
+                  
                   spread={25}
                   glow={true}
                   disabled={false}
@@ -417,7 +417,7 @@ export default function UnifiedLandingPage() {
                 className="relative rounded-xl border border-green-500/20 p-1 transition-all duration-300 hover:scale-105"
               >
                 <GlowingEffect
-                  variant="green"
+                  
                   spread={25}
                   glow={true}
                   disabled={false}
@@ -453,7 +453,7 @@ export default function UnifiedLandingPage() {
                 className="relative rounded-xl border border-purple-500/20 p-1 transition-all duration-300 hover:scale-105"
               >
                 <GlowingEffect
-                  variant="purple"
+                  
                   spread={25}
                   glow={true}
                   disabled={false}
@@ -489,7 +489,7 @@ export default function UnifiedLandingPage() {
                 className="relative rounded-xl border border-orange-500/20 p-1 transition-all duration-300 hover:scale-105"
               >
                 <GlowingEffect
-                  variant="orange"
+                  
                   spread={25}
                   glow={true}
                   disabled={false}
@@ -525,7 +525,7 @@ export default function UnifiedLandingPage() {
                 className="relative rounded-xl border border-cyan-500/20 p-1 transition-all duration-300 hover:scale-105"
               >
                 <GlowingEffect
-                  variant="cyan"
+                  
                   spread={25}
                   glow={true}
                   disabled={false}
@@ -558,7 +558,7 @@ export default function UnifiedLandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             <Button
-              variant="gradient"
+              
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white px-6 py-3 font-semibold"
             >
@@ -567,7 +567,7 @@ export default function UnifiedLandingPage() {
             </Button>
 
             <Button
-              variant="gradient"
+              
               size="lg"
               className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white px-6 py-3 font-semibold"
             >
@@ -576,7 +576,7 @@ export default function UnifiedLandingPage() {
             </Button>
 
             <Button
-              variant="gradient"
+              
               size="lg"
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white px-6 py-3 font-semibold"
             >
@@ -585,7 +585,7 @@ export default function UnifiedLandingPage() {
             </Button>
 
             <Button
-              variant="gradient"
+              
               size="lg"
               className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-6 py-3 font-semibold"
             >

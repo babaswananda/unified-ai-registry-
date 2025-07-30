@@ -100,10 +100,7 @@ export default function ForkdSection() {
             return (
               <SpotlightCard
                 key={item.title}
-                variant="green"
                 className="border-green-500/20"
-                glowSpread={30}
-                glowProximity={48}
               >
                 <div className="p-6" style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="text-3xl mb-4">{item.emoji}</div>
